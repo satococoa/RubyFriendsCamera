@@ -5,7 +5,18 @@ class PhotosController < UICollectionViewController
     navigationController.toolbarHidden = false
     camera_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemCamera, target:self, action:'camera_tapped')
     navigationItem.rightBarButtonItem = camera_button
+    open_twitter_button = UIBarButtonItem.alloc.initWithTitle('T', style:UIBarButtonItemStyleBordered, target:self, action:'open_twitter')
+    open_rubyfriends_button = UIBarButtonItem.alloc.initWithTitle('RF', style:UIBarButtonItemStyleBordered, target:self, action:'open_rubyfriends')
+    self.toolbarItems = [open_twitter_button, open_rubyfriends_button]
     collectionView.backgroundColor = UIColor.underPageBackgroundColor
+  end
+
+  def open_twitter
+    App.open_url('https://mobile.twitter.com/search?q=%23RubyFriends')
+  end
+
+  def open_rubyfriends
+    App.open_url('http://rubyfriends.com')
   end
 
   def camera_tapped
