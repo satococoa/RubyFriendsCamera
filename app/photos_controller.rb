@@ -84,9 +84,10 @@ class PhotosController < UICollectionViewController
         t.setInitialText(AppDelegate::HASHTAG)
         t.addImage(image)
         t.completionHandler = lambda {|result|
-          if result == SLComposeViewControllerResultDone
+          # if result == SLComposeViewControllerResultDone
+          #   save_friend(image)
+          # end
             save_friend(image)
-          end
           dismissModalViewControllerAnimated(true)
           reload
         }
@@ -100,6 +101,10 @@ class PhotosController < UICollectionViewController
   def save_friend(image)
     path = NSString.pathWithComponents([App.documents_path, UIImagePNGRepresentation(image).MD5HexDigest + '.png'])
     image.saveToPath(path, type:NYXImageTypePNG, backgroundFillColor:nil)
-    Friend.create(:image_path => path, :created_at => Time.now)
+    Friend.create(
+      :image_path => path,
+      :image_orientation => image.imageOrientation,
+      :created_at => Time.now
+    )
   end
 end
