@@ -1,11 +1,21 @@
 
 PODS:
+- NSData+MD5Digest (1.0.0)
+- NYXImagesKit (2.1.3)
 - NanoStore (2.5.3)
 
 DEPENDENCIES:
+- NSData+MD5Digest
+- NYXImagesKit (from `NYXImagesKit.podspec')
 - NanoStore (~> 2.5.3)
 
+EXTERNAL SOURCES:
+  NYXImagesKit:
+    :podspec: NYXImagesKit.podspec
+
 SPEC CHECKSUMS:
+  NSData+MD5Digest: 8275479b2a935e6caa8a92a9a814fb5abecba367
+  NYXImagesKit: cf600402f71072fb1e475953da5c5569dbbef5b5
   NanoStore: ea3eabc945dbd7d80678da2b0aed669f683d239f
 
 COCOAPODS: 0.16.1

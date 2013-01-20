@@ -85,7 +85,7 @@ class PhotosController < UICollectionViewController
         t.addImage(image)
         t.completionHandler = lambda {|result|
           if result == SLComposeViewControllerResultDone
-            Friend.create(:image => UIImagePNGRepresentation(image), :created_at => Time.now)
+            save_friend(image)
           end
           dismissModalViewControllerAnimated(true)
           reload
@@ -95,5 +95,11 @@ class PhotosController < UICollectionViewController
     else
       App.alert('Posting twitter is not available.')
     end
+  end
+
+  def save_friend(image)
+    path = NSString.pathWithComponents([App.documents_path, UIImagePNGRepresentation(image).MD5HexDigest + '.png'])
+    image.saveToPath(path, type:NYXImageTypePNG, backgroundFillColor:nil)
+    Friend.create(:image_path => path, :created_at => Time.now)
   end
 end
