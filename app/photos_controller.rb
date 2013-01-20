@@ -8,7 +8,9 @@ class PhotosController < UICollectionViewController
     open_twitter_button = UIBarButtonItem.alloc.initWithTitle('T', style:UIBarButtonItemStyleBordered, target:self, action:'open_twitter')
     open_rubyfriends_button = UIBarButtonItem.alloc.initWithTitle('RF', style:UIBarButtonItemStyleBordered, target:self, action:'open_rubyfriends')
     self.toolbarItems = [open_twitter_button, open_rubyfriends_button]
+    collectionView.registerClass(FriendCell, forCellWithReuseIdentifier:'friend_cell')
     collectionView.backgroundColor = UIColor.underPageBackgroundColor
+    @friends = Friend.all
   end
 
   def viewDidAppear(animated)
@@ -16,6 +18,28 @@ class PhotosController < UICollectionViewController
       open_tweet(@image)
       @image = nil
     end
+  end
+
+  def numberOfSectionsInCollectionView(collection_view)
+    1
+  end
+
+  def collectionView(collection_view, numberOfItemsInSection:section)
+    @friends.count
+  end
+
+  def collectionView(collection_view, cellForItemAtIndexPath:index_path)
+    cell = collection_view.dequeueReusableCellWithReuseIdentifier('friend_cell', forIndexPath:index_path)
+    friend = @friends[index_path.row]
+    cell.friend = friend
+    cell
+  end
+
+
+  private
+  def reload
+    @friends = Friend.all
+    collectionView.reloadData
   end
 
   def open_twitter
@@ -60,11 +84,11 @@ class PhotosController < UICollectionViewController
         t.setInitialText(AppDelegate::HASHTAG)
         t.addImage(image)
         t.completionHandler = lambda {|result|
-          p image
           if result == SLComposeViewControllerResultDone
-            # TODO: 画像を保存
+            Friend.create(:image => UIImagePNGRepresentation(image), :created_at => Time.now)
           end
           dismissModalViewControllerAnimated(true)
+          reload
         }
       end
       presentModalViewController(tweet_controller, animated:true)
