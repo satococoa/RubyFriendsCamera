@@ -27,7 +27,7 @@ class PhotosController < UICollectionViewController
   def take_picture
     BW::Device.camera.rear.picture(media_types: [:image]) do |result|
       image = result[:original_image]
-      open_tweet(image, AppDelegate::HASHTAG)
+      open_tweet(image)
     end
   end
 
@@ -35,11 +35,11 @@ class PhotosController < UICollectionViewController
     BW::Device.camera.any.picture(media_types: [:image]) do |result|
       image = result[:original_image]
       p AppDelegate::HASHTAG
-      open_tweet(image, AppDelegate::HASHTAG)
+      open_tweet(image)
     end
   end
 
-  def open_tweet(image, hashtag)
-    p image, hashtag
+  def open_tweet(image)
+    p image, AppDelegate::HASHTAG
   end
 end
