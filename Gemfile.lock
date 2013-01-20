@@ -29,6 +29,8 @@ GEM
       cocoapods (>= 0.14.0)
     multi_json (1.5.0)
     multipart-post (1.1.5)
+    nano-store (0.6.0)
+      motion-cocoapods (>= 1.2.1)
     netrc (0.7.7)
     octokit (1.22.0)
       addressable (~> 2.2)
@@ -49,3 +51,4 @@ PLATFORMS
 DEPENDENCIES
   bubble-wrap
   motion-cocoapods
+  nano-store
