@@ -1,4 +1,6 @@
 class AppDelegate
+  HASHTAG = '#RubyFriends'
+
   def application(application, didFinishLaunchingWithOptions:launchOptions)
     @window = UIWindow.alloc.initWithFrame(App.bounds)
     photos_controller = PhotosController.alloc.initWithCollectionViewLayout(PhotosLayout.new)
