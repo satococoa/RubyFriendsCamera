@@ -16,6 +16,6 @@ class FriendCell < UICollectionViewCell
   end
 
   def friend=(friend)
-    @image_view.image = friend.image
+    @image_view.image = friend.thumbnail
   end
 end

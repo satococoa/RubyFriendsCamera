@@ -87,9 +87,10 @@ class PhotosController < UICollectionViewController
           # if result == SLComposeViewControllerResultDone
           #   save_friend(image)
           # end
+          Dispatch::Queue.concurrent.async {
             save_friend(image)
+          }
           dismissModalViewControllerAnimated(true)
-          reload
         }
       end
       presentModalViewController(tweet_controller, animated:true)
@@ -99,12 +100,21 @@ class PhotosController < UICollectionViewController
   end
 
   def save_friend(image)
-    path = NSString.pathWithComponents([App.documents_path, UIImagePNGRepresentation(image).MD5HexDigest + '.png'])
+    image_path = UIImagePNGRepresentation(image).MD5HexDigest + '.png'
+    path = NSString.pathWithComponents([App.documents_path, image_path])
     image.saveToPath(path, type:NYXImageTypePNG, backgroundFillColor:nil)
+
+    thumbnail = image.scaleToFitSize([256, 256])
+    thumbnail_path = UIImagePNGRepresentation(thumbnail).MD5HexDigest + '.png'
+    path = NSString.pathWithComponents([App.documents_path, thumbnail_path])
+    thumbnail.saveToPath(path, type:NYXImageTypePNG, backgroundFillColor:nil)
+
     Friend.create(
-      :image_path => path,
+      :image_path => image_path,
       :image_orientation => image.imageOrientation,
+      :thumbnail_path => thumbnail_path,
       :created_at => Time.now
     )
+    reload
   end
 end
