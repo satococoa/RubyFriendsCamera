@@ -10,7 +10,7 @@ class PhotosController < UICollectionViewController
     self.toolbarItems = [open_twitter_button, open_rubyfriends_button]
     collectionView.registerClass(FriendCell, forCellWithReuseIdentifier:'friend_cell')
     collectionView.backgroundColor = UIColor.underPageBackgroundColor
-    @friends = Friend.all
+    @friends = Friend.find({}, {:sort => {:created_at => :desc}})
   end
 
   def viewDidAppear(animated)
@@ -38,7 +38,7 @@ class PhotosController < UICollectionViewController
 
   private
   def reload
-    @friends = Friend.all
+    @friends = Friend.find({}, {:sort => {:created_at => :desc}})
     collectionView.reloadData
   end
 

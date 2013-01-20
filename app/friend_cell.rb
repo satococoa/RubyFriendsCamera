@@ -1,12 +1,22 @@
 class FriendCell < UICollectionViewCell
-  def friend=(friend)
-    image = UIImage.imageWithData(friend.image)
-    image_view = UIImageView.alloc.initWithImage(image).tap do |iv|
-      p contentView.bounds.size
-      iv.frame = contentView.bounds
-      iv.center = contentView.center
+  def initWithFrame(rect)
+    super
+    @image_view ||= UIImageView.new.tap do |iv|
       iv.contentMode = UIViewContentModeScaleAspectFit
     end
-    contentView.addSubview(image_view)
+    contentView.addSubview(@image_view)
+    self
+  end
+
+  def layoutSubviews
+    @image_view.tap do |iv|
+      iv.frame = contentView.bounds
+      iv.center = contentView.center
+    end
+  end
+
+  def friend=(friend)
+    image = UIImage.imageWithData(friend.image)
+    @image_view.image = image
   end
 end
