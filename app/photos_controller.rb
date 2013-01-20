@@ -1,5 +1,5 @@
 class PhotosController < UICollectionViewController
-    def viewDidLoad
+  def viewDidLoad
     super
     navigationItem.title = 'RubyFriends'
     navigationController.toolbarHidden = false
@@ -9,6 +9,13 @@ class PhotosController < UICollectionViewController
     open_rubyfriends_button = UIBarButtonItem.alloc.initWithTitle('RF', style:UIBarButtonItemStyleBordered, target:self, action:'open_rubyfriends')
     self.toolbarItems = [open_twitter_button, open_rubyfriends_button]
     collectionView.backgroundColor = UIColor.underPageBackgroundColor
+  end
+
+  def viewDidAppear(animated)
+    if @image
+      open_tweet(@image)
+      @image = nil
+    end
   end
 
   def open_twitter
@@ -36,21 +43,33 @@ class PhotosController < UICollectionViewController
   end
 
   def take_picture
-    BW::Device.camera.rear.picture(media_types: [:image]) do |result|
-      image = result[:original_image]
-      open_tweet(image)
+    BW::Device.camera.rear.picture({media_types: [:image]}, self) do |result|
+      @image = result[:original_image]
     end
   end
 
   def open_album
-    BW::Device.camera.any.picture(media_types: [:image]) do |result|
-      image = result[:original_image]
-      p AppDelegate::HASHTAG
-      open_tweet(image)
+    BW::Device.camera.any.picture({media_types: [:image]}, self) do |result|
+      @image = result[:original_image]
     end
   end
 
   def open_tweet(image)
-    p image, AppDelegate::HASHTAG
+    if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter)
+      tweet_controller = SLComposeViewController.composeViewControllerForServiceType(SLServiceTypeTwitter).tap do |t|
+        t.setInitialText(AppDelegate::HASHTAG)
+        t.addImage(image)
+        t.completionHandler = lambda {|result|
+          p image
+          if result == SLComposeViewControllerResultDone
+            # TODO: 画像を保存
+          end
+          dismissModalViewControllerAnimated(true)
+        }
+      end
+      presentModalViewController(tweet_controller, animated:true)
+    else
+      App.alert('Posting twitter is not available.')
+    end
   end
 end
