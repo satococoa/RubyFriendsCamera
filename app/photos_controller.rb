@@ -14,10 +14,7 @@ class PhotosController < UICollectionViewController
   end
 
   def viewWillAppear(animated)
-    navigationController.tap do |nav|
-      # nav.toolbarHidden = false
-      nav.navigationBar.translucent = false
-    end
+    navigationController.navigationBar.translucent = false
   end
 
   def viewDidAppear(animated)
