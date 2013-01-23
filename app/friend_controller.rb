@@ -8,6 +8,8 @@ class FriendController < UIViewController
 
   def viewDidLoad
     super
+    view.backgroundColor = UIColor.underPageBackgroundColor
+
     @image_view = UIImageView.new.tap do |iv|
       iv.frame = CGRectZero
       iv.contentMode = UIViewContentModeScaleAspectFit
@@ -16,11 +18,20 @@ class FriendController < UIViewController
       iv.addGestureRecognizer(tap)
     end
     view.addSubview(@image_view)
-    view.backgroundColor = UIColor.underPageBackgroundColor
+
+    @label = UILabel.new.tap do |l|
+      l.textAlignment = UITextAlignmentRight
+      l.alpha = 0.8
+      l.textColor = UIColor.whiteColor
+      l.font = UIFont.boldSystemFontOfSize(14)
+      l.backgroundColor = UIColor.blackColor
+    end
+    view.addSubview(@label)
   end
 
   def viewWillAppear(animated)
     setup_image_frame
+    setup_label
     navigationController.navigationBar.translucent = true
   end
 
@@ -45,6 +56,11 @@ class FriendController < UIViewController
     y = (frame_size.height - height) / 2
     @image_view.frame = [[x, y], [width, height]]
     @image_view.image = @friend.image
+  end
+
+  def setup_label
+    @label.frame = [[0, App.bounds.size.height - 20 - 30], [content_frame.size.width, 30]]
+    @label.text = @friend.created_at.strftime('%Y/%m/%d %H:%M ')
   end
 
   private
