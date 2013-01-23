@@ -1,0 +1,19 @@
+testflight:
+  api_token: API_TOKEN
+  team_token: TEAM_TOKEN
+  distribution_lists:
+    - DIST_LISTS
+
+identifier: com.example.coolapp
+
+development:
+  certificate: 'iPhone Developer: foo (bar)'
+  provisioning: '/path/to/foo.mobileprovision'
+
+adhoc:
+  certificate: 'iPhone Distribution: foo'
+  provisioning: '/path/to/foo.mobileprovision'
+
+release:
+  certificate: 'iPhone Distribution: foo'
+  provisioning: '/path/to/foo.mobileprovision'
