@@ -1,5 +1,6 @@
 class AppDelegate
   # HASHTAG = '#RubyFriends'
+  # TODO: リリース前に戻す
   HASHTAG = 'test'
 
   def application(application, didFinishLaunchingWithOptions:launchOptions)
@@ -7,7 +8,8 @@ class AppDelegate
 
     @window = UIWindow.alloc.initWithFrame(App.bounds)
     photos_controller = PhotosController.alloc.initWithCollectionViewLayout(PhotosLayout.new)
-    navigation_controller = UINavigationController.alloc.initWithRootViewController(photos_controller)
+    navigation_controller = UINavigationController.alloc.initWithRootViewController(photos_controller).tap do |nav|
+    end
     @window.rootViewController = navigation_controller
     @window.makeKeyAndVisible
     true

@@ -2,7 +2,6 @@ class PhotosController < UICollectionViewController
   def viewDidLoad
     super
     navigationItem.title = 'RubyFriends'
-    navigationController.toolbarHidden = false
     camera_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemCamera, target:self, action:'camera_tapped')
     navigationItem.rightBarButtonItem = camera_button
     open_twitter_button = UIBarButtonItem.alloc.initWithTitle('T', style:UIBarButtonItemStyleBordered, target:self, action:'open_twitter')
@@ -11,6 +10,14 @@ class PhotosController < UICollectionViewController
     collectionView.registerClass(FriendCell, forCellWithReuseIdentifier:'friend_cell')
     collectionView.backgroundColor = UIColor.underPageBackgroundColor
     @friends = Friend.find({}, {:sort => {:created_at => :desc}})
+    navigationController.toolbarHidden = false
+  end
+
+  def viewWillAppear(animated)
+    navigationController.tap do |nav|
+      # nav.toolbarHidden = false
+      nav.navigationBar.translucent = false
+    end
   end
 
   def viewDidAppear(animated)
@@ -32,9 +39,19 @@ class PhotosController < UICollectionViewController
     cell = collection_view.dequeueReusableCellWithReuseIdentifier('friend_cell', forIndexPath:index_path)
     friend = @friends[index_path.row]
     cell.friend = friend
+    cell.tag = index_path.row
+    tap = UITapGestureRecognizer.alloc.initWithTarget(self, action:'image_tapped:')
+    cell.addGestureRecognizer(tap)
     cell
   end
 
+  def image_tapped(target)
+    index = target.view.tag
+    friend = @friends[index]
+    @friend_controller ||= FriendController.new
+    @friend_controller.friend = friend
+    navigationController.pushViewController(@friend_controller, animated:true)
+  end
 
   private
   def reload
@@ -84,6 +101,7 @@ class PhotosController < UICollectionViewController
         t.setInitialText(AppDelegate::HASHTAG)
         t.addImage(image)
         t.completionHandler = lambda {|result|
+          # TODO: 成功時だけ保存するように戻す
           # if result == SLComposeViewControllerResultDone
           #   save_friend(image)
           # end
@@ -99,6 +117,7 @@ class PhotosController < UICollectionViewController
     end
   end
 
+  # TODO: モデルに移動する
   def save_friend(image)
     image_path = UIImagePNGRepresentation(image).MD5HexDigest + '.png'
     path = NSString.pathWithComponents([App.documents_path, image_path])
