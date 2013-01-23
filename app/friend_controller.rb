@@ -9,6 +9,8 @@ class FriendController < UIViewController
   def viewDidLoad
     super
     view.backgroundColor = UIColor.underPageBackgroundColor
+    action_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemAction, target:self, action:'action_tapped')
+    navigationItem.rightBarButtonItem = action_button
 
     @image_view = UIImageView.new.tap do |iv|
       iv.frame = CGRectZero
@@ -63,7 +65,44 @@ class FriendController < UIViewController
     @label.text = @friend.created_at.strftime('%Y/%m/%d %H:%M ')
   end
 
+  def action_tapped
+    action_sheet = UIActionSheet.alloc.initWithTitle('Share', delegate:self, cancelButtonTitle:'Cancel', destructiveButtonTitle:nil, otherButtonTitles:'Twitter', 'Facebook', nil)
+    action_sheet.showInView(view)
+  end
+
+  def actionSheet(action_sheet, clickedButtonAtIndex:button_index)
+    case button_index
+    when 0 # twitter
+      open_share(:twitter)
+    when 1 # facebook
+      open_share(:facebook)
+    when action_sheet.cancelButtonIndex
+      return
+    end
+  end
+
   private
+  def open_share(type)
+    case type
+    when :twitter
+      service_type = SLServiceTypeTwitter
+    when :facebook
+      service_type = SLServiceTypeFacebook
+    end
+    if SLComposeViewController.isAvailableForServiceType(service_type)
+      controller = SLComposeViewController.composeViewControllerForServiceType(service_type).tap do |t|
+        t.setInitialText(AppDelegate::HASHTAG)
+        t.addImage(@friend.image)
+        t.completionHandler = lambda {|result|
+          dismissModalViewControllerAnimated(true)
+        }
+      end
+      presentModalViewController(controller, animated:true)
+    else
+      App.alert("Posting #{type} is not available.")
+    end
+  end
+
   def toggle_navigation_bar
     hidden = !navigationController.navigationBarHidden?
     navigationController.setNavigationBarHidden(hidden, animated:true)
