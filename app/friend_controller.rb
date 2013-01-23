@@ -65,6 +65,13 @@ class FriendController < UIViewController
 
   private
   def toggle_navigation_bar
-    navigationController.setNavigationBarHidden(!navigationController.navigationBarHidden?, animated:true)
+    hidden = !navigationController.navigationBarHidden?
+    navigationController.setNavigationBarHidden(hidden, animated:true)
+    UIView.animateWithDuration(0.3,
+      animations:lambda {
+        y = @label.frame.origin.y + (hidden ? @label.frame.size.height : -@label.frame.size.height)
+        @label.frame = [[0, y], @label.frame.size]
+      }
+    )
   end
 end
