@@ -6,7 +6,12 @@ class PhotosController < UICollectionViewController
     navigationItem.rightBarButtonItem = camera_button
     open_twitter_button = UIBarButtonItem.alloc.initWithTitle('T', style:UIBarButtonItemStyleBordered, target:self, action:'open_twitter')
     open_rubyfriends_button = UIBarButtonItem.alloc.initWithTitle('RF', style:UIBarButtonItemStyleBordered, target:self, action:'open_rubyfriends')
-    self.toolbarItems = [open_twitter_button, open_rubyfriends_button]
+    spacer = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemFlexibleSpace, target:nil, action:nil)
+    info = UIButton.buttonWithType(UIButtonTypeInfoLight).tap do |b|
+      b.addTarget(self, action:'open_info', forControlEvents:UIControlEventTouchUpInside)
+    end
+    info_button = UIBarButtonItem.alloc.initWithCustomView(info)
+    self.toolbarItems = [open_twitter_button, open_rubyfriends_button, spacer, info_button]
     collectionView.registerClass(FriendCell, forCellWithReuseIdentifier:'friend_cell')
     collectionView.backgroundColor = UIColor.underPageBackgroundColor
     @friends = Friend.find({}, {:sort => {:created_at => :desc}})
@@ -50,7 +55,6 @@ class PhotosController < UICollectionViewController
     navigationController.pushViewController(@friend_controller, animated:true)
   end
 
-  private
   def reload
     @friends = Friend.find({}, {:sort => {:created_at => :desc}})
     collectionView.reloadData
@@ -62,6 +66,17 @@ class PhotosController < UICollectionViewController
 
   def open_rubyfriends
     App.open_url('http://rubyfriends.com')
+  end
+
+  def open_info
+    controller = InfoController.new
+    controller.delegate = self
+    presentModalViewController(controller, animated:true)
+  end
+
+  def close_info(info)
+    info.delegate = nil
+    dismissModalViewControllerAnimated(true)
   end
 
   def camera_tapped
@@ -80,6 +95,7 @@ class PhotosController < UICollectionViewController
     end
   end
 
+  private
   def take_picture
     BW::Device.camera.rear.picture({media_types: [:image]}, self) do |result|
       @image = result[:original_image]
