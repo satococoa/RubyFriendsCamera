@@ -1,7 +1,7 @@
 class FriendCell < UICollectionViewCell
   def initWithFrame(rect)
     super
-    @image_view ||= UIImageView.new.tap do |iv|
+    @image_view ||= LoadableImageView.new.tap do |iv|
       iv.contentMode = UIViewContentModeScaleAspectFit
     end
     contentView.addSubview(@image_view)
@@ -16,6 +16,11 @@ class FriendCell < UICollectionViewCell
   end
 
   def friend=(friend)
-    @image_view.image = friend.thumbnail
+    if friend.thumbnail.nil?
+      @image_view.loading = true
+    else
+      @image_view.loading = false
+      @image_view.image = friend.thumbnail
+    end
   end
 end

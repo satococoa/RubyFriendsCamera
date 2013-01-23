@@ -102,6 +102,9 @@ class PhotosController < UICollectionViewController
           # if result == SLComposeViewControllerResultDone
           #   save_friend(image)
           # end
+          @friends = [Friend.new] + @friends
+          path = NSIndexPath.indexPathForRow(0, inSection:0)
+          collectionView.insertItemsAtIndexPaths([path])
           Dispatch::Queue.concurrent.async {
             save_friend(image)
           }
