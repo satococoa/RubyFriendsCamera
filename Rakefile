@@ -25,11 +25,11 @@ Motion::Project::App.setup do |app|
   conf_file = './config.yml'
   if File.exists?(conf_file)
     config = YAML::load_file(conf_file)
-    # app.testflight.sdk        = 'vendor/TestFlightSDK'
-    # app.testflight.api_token  = config['testflight']['api_token']
-    # app.testflight.team_token = config['testflight']['team_token']
-    # app.testflight.notify     = true
-    # app.testflight.distribution_lists = config['testflight']['distribution_lists']
+    app.testflight.sdk        = 'vendor/TestFlightSDK'
+    app.testflight.api_token  = config['testflight']['api_token']
+    app.testflight.team_token = config['testflight']['team_token']
+    app.testflight.notify     = true
+    app.testflight.distribution_lists = config['testflight']['distribution_lists']
     app.identifier = config['identifier']
     app.info_plist['CFBundleURLTypes'] = [
       { 'CFBundleURLName' => config['identifier'],
@@ -45,5 +45,12 @@ Motion::Project::App.setup do |app|
     pod 'NanoStore', '~> 2.5.3'
     pod 'NYXImagesKit', :podspec => 'NYXImagesKit.podspec'
     pod 'NSData+MD5Digest'
+  end
+
+  app.development do
+    app.entitlements['get-task-allow']  = true
+  end
+  app.release do
+    app.entitlements['get-task-allow']  = false
   end
 end
