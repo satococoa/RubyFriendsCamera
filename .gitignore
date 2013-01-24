@@ -16,3 +16,4 @@ vendor/Pods
 .bundle
 config.yml
 testflight_launcher.rb
+pixate_code.rb
