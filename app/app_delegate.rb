@@ -12,6 +12,7 @@ class AppDelegate
     end
     @window.rootViewController = navigation_controller
     @window.makeKeyAndVisible
+
     true
   end
 end

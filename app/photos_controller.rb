@@ -1,6 +1,10 @@
 class PhotosController < UICollectionViewController
+  include Motion::Pixate::Observer
+
   def viewDidLoad
     super
+    startObserving
+
     navigationItem.title = 'RubyFriends'
     camera_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemCamera, target:self, action:'camera_tapped')
     navigationItem.rightBarButtonItem = camera_button
