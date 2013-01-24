@@ -73,7 +73,7 @@ class FriendController < UIViewController
   end
 
   def delete_tapped
-    action_sheet = UIActionSheet.alloc.initWithTitle('Delete', delegate:self, cancelButtonTitle:'Cancel', destructiveButtonTitle:'Delete', otherButtonTitles:nil)
+    action_sheet = UIActionSheet.alloc.initWithTitle('Are you sure to delete?', delegate:self, cancelButtonTitle:'Cancel', destructiveButtonTitle:'OK', otherButtonTitles:nil)
     action_sheet.tag = 2
     action_sheet.showInView(view)
   end
