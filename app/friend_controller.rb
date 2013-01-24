@@ -66,15 +66,17 @@ class FriendController < UIViewController
   end
 
   def action_tapped
-    action_sheet = UIActionSheet.alloc.initWithTitle('Share', delegate:self, cancelButtonTitle:'Cancel', destructiveButtonTitle:nil, otherButtonTitles:'Twitter', 'Facebook', nil)
+    action_sheet = UIActionSheet.alloc.initWithTitle('Share', delegate:self, cancelButtonTitle:'Cancel', destructiveButtonTitle:'Delete', otherButtonTitles:'Twitter', 'Facebook', nil)
     action_sheet.showInView(view)
   end
 
   def actionSheet(action_sheet, clickedButtonAtIndex:button_index)
     case button_index
-    when 0 # twitter
+    when 0
+      delete
+    when 1 # twitter
       open_share(:twitter)
-    when 1 # facebook
+    when 2 # facebook
       open_share(:facebook)
     when action_sheet.cancelButtonIndex
       return
@@ -82,6 +84,12 @@ class FriendController < UIViewController
   end
 
   private
+  def delete
+    @friend.delete
+    navigationController.viewControllers[0].reload
+    navigationController.popViewControllerAnimated(true)
+  end
+
   def open_share(type)
     case type
     when :twitter

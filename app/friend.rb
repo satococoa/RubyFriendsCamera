@@ -4,6 +4,18 @@ class Friend < NanoStore::Model
   attribute :thumbnail_path
   attribute :created_at
 
+  def delete
+    path = NSString.pathWithComponents([App.documents_path, self.image_path])
+    error_ptr = Pointer.new(:object)
+    NSFileManager.defaultManager.removeItemAtPath(path, error:error_ptr)
+    p error_ptr[0] unless error_ptr[0].nil?
+    path = NSString.pathWithComponents([App.documents_path, self.thumbnail_path])
+    error_ptr = Pointer.new(:object)
+    NSFileManager.defaultManager.removeItemAtPath(path, error:error_ptr)
+    p error_ptr[0] unless error_ptr[0].nil?
+    super
+  end
+
   def image
     @image ||= begin
       if img_path = self.image_path
