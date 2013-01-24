@@ -10,7 +10,8 @@ class FriendController < UIViewController
     super
     view.backgroundColor = UIColor.underPageBackgroundColor
     action_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemAction, target:self, action:'action_tapped')
-    navigationItem.rightBarButtonItem = action_button
+    delete_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemTrash, target:self, action:'delete_tapped')
+    navigationItem.rightBarButtonItems = [action_button, delete_button]
 
     @image_view = UIImageView.new.tap do |iv|
       iv.frame = CGRectZero
@@ -66,20 +67,34 @@ class FriendController < UIViewController
   end
 
   def action_tapped
-    action_sheet = UIActionSheet.alloc.initWithTitle('Share', delegate:self, cancelButtonTitle:'Cancel', destructiveButtonTitle:'Delete', otherButtonTitles:'Twitter', 'Facebook', nil)
+    action_sheet = UIActionSheet.alloc.initWithTitle('Share', delegate:self, cancelButtonTitle:'Cancel', destructiveButtonTitle:nil, otherButtonTitles:'Twitter', 'Facebook', nil)
+    action_sheet.tag = 1
+    action_sheet.showInView(view)
+  end
+
+  def delete_tapped
+    action_sheet = UIActionSheet.alloc.initWithTitle('Delete', delegate:self, cancelButtonTitle:'Cancel', destructiveButtonTitle:'Delete', otherButtonTitles:nil)
+    action_sheet.tag = 2
     action_sheet.showInView(view)
   end
 
   def actionSheet(action_sheet, clickedButtonAtIndex:button_index)
-    case button_index
-    when 0
-      delete
-    when 1 # twitter
-      open_share(:twitter)
-    when 2 # facebook
-      open_share(:facebook)
-    when action_sheet.cancelButtonIndex
-      return
+    if action_sheet.tag == 1
+      case button_index
+      when 0 # twitter
+        open_share(:twitter)
+      when 1 # facebook
+        open_share(:facebook)
+      when action_sheet.cancelButtonIndex
+        return
+      end
+    else
+      case button_index
+      when 0
+        delete
+      when action_sheet.cancelButtonIndex
+        return
+      end
     end
   end
 
