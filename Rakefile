@@ -12,6 +12,7 @@ Motion::Project::App.setup do |app|
   app.version = '1.0.0'
   app.short_version = '1.0.0'
   app.interface_orientations = [:portrait]
+  app.prerendered_icon = true
   app.frameworks += [
     'Social',
     'Accelerate',
