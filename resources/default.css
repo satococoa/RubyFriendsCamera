@@ -1,0 +1,25 @@
+navigation-bar {
+  color          : white;
+  font-family    : "Helvetica";
+  font-size      : 20px;
+  font-weight    : bold;
+  color          : #ffffff;
+  background-color : linear-gradient(#9F1D2F, #AC4F5B);
+  box-shadow    : inset 0 1px 0 rgba(255,255,255,0.3),
+                 0 1px 1px rgba(0,0,0,0.5);  
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+toolbar {
+  color          : white;
+  font-family    : "Helvetica";
+  font-size      : 20px;
+  font-weight    : bold;
+  color          : #ffffff;
+  background-color : linear-gradient(#9F1D2F, #AC4F5B);
+  box-shadow    : inset 0 1px 0 rgba(255,255,255,0.3),
+                 0 1px 1px rgba(0,0,0,0.5);  
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
