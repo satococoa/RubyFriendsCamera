@@ -16,8 +16,8 @@ class PhotosController < UICollectionViewController
     end
     info_button = UIBarButtonItem.alloc.initWithCustomView(info)
     self.toolbarItems = [open_twitter_button, open_rubyfriends_button, spacer, info_button]
+    collectionView.styleId = 'photos'
     collectionView.registerClass(FriendCell, forCellWithReuseIdentifier:'friend_cell')
-    collectionView.backgroundColor = UIColor.underPageBackgroundColor
     @friends = Friend.find({}, {:sort => {:created_at => :desc}})
     navigationController.toolbarHidden = false
   end

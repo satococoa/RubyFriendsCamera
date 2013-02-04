@@ -8,7 +8,7 @@ class FriendController < UIViewController
 
   def viewDidLoad
     super
-    view.backgroundColor = UIColor.underPageBackgroundColor
+    view.styleId = 'friend'
     action_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemAction, target:self, action:'action_tapped')
     delete_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemTrash, target:self, action:'delete_tapped')
     navigationItem.rightBarButtonItems = [action_button, delete_button]
