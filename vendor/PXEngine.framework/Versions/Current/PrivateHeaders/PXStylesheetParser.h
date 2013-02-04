@@ -2,7 +2,7 @@
 //  PXStylesheetParser.h
 //  PXEngine
 //
-// !WARNING!  Do not include this header file directly in your application. 
+// !WARNING!  Do not include this header file directly in your application.
 //            This file is not part of the public Pixate API and will likely change.
 //
 //  Created by Kevin Lindsey on 9/1/12.
@@ -47,5 +47,12 @@
  *  @param css The inline CSS to parse
  */
 - (PXStylesheet *)parseInlineCSS:(NSString *)css;
+
+/**
+ *  Parse the specified source as a CSS selector only.
+ *
+ *  @param source The selector source
+ */
+- (id<PXSelector>)parseSelectorString:(NSString *)source;
 
 @end

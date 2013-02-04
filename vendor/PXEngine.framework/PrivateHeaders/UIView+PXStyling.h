@@ -16,5 +16,8 @@
 
 @interface UIView (PXStyling) <PXStyleable>
 
+- (void)updateStyles;
+- (void)updateStylesNonRecursively;
+
 @end
 

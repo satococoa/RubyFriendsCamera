@@ -36,7 +36,7 @@ typedef enum
  *
  *  @param specificity The other PXSpecificity to compare against
  */
-- (CFComparisonResult)compareSpecificity:(PXSpecificity *)specificity;
+- (NSComparisonResult)compareSpecificity:(PXSpecificity *)specificity;
 
 /**
  *  Increase the specificity counter for the given specificity type

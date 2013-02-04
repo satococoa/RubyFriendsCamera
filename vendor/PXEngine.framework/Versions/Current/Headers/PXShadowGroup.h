@@ -15,7 +15,12 @@
 @interface PXShadowGroup : NSObject <PXShadowPaint>
 
 /**
- *  The list of PXShapowPaints associated with this shadow group
+ *  Returns the number of PXShadowPaints in this group
+ */
+@property (nonatomic, readonly) NSUInteger count;
+
+/**
+ *  The list of PXShadowPaints associated with this shadow group
  */
 @property (nonatomic, readonly) NSArray *shadows;
 

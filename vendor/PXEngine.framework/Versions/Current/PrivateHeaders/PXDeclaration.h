@@ -15,6 +15,7 @@
 #import <PXEngine/PXDimension.h>
 #import <PXEngine/PXCornerRadius.h>
 #import <PXEngine/PXMargin.h>
+#import <PXEngine/PXEngineConfiguration.h>
 
 /**
  *  PXDeclaration represents a single property/value pair in a CSS rule set. A declaration consists of a property name
@@ -25,7 +26,7 @@
 @interface PXDeclaration : NSObject
 
 @property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSArray *lexemes;
+@property (readonly, nonatomic, strong) NSArray *lexemes;
 @property (nonatomic) BOOL important;
 
 /**
@@ -43,6 +44,18 @@
  *  @param value The property value
  */
 - (id)initWithName:(NSString *)name value:(NSString *)value;
+
+- (void)setSource:(NSString *)source filename:(NSString *)filename lexemes:(NSArray *)lexemes;
+
+/**
+ *  Convert the declaration value to a boolean value
+ */
+- (BOOL)booleanValue;
+
+/**
+ *  Convert the declaration value to a PXCacheStylesType value
+ */
+- (PXCacheStylesType)cacheStylesTypeValue;
 
 /**
  *  Convert the declaration value to a color value
@@ -70,6 +83,11 @@
 - (id<PXPaint>)paintValue;
 
 /**
+ *  Convert the declaration value to a parse error destination value
+ */
+- (PXParseErrorDestination)parseErrorDestinationValue;
+
+/**
  *  Convert the declaration value to a size value
  */
 - (CGSize)sizeValue;
@@ -88,6 +106,11 @@
  *  Convert the declaration value to a text alignment enumeration value
  */
 - (UITextAlignment)textAlignmentValue;
+
+/**
+ *  Convert the declaration value to a PXUpdateStylesType value
+ */
+- (PXUpdateStylesType)updateStylesTypeValue;
 
 /**
  *  Treat the string value of this declaration as a text-transform value. Apply the text transform to the specified

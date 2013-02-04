@@ -2,7 +2,7 @@
 //  PXParserBase.h
 //  PXEngine
 //
-// !WARNING!  Do not include this header file directly in your application. 
+// !WARNING!  Do not include this header file directly in your application.
 //            This file is not part of the public Pixate API and will likely change.
 //
 //  Created by Kevin Lindsey on 6/30/12.
@@ -43,6 +43,15 @@
  *  @param error The error message to add
  */
 - (void)addError:(NSString *)error;
+
+/**
+ *  Add an error message, including the filename and offset where the error occurred
+ *
+ *  @param error The error message
+ *  @param filename The filename where the error occurred
+ *  @param offset A string representing the offset where the error occurred
+ */
+- (void)addError:(NSString *)error filename:(NSString *)filename offset:(NSString *)offset;
 
 /**
  *  Remove all errors that have been previously reported. This should be called before a parse begins if the parser
