@@ -62,7 +62,7 @@ class PhotosController < UICollectionViewController
     cell = collection_view.dequeueReusableCellWithReuseIdentifier('friend_cell', forIndexPath:index_path)
     friend = @friends[index_path.row]
     cell.friend = friend
-    cell.tag = index_path.row
+    cell.tag = @friends.count - index_path.row
     tap = UITapGestureRecognizer.alloc.initWithTarget(self, action:'image_tapped:')
     cell.addGestureRecognizer(tap)
     cell
@@ -70,10 +70,12 @@ class PhotosController < UICollectionViewController
 
   def image_tapped(target)
     index = target.view.tag
-    friend = @friends[index]
-    @friend_controller ||= FriendController.new
-    @friend_controller.friend = friend
-    navigationController.pushViewController(@friend_controller, animated:true)
+    friend = @friends[-index]
+    if !friend.image.nil?
+      @friend_controller ||= FriendController.new
+      @friend_controller.friend = friend
+      navigationController.pushViewController(@friend_controller, animated:true)
+    end
   end
 
   def reload
