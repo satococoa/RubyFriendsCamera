@@ -24,11 +24,24 @@ class PhotosController < UICollectionViewController
 
   def viewWillAppear(animated)
     navigationController.navigationBar.translucent = false
+    @add_friend_observer = App.notification_center.observe('FriendDidCreate', Friend) do |notif|
+      reload
+    end
   end
 
   def viewDidAppear(animated)
+    # TODO: 本来は撮影後 or 写真選択後にこの処理を行いたい。
+    # BubbleWrap の #picture メソッドの仕様により、これで回避
     if @image
       open_tweet(@image)
+      Dispatch::Queue.concurrent.async {
+        @friends = [Friend.new] + @friends
+        path = NSIndexPath.indexPathForRow(0, inSection:0)
+        Dispatch::Queue.main.async {
+          collectionView.insertItemsAtIndexPaths([path])
+        }
+      }
+      Friend.save_with_image(@image)
       @image = nil
     end
   end
@@ -118,16 +131,6 @@ class PhotosController < UICollectionViewController
         t.setInitialText(AppDelegate::HASHTAG)
         t.addImage(image)
         t.completionHandler = lambda {|result|
-          # TODO: 成功時だけ保存するように戻す
-          # if result == SLComposeViewControllerResultDone
-          #   save_friend(image)
-          # end
-          @friends = [Friend.new] + @friends
-          path = NSIndexPath.indexPathForRow(0, inSection:0)
-          collectionView.insertItemsAtIndexPaths([path])
-          Dispatch::Queue.concurrent.async {
-            save_friend(image)
-          }
           dismissModalViewControllerAnimated(true)
         }
       end
@@ -135,25 +138,5 @@ class PhotosController < UICollectionViewController
     else
       App.alert('Posting twitter is not available.')
     end
-  end
-
-  # TODO: モデルに移動する
-  def save_friend(image)
-    image_path = UIImagePNGRepresentation(image).MD5HexDigest + '.png'
-    path = NSString.pathWithComponents([App.documents_path, image_path])
-    image.saveToPath(path, type:NYXImageTypePNG, backgroundFillColor:nil)
-
-    thumbnail = image.scaleToFitSize([256, 256])
-    thumbnail_path = UIImagePNGRepresentation(thumbnail).MD5HexDigest + '.png'
-    path = NSString.pathWithComponents([App.documents_path, thumbnail_path])
-    thumbnail.saveToPath(path, type:NYXImageTypePNG, backgroundFillColor:nil)
-
-    Friend.create(
-      :image_path => image_path,
-      :image_orientation => image.imageOrientation,
-      :thumbnail_path => thumbnail_path,
-      :created_at => Time.now
-    )
-    reload
   end
 end

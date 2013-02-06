@@ -39,4 +39,27 @@ class Friend < NanoStore::Model
       end
     end
   end
+
+  def self.save_with_image(image)
+    Dispatch::Queue.concurrent.async {
+      image_path = UIImagePNGRepresentation(image).MD5HexDigest + '.png'
+      path = NSString.pathWithComponents([App.documents_path, image_path])
+      image.saveToPath(path, type:NYXImageTypePNG, backgroundFillColor:nil)
+
+      thumbnail = image.scaleToFitSize([256, 256])
+      thumbnail_path = UIImagePNGRepresentation(thumbnail).MD5HexDigest + '.png'
+      path = NSString.pathWithComponents([App.documents_path, thumbnail_path])
+      thumbnail.saveToPath(path, type:NYXImageTypePNG, backgroundFillColor:nil)
+
+      friend = self.create(
+        :image_path => image_path,
+        :image_orientation => image.imageOrientation,
+        :thumbnail_path => thumbnail_path,
+        :created_at => Time.now
+      )
+      Dispatch::Queue.main.async {
+        App.notification_center.post('FriendDidCreate', self, {friend: friend})
+      }
+    }
+  end
 end
