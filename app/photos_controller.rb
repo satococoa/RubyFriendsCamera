@@ -29,6 +29,10 @@ class PhotosController < UICollectionViewController
     end
   end
 
+  def viewWillDisappear(animated)
+    App.notification_center.unobserve(@add_friend_observer)
+  end
+
   def viewDidAppear(animated)
     # TODO: 本来は撮影後 or 写真選択後にこの処理を行いたい。
     # BubbleWrap の #picture メソッドの仕様により、これで回避
