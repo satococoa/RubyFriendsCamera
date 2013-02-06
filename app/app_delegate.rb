@@ -6,10 +6,7 @@ class AppDelegate
 
     @window = UIWindow.alloc.initWithFrame(App.bounds)
     photos_controller = PhotosController.alloc.initWithCollectionViewLayout(PhotosLayout.new)
-    navigation_controller = UINavigationController.alloc.initWithRootViewController(photos_controller).tap do |nav|
-      nav.navigationBar.tintColor = '#9F1D2F'.to_color
-      nav.toolbar.tintColor = '#9F1D2F'.to_color
-    end
+    navigation_controller = UINavigationController.alloc.initWithRootViewController(photos_controller)
     @window.rootViewController = navigation_controller
     @window.makeKeyAndVisible
 

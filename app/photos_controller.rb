@@ -84,11 +84,18 @@ class PhotosController < UICollectionViewController
   end
 
   def open_twitter
-    App.open_url('https://mobile.twitter.com/search?q=%23RubyFriends')
+    open_browser('https://mobile.twitter.com/search?q=%23RubyFriends')
   end
 
   def open_rubyfriends
-    App.open_url('http://rubyfriends.com')
+    open_browser('http://rubyfriends.com')
+  end
+
+  def open_browser(url)
+    browser = SVModalWebViewController.alloc.initWithAddress(url)
+    browser.navigationBar.styleId = 'browser-navigation-bar'
+    browser.toolbar.styleId = 'browser-toolbar'
+    presentViewController(browser, animated:true, completion:lambda{})
   end
 
   def open_info

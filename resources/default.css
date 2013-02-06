@@ -24,6 +24,18 @@ toolbar {
   border-bottom-right-radius: 6px;
 }
 
+nav-buttons, bar-button-item {
+  background-color: #9F1D2F;
+}
+
+#browser-navigation-bar nav-buttons {
+  background-color: #9F1D2F;
+}
+
+#browser-toolbar bar-button-item {
+  background-color: transparent;
+}
+
 #friend, #photos {
   background-image: url(bundle://background.png);
 }
