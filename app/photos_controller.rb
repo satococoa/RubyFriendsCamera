@@ -8,8 +8,8 @@ class PhotosController < UICollectionViewController
     navigationItem.title = 'RubyFriends'
     camera_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemCamera, target:self, action:'camera_tapped')
     navigationItem.rightBarButtonItem = camera_button
-    open_twitter_button = UIBarButtonItem.alloc.initWithTitle('T', style:UIBarButtonItemStyleBordered, target:self, action:'open_twitter')
-    open_rubyfriends_button = UIBarButtonItem.alloc.initWithTitle('RF', style:UIBarButtonItemStyleBordered, target:self, action:'open_rubyfriends')
+    open_twitter_button = UIBarButtonItem.alloc.initWithImage(UIImage.imageNamed('icon-twitter.png'), style:UIBarButtonItemStyleBordered, target:self, action:'open_twitter')
+    open_rubyfriends_button = UIBarButtonItem.alloc.initWithImage(UIImage.imageNamed('icon-ruby.png'), style:UIBarButtonItemStyleBordered, target:self, action:'open_rubyfriends')
     spacer = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemFlexibleSpace, target:nil, action:nil)
     info = UIButton.buttonWithType(UIButtonTypeInfoLight).tap do |b|
       b.addTarget(self, action:'open_info', forControlEvents:UIControlEventTouchUpInside)
