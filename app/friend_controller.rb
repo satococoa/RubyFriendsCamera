@@ -68,7 +68,7 @@ class FriendController < UIViewController
   end
 
   def action_tapped
-    action_sheet = UIActionSheet.alloc.initWithTitle('Share', delegate:self, cancelButtonTitle:'Cancel', destructiveButtonTitle:nil, otherButtonTitles:'Twitter', 'Facebook', nil)
+    action_sheet = UIActionSheet.alloc.initWithTitle('Share', delegate:self, cancelButtonTitle:'Cancel', destructiveButtonTitle:nil, otherButtonTitles:'Twitter', 'Facebook', 'Save to album', nil)
     action_sheet.tag = 1
     action_sheet.showInView(view)
   end
@@ -86,6 +86,8 @@ class FriendController < UIViewController
         open_share(:twitter)
       when 1 # facebook
         open_share(:facebook)
+      when 2 # save to album
+        @friend.image.saveToPhotosAlbum
       when action_sheet.cancelButtonIndex
         return
       end
