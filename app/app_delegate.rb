@@ -1,7 +1,5 @@
 class AppDelegate
-  # HASHTAG = '#RubyFriends'
-  # TODO: リリース前に戻す
-  HASHTAG = 'test'
+  HASHTAG = '#RubyFriends'
 
   def application(application, didFinishLaunchingWithOptions:launchOptions)
     NanoStore.shared_store = NanoStore.store(:file, App.documents_path + '/nano.db')
