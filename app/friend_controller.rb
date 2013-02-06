@@ -57,6 +57,7 @@ class FriendController < UIViewController
     end
     x = (frame_size.width - width) / 2
     y = (frame_size.height - height) / 2
+
     @image_view.frame = [[x, y], [width, height]]
     @image_view.image = @friend.image
   end
