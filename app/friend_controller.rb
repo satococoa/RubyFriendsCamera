@@ -33,9 +33,9 @@ class FriendController < UIViewController
   end
 
   def viewWillAppear(animated)
+    navigationController.navigationBar.translucent = true
     setup_image_frame
     setup_label
-    navigationController.navigationBar.translucent = true
   end
 
   def setup_image_frame
