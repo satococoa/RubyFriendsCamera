@@ -19,6 +19,6 @@ $ bundle exec rake
 
 1. 写真を撮る or アルバムから選択する
 1. Twitter の共有シートがすぐに出ますので、投稿する
-1. [#RubyFriend](http://rubyfriends.com) に掲載される
+1. [#RubyFriends](http://rubyfriends.com) に掲載される
 
-テスト時には #RubyFriend のタグを消すか、Twitter にシェアしないように気をつけてください。
+テスト時には #RubyFriends のタグを消すか、Twitter にシェアしないように気をつけてください。
