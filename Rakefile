@@ -51,6 +51,7 @@ Motion::Project::App.setup do |app|
     pod 'NYXImagesKit', :podspec => 'NYXImagesKit.podspec'
     pod 'NSData+MD5Digest'
     pod 'SVWebViewController'
+    pod 'SVProgressHUD'
   end
   app.info_plist['UIRequiredDeviceCapabilities'] = [
     'still-camera'

@@ -88,6 +88,7 @@ class FriendController < UIViewController
         open_share(:facebook)
       when 2 # save to album
         @friend.image.saveToPhotosAlbum
+        SVProgressHUD.showSuccessWithStatus('Saved!')
       when action_sheet.cancelButtonIndex
         return
       end
