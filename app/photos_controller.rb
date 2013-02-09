@@ -19,12 +19,18 @@ class PhotosController < UICollectionViewController
     collectionView.styleId = 'photos'
     collectionView.registerClass(FriendCell, forCellWithReuseIdentifier:'friend_cell')
     @friends = Friend.find({}, {:sort => {:created_at => :desc}})
+    if @friends.count == 0
+      tutorial_frame = [[0, 0], [content_frame.size.width, content_frame.size.height-44]]
+      @tutorial ||= TutorialView.alloc.initWithFrame(tutorial_frame)
+      collectionView.addSubview(@tutorial)
+    end
     navigationController.toolbarHidden = false
   end
 
   def viewWillAppear(animated)
     navigationController.navigationBar.translucent = false
     @add_friend_observer = App.notification_center.observe('FriendDidCreate', Friend) do |notif|
+      @tutorial.removeFromSuperview unless @tutorial.nil?
       reload
     end
   end
