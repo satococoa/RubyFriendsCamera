@@ -38,14 +38,15 @@ class PhotosController < UICollectionViewController
     # BubbleWrap の #picture メソッドの仕様により、これで回避
     if @image
       open_tweet(@image)
+      @saving_image = @image
       Dispatch::Queue.concurrent.async {
         @friends = [Friend.new] + @friends
         path = NSIndexPath.indexPathForRow(0, inSection:0)
         Dispatch::Queue.main.async {
           collectionView.insertItemsAtIndexPaths([path])
+          Friend.save_with_image(@saving_image)
         }
       }
-      Friend.save_with_image(@image)
       @image = nil
     end
   end
