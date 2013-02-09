@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PXShadowPaint.h"
+#import <PXEngine/PXShadowPaint.h>
 
 /**
  *  A PXShadowGroup serves as a collection of PXShadowPaints

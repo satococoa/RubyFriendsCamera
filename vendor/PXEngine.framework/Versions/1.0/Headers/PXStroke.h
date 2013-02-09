@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PXPaint.h"
-#import "PXStrokeRenderer.h"
+#import <PXEngine/PXPaint.h>
+#import <PXEngine/PXStrokeRenderer.h>
 
 /**
  *  PXStrokeType is an enumeration indicating the placement of the stroke in relation to the contour it is being applied

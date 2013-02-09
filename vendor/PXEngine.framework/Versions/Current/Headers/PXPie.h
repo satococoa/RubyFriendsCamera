@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PXArc.h"
+#import <PXEngine/PXArc.h>
 
 /**
  *  A PXArc subclass used to render pie graphs

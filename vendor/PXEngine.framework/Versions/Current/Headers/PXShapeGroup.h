@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PXShape.h"
-#import "PXRenderable.h"
+#import <PXEngine/PXShape.h>
+#import <PXEngine/PXRenderable.h>
 
 typedef enum {
     kAlignViewPortNone,

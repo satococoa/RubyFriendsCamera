@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PXPaint.h"
+#import <PXEngine/PXPaint.h>
 
 /**
  *  A common base class for linear- and radial-gradients.

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PXGraphics.h"
+#import <PXEngine/PXShape.h>
 
 @class PXScene;
 

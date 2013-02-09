@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 Pixate, Inc. All rights reserved.
 //
 
-#import "PXShape.h"
-#import "PXBoundable.h"
+#import <PXEngine/PXShape.h>
+#import <PXEngine/PXBoundable.h>
 
 /**
  *  A PXShape sub-class used to render ellipses

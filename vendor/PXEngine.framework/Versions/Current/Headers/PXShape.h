@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PXRenderable.h"
-#import "PXPaintable.h"
-#import "PXScene.h"
+#import <PXEngine/PXRenderable.h>
+#import <PXEngine/PXPaintable.h>
+#import <PXEngine/PXScene.h>
 
 /**
  *  A common base class for all shapes in ShapeKit.

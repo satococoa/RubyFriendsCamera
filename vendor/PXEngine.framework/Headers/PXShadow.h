@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PXShadowPaint.h"
+#import <PXEngine/PXShadowPaint.h>
 
 /**
  *  PXShadow is used to capture all settings needed to render a box shadow.

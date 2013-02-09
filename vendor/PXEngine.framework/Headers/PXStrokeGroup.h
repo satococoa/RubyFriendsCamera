@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PXStroke.h"
+#import <PXEngine/PXStroke.h>
 
 /**
  *  PXStrokeGroup allows a collection of PXStrokeRenderers to be treated as a single stroke. This is particularly useful

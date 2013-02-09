@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PXPaint.h"
-#import "PXGradient.h"
+#import <PXEngine/PXPaint.h>
+#import <PXEngine/PXGradient.h>
 
 /**
  *  PXLinearGradient is an implementation of a linear gradient. Linear gradients may be specified by an angle, or by two

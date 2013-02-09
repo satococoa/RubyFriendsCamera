@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Pixate, Inc. All rights reserved.
 //
 
-#import "PXStroke.h"
+#import <PXEngine/PXStroke.h>
 
 /**
  *  PXNonScalingStroke is a special stroke implementation that tries its best to preserve its stroke width, in screen

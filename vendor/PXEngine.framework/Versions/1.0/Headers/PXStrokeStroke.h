@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PXStrokeRenderer.h"
+#import <PXEngine/PXStrokeRenderer.h>
 
 @class PXStroke;
 

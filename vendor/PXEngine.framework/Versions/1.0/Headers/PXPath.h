@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PXShape.h"
+#import <PXEngine/PXShape.h>
 
 /**
  *  A PXShape sub-class used to render paths

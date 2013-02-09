@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PXPaint.h"
+#import <PXEngine/PXPaint.h>
 
 /**
  *  A PXPaintGroup allows a collection of PXPaints to be treated as a single fill. This can reduce the number of

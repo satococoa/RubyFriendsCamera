@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PXPaint.h"
+#import <PXEngine/PXPaint.h>
 
 /**
  *  PXSolidPaint is used to fill a contour with a solid color

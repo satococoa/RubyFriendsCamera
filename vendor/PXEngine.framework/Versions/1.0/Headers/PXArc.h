@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Pixate, Inc. All rights reserved.
 //
 
-#import "PXShape.h"
+#import <PXEngine/PXShape.h>
 
 /**
  *  A PXShape subclass used to render arcs

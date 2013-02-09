@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PXStrokeRenderer.h"
-#import "PXPaint.h"
-#import "PXShadowPaint.h"
+#import <PXEngine/PXStrokeRenderer.h>
+#import <PXEngine/PXPaint.h>
+#import <PXEngine/PXShadowPaint.h>
 
 @class PXShape;
 

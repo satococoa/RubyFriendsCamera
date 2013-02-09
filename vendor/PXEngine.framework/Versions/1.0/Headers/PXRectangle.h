@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PXShape.h"
-#import "PXBoundable.h"
-#import "PXCornerRadius.h"
+#import <PXEngine/PXShape.h>
+#import <PXEngine/PXBoundable.h>
+#import <PXEngine/PXCornerRadius.h>
 
 /**
  *  A PXShape sub-class used to render rectangles

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PXRenderable.h"
+#import <PXEngine/PXRenderable.h>
 
 @class PXShapeView;
 

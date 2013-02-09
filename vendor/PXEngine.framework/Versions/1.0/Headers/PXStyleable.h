@@ -56,6 +56,16 @@
 @optional
 
 /**
+ *  Update styles for this styleable and all of its descendant styleables
+ */
+- (void)updateStyles;
+
+/**
+ *  Update styles for this styleable only
+ */
+- (void)updateStylesNonRecursively;
+
+/**
  *  Return the namespace URI associated with this object
  */
 @property (readonly, nonatomic, copy) NSString *pxStyleNamespace;

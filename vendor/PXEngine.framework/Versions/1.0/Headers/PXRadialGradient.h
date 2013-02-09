@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 Pixate, Inc. All rights reserved.
 //
 
-#import "PXGradient.h"
-#import "PXPaint.h"
+#import <PXEngine/PXGradient.h>
+#import <PXEngine/PXPaint.h>
 
 /**
  *  PXRadialGradient is an implementation of a radial gradient. Radial gradients are specified by a starting and ending

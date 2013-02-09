@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PXScene.h"
+#import <PXEngine/PXScene.h>
 
 /**
  *  PXShapeView serves as a convenience class for displaying vector graphics as defined by Pixate's ShapeKit.
@@ -42,15 +42,5 @@
  *  based on the scene's viewport settings
  */
 - (void)applyBoundsToScene;
-
-/**
- *  Note that the following properties and method are experimental and will most likely be deleted in a future release.
- */
-@property (nonatomic) CGPoint shapeCenter;
-@property (nonatomic) CGPoint shapeTranslation;
-@property (nonatomic) CGPoint shapeScale;
-@property (nonatomic) CGFloat shapeRotation;
-@property (readonly) CGAffineTransform shapeTransform;
-- (void)resetTransforms;
 
 @end
