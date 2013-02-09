@@ -24,7 +24,6 @@ class PhotosController < UICollectionViewController
   def viewWillAppear(animated)
     navigationController.navigationBar.translucent = false
     @add_friend_observer = App.notification_center.observe('FriendDidCreate', Friend) do |notif|
-      @tutorial.removeFromSuperview unless @tutorial.nil?
       reload
     end
   end
@@ -43,6 +42,7 @@ class PhotosController < UICollectionViewController
         @friends = [Friend.new] + @friends
         path = NSIndexPath.indexPathForRow(0, inSection:0)
         Dispatch::Queue.main.async {
+          @tutorial.removeFromSuperview unless @tutorial.nil?
           collectionView.insertItemsAtIndexPaths([path])
           Friend.save_with_image(@saving_image)
         }
