@@ -42,12 +42,14 @@ class Friend < NanoStore::Model
 
   def self.save_with_image(image)
     Dispatch::Queue.concurrent.async {
-      image_path = UIImagePNGRepresentation(image).MD5HexDigest + '.png'
+      # 同じ写真を選択したとき、ファイル名がかぶるのを防ぐ
+      str = Time.now.to_i.to_s.dataUsingEncoding(NSUTF8StringEncoding).MD5HexDigest[0, 5]
+      image_path = str + UIImagePNGRepresentation(image).MD5HexDigest + '.png'
       path = NSString.pathWithComponents([App.documents_path, image_path])
       image.saveToPath(path, type:NYXImageTypePNG, backgroundFillColor:nil)
 
       thumbnail = image.scaleToFitSize([256, 256])
-      thumbnail_path = UIImagePNGRepresentation(thumbnail).MD5HexDigest + '.png'
+      thumbnail_path = str + UIImagePNGRepresentation(thumbnail).MD5HexDigest + '.png'
       path = NSString.pathWithComponents([App.documents_path, thumbnail_path])
       thumbnail.saveToPath(path, type:NYXImageTypePNG, backgroundFillColor:nil)
 
