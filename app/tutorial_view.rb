@@ -4,7 +4,7 @@ class TutorialView < UIView
       self.backgroundColor = UIColor.clearColor
       main_image = UIImage.imageNamed('tutorial-main.png')
       main = UIImageView.alloc.initWithImage(main_image).tap do |iv|
-        iv.frame = [[5, 50], [310, 254]]
+        iv.frame = [[5, (self.bounds.size.height - 254)/2], [310, 254]]
         iv.contentMode = UIViewContentModeScaleAspectFit
         iv.layer.shadowColor = UIColor.blackColor.CGColor
         iv.layer.shadowRadius = 3
