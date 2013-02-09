@@ -117,7 +117,7 @@ class FriendController < UIViewController
     end
     if SLComposeViewController.isAvailableForServiceType(service_type)
       controller = SLComposeViewController.composeViewControllerForServiceType(service_type).tap do |t|
-        t.setInitialText(AppDelegate::HASHTAG)
+        t.setInitialText(AppDelegate::HASHTAG + ' ')
         t.addImage(@friend.image)
         t.completionHandler = lambda {|result|
           dismissModalViewControllerAnimated(true)

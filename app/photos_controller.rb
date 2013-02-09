@@ -143,7 +143,7 @@ class PhotosController < UICollectionViewController
   def open_tweet(image)
     if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter)
       tweet_controller = SLComposeViewController.composeViewControllerForServiceType(SLServiceTypeTwitter).tap do |t|
-        t.setInitialText(AppDelegate::HASHTAG)
+        t.setInitialText(AppDelegate::HASHTAG + ' ')
         t.addImage(image)
         t.completionHandler = lambda {|result|
           dismissModalViewControllerAnimated(true)
