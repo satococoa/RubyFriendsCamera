@@ -8,14 +8,13 @@ class PhotosController < UICollectionViewController
     navigationItem.title = 'RubyFriends'
     camera_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemCamera, target:self, action:'camera_tapped')
     navigationItem.rightBarButtonItem = camera_button
-    open_twitter_button = UIBarButtonItem.alloc.initWithImage(UIImage.imageNamed('icon-twitter.png'), style:UIBarButtonItemStyleBordered, target:self, action:'open_twitter')
     open_rubyfriends_button = UIBarButtonItem.alloc.initWithImage(UIImage.imageNamed('icon-ruby.png'), style:UIBarButtonItemStyleBordered, target:self, action:'open_rubyfriends')
     spacer = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemFlexibleSpace, target:nil, action:nil)
     info = UIButton.buttonWithType(UIButtonTypeInfoLight).tap do |b|
       b.addTarget(self, action:'open_info', forControlEvents:UIControlEventTouchUpInside)
     end
     info_button = UIBarButtonItem.alloc.initWithCustomView(info)
-    self.toolbarItems = [open_twitter_button, open_rubyfriends_button, spacer, info_button]
+    self.toolbarItems = [open_rubyfriends_button, spacer, info_button]
     collectionView.styleId = 'photos'
     collectionView.registerClass(FriendCell, forCellWithReuseIdentifier:'friend_cell')
     @friends = Friend.find({}, {:sort => {:created_at => :desc}})
@@ -87,10 +86,6 @@ class PhotosController < UICollectionViewController
   def reload
     @friends = Friend.find({}, {:sort => {:created_at => :desc}})
     collectionView.reloadData
-  end
-
-  def open_twitter
-    open_browser('https://mobile.twitter.com/search?q=%23RubyFriends')
   end
 
   def open_rubyfriends
