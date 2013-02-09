@@ -1,5 +1,4 @@
 navigation-bar {
-  color: white;
   font-family: "Helvetica";
   font-size: 20px;
   font-weight: bold;
@@ -12,7 +11,6 @@ navigation-bar {
 }
 
 toolbar {
-  color: white;
   font-family: "Helvetica";
   font-size: 20px;
   font-weight: bold;
