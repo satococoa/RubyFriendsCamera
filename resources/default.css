@@ -35,9 +35,5 @@ nav-buttons, bar-button-item {
 }
 
 #friend, #photos {
-  background-image: url(bundle://background.png);
-}
-
-#tutorial {
-  background-color: rgba(255, 255, 255, 1);
+  background-image: url(background.png);
 }

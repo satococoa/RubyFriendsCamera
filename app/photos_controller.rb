@@ -17,12 +17,7 @@ class PhotosController < UICollectionViewController
     self.toolbarItems = [open_rubyfriends_button, spacer, info_button]
     collectionView.styleId = 'photos'
     collectionView.registerClass(FriendCell, forCellWithReuseIdentifier:'friend_cell')
-    @friends = Friend.find({}, {:sort => {:created_at => :desc}})
-    if @friends.count == 0
-      tutorial_frame = [[0, 0], [content_frame.size.width, content_frame.size.height-44]]
-      @tutorial ||= TutorialView.alloc.initWithFrame(tutorial_frame)
-      collectionView.addSubview(@tutorial)
-    end
+    reload
     navigationController.toolbarHidden = false
   end
 
@@ -85,6 +80,11 @@ class PhotosController < UICollectionViewController
 
   def reload
     @friends = Friend.find({}, {:sort => {:created_at => :desc}})
+    if @friends.count == 0
+      tutorial_frame = [[0, 0], [content_frame.size.width, content_frame.size.height-44]]
+      @tutorial ||= TutorialView.alloc.initWithFrame(tutorial_frame)
+      collectionView.addSubview(@tutorial)
+    end
     collectionView.reloadData
   end
 
