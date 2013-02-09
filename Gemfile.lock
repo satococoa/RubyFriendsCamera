@@ -27,7 +27,7 @@ GEM
     json (1.7.6)
     motion-cocoapods (1.2.1)
       cocoapods (>= 0.14.0)
-    motion-pixate (1.0)
+    motion-pixate (1.2)
       sass
     motion-pixate-observer (0.2)
     motion-testflight (1.4)
