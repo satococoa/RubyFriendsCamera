@@ -29,7 +29,6 @@ GEM
       cocoapods (>= 0.14.0)
     motion-pixate (1.2)
       sass
-    motion-pixate-observer (0.2)
     motion-testflight (1.4)
     multi_json (1.5.0)
     multipart-post (1.1.5)
@@ -57,6 +56,5 @@ DEPENDENCIES
   bubble-wrap
   motion-cocoapods
   motion-pixate
-  motion-pixate-observer
   motion-testflight
   nano-store
