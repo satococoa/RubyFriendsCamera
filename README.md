@@ -22,18 +22,3 @@ $ bundle exec rake
 1. [#RubyFriends](http://rubyfriends.com) に掲載される
 
 テスト時には #RubyFriends のタグを消すか、Twitter にシェアしないように気をつけてください。
-
-
-## 再起動無しで CSS の変更を反映させる
-
-添付の `pixate_server` スクリプトにより、CSS の変更を即時反映させることが可能です。
-
-実機でも、同一ネットワーク上にあれば可能です。うまくいかない場合、アプリ、サーバの再起動をして試してみてください。
-
-MacRuby のインストールが必要です。
-
-
-```
-# サーバの起動
-$ ./pixate_server resources/default.css
-```
