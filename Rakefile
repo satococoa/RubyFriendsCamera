@@ -48,7 +48,7 @@ Motion::Project::App.setup do |app|
 
   app.pods do
     pod 'NanoStore', '2.5.2'
-    pod 'NYXImagesKit'
+    pod 'NYXImagesKit', :podspec => 'NYXImagesKit.podspec'
     pod 'NSData+MD5Digest'
     pod 'SVWebViewController'
     pod 'SVProgressHUD'
