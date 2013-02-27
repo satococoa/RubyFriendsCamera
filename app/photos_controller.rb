@@ -1,10 +1,11 @@
 class PhotosController < UICollectionViewController
   def viewDidLoad
     super
-
     navigationItem.title = 'RubyFriends'
+
     camera_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemCamera, target:self, action:'camera_tapped')
     navigationItem.rightBarButtonItem = camera_button
+    
     open_rubyfriends_button = UIBarButtonItem.alloc.initWithImage(UIImage.imageNamed('icon-ruby.png'), style:UIBarButtonItemStyleBordered, target:self, action:'open_rubyfriends')
     spacer = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemFlexibleSpace, target:nil, action:nil)
     info = UIButton.buttonWithType(UIButtonTypeInfoLight).tap do |b|
@@ -12,8 +13,17 @@ class PhotosController < UICollectionViewController
     end
     info_button = UIBarButtonItem.alloc.initWithCustomView(info)
     self.toolbarItems = [open_rubyfriends_button, spacer, info_button]
+
     collectionView.styleId = 'photos'
     collectionView.registerClass(FriendCell, forCellWithReuseIdentifier:'friend_cell')
+
+    self.collectionView.collectionViewLayout.tap do |l|
+      l.itemSize = CGSizeMake(128, 128)
+      l.minimumLineSpacing = 20
+      l.minimumInteritemSpacing = 20
+      l.sectionInset = UIEdgeInsetsMake(20, 20, 20, 20)
+    end
+    
     reload
     navigationController.toolbarHidden = false
   end
