@@ -34,6 +34,6 @@ nav-buttons, bar-button-item {
   background-color: transparent;
 }
 
-#friend, #photos {
+#photo, #photos {
   background-image: url(background.png);
 }

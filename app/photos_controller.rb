@@ -15,7 +15,7 @@ class PhotosController < UICollectionViewController
     self.toolbarItems = [open_rubyfriends_button, spacer, info_button]
 
     self.collectionView.styleId = 'photos'
-    self.collectionView.registerClass(FriendCell, forCellWithReuseIdentifier:'friend_cell')
+    self.collectionView.registerClass(PhotoCell, forCellWithReuseIdentifier:'photo_cell')
 
     self.collectionView.collectionViewLayout.tap do |l|
       l.itemSize = CGSizeMake(128, 128)
@@ -30,13 +30,13 @@ class PhotosController < UICollectionViewController
 
   def viewWillAppear(animated)
     navigationController.navigationBar.translucent = false
-    @add_friend_observer = App.notification_center.observe('FriendDidCreate', Friend) do |notif|
+    @add_photo_observer = App.notification_center.observe('PhotoDidCreate', Photo) do |notif|
       reload
     end
   end
 
   def viewWillDisappear(animated)
-    App.notification_center.unobserve(@add_friend_observer)
+    App.notification_center.unobserve(@add_photo_observer)
   end
 
   def viewDidAppear(animated)
@@ -46,12 +46,12 @@ class PhotosController < UICollectionViewController
       open_tweet(@image)
       @saving_image = @image
       Dispatch::Queue.concurrent.async {
-        @friends = [Friend.new] + @friends
+        @photos = [Photo.new] + @photos
         path = NSIndexPath.indexPathForRow(0, inSection:0)
         Dispatch::Queue.main.async {
           @tutorial.removeFromSuperview unless @tutorial.nil?
           collectionView.insertItemsAtIndexPaths([path])
-          Friend.save_with_image(@saving_image)
+          Photo.save_with_image(@saving_image)
         }
       }
       @image = nil
@@ -63,14 +63,14 @@ class PhotosController < UICollectionViewController
   end
 
   def collectionView(collection_view, numberOfItemsInSection:section)
-    @friends.count
+    @photos.count
   end
 
   def collectionView(collection_view, cellForItemAtIndexPath:index_path)
-    cell = collection_view.dequeueReusableCellWithReuseIdentifier('friend_cell', forIndexPath:index_path)
-    friend = @friends[index_path.row]
-    cell.friend = friend
-    cell.tag = @friends.count - index_path.row
+    cell = collection_view.dequeueReusableCellWithReuseIdentifier('photo_cell', forIndexPath:index_path)
+    photo = @photos[index_path.row]
+    cell.photo = photo
+    cell.tag = @photos.count - index_path.row
     tap = UITapGestureRecognizer.alloc.initWithTarget(self, action:'image_tapped:')
     cell.addGestureRecognizer(tap)
     cell
@@ -78,17 +78,17 @@ class PhotosController < UICollectionViewController
 
   def image_tapped(target)
     index = target.view.tag
-    friend = @friends[-index]
-    if !friend.image.nil?
-      @friend_controller ||= FriendController.new
-      @friend_controller.friend = friend
-      navigationController.pushViewController(@friend_controller, animated:true)
+    photo = @photos[-index]
+    if !photo.image.nil?
+      @photo_controller ||= PhotoController.new
+      @photo_controller.photo = photo
+      navigationController.pushViewController(@photo_controller, animated:true)
     end
   end
 
   def reload
-    @friends = Friend.find({}, {:sort => {:created_at => :desc}})
-    if @friends.count == 0
+    @photos = Photo.find({}, {:sort => {:created_at => :desc}})
+    if @photos.count == 0
       tutorial_frame = [[0, 0], [content_frame.size.width, content_frame.size.height-44]]
       @tutorial ||= TutorialView.alloc.initWithFrame(tutorial_frame)
       collectionView.addSubview(@tutorial)

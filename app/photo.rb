@@ -1,4 +1,4 @@
-class Friend < NanoStore::Model
+class Photo < NanoStore::Model
   attribute :image_path
   attribute :image_orientation
   attribute :thumbnail_path
@@ -53,14 +53,14 @@ class Friend < NanoStore::Model
       path = NSString.pathWithComponents([App.documents_path, thumbnail_path])
       thumbnail.saveToPath(path, type:NYXImageTypePNG, backgroundFillColor:nil)
 
-      friend = self.create(
+      photo = self.create(
         :image_path => image_path,
         :image_orientation => image.imageOrientation,
         :thumbnail_path => thumbnail_path,
         :created_at => Time.now
       )
       Dispatch::Queue.main.async {
-        App.notification_center.post('FriendDidCreate', self, {friend: friend})
+        App.notification_center.post('PhotoDidCreate', self, {photo: photo})
       }
     }
   end

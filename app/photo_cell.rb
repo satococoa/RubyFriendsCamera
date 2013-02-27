@@ -1,4 +1,4 @@
-class FriendCell < UICollectionViewCell
+class PhotoCell < UICollectionViewCell
   def initWithFrame(rect)
     super
     @image_view ||= LoadableImageView.new.tap do |iv|
@@ -20,12 +20,12 @@ class FriendCell < UICollectionViewCell
     end
   end
 
-  def friend=(friend)
-    if friend.thumbnail.nil?
+  def photo=(photo)
+    if photo.thumbnail.nil?
       @image_view.loading = true
     else
       @image_view.loading = false
-      @image_view.image = friend.thumbnail
+      @image_view.image = photo.thumbnail
     end
   end
 end

@@ -1,5 +1,5 @@
-class FriendController < UIViewController
-  attr_accessor :friend
+class PhotoController < UIViewController
+  attr_accessor :photo
   def init
     super
     self.hidesBottomBarWhenPushed = true
@@ -8,7 +8,7 @@ class FriendController < UIViewController
 
   def viewDidLoad
     super
-    view.styleId = 'friend'
+    view.styleId = 'photo'
     action_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemAction, target:self, action:'action_tapped')
     delete_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemTrash, target:self, action:'delete_tapped')
     navigationItem.rightBarButtonItems = [action_button, delete_button]
@@ -39,7 +39,7 @@ class FriendController < UIViewController
   end
 
   def setup_image_frame
-    image_size = @friend.image.size
+    image_size = @photo.image.size
     frame_size = CGSizeMake(App.bounds.size.width, App.bounds.size.height - 20)
     if image_size.height > frame_size.height
       height = frame_size.height
@@ -59,12 +59,12 @@ class FriendController < UIViewController
     y = (frame_size.height - height) / 2
 
     @image_view.frame = [[x, y], [width, height]]
-    @image_view.image = @friend.image
+    @image_view.image = @photo.image
   end
 
   def setup_label
     @label.frame = [[0, App.bounds.size.height - 20 - 30], [content_frame.size.width, 30]]
-    @label.text = @friend.created_at.strftime('%Y/%m/%d %H:%M ')
+    @label.text = @photo.created_at.strftime('%Y/%m/%d %H:%M ')
   end
 
   def action_tapped
@@ -87,7 +87,7 @@ class FriendController < UIViewController
       when 1 # facebook
         open_share(:facebook)
       when 2 # save to album
-        @friend.image.saveToPhotosAlbum
+        @photo.image.saveToPhotosAlbum
         SVProgressHUD.showSuccessWithStatus('Saved!')
       when action_sheet.cancelButtonIndex
         return
@@ -104,7 +104,7 @@ class FriendController < UIViewController
 
   private
   def delete
-    @friend.delete
+    @photo.delete
     navigationController.viewControllers[0].reload
     navigationController.popViewControllerAnimated(true)
   end
@@ -119,7 +119,7 @@ class FriendController < UIViewController
     if SLComposeViewController.isAvailableForServiceType(service_type)
       controller = SLComposeViewController.composeViewControllerForServiceType(service_type).tap do |t|
         t.setInitialText(AppDelegate::HASHTAG + ' ')
-        t.addImage(@friend.image)
+        t.addImage(@photo.image)
         t.completionHandler = lambda {|result|
           dismissModalViewControllerAnimated(true)
         }
