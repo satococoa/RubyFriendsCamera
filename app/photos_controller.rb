@@ -14,8 +14,8 @@ class PhotosController < UICollectionViewController
     info_button = UIBarButtonItem.alloc.initWithCustomView(info)
     self.toolbarItems = [open_rubyfriends_button, spacer, info_button]
 
-    collectionView.styleId = 'photos'
-    collectionView.registerClass(FriendCell, forCellWithReuseIdentifier:'friend_cell')
+    self.collectionView.styleId = 'photos'
+    self.collectionView.registerClass(FriendCell, forCellWithReuseIdentifier:'friend_cell')
 
     self.collectionView.collectionViewLayout.tap do |l|
       l.itemSize = CGSizeMake(128, 128)
