@@ -17,3 +17,4 @@ vendor/Pods
 config.yml
 testflight_launcher.rb
 pixate_code.rb
+debugger_cmds
