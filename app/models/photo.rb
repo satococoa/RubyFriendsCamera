@@ -44,14 +44,14 @@ class Photo < NanoStore::Model
     Dispatch::Queue.concurrent.async {
       # 同じ写真を選択したとき、ファイル名がかぶるのを防ぐ
       str = Time.now.to_i.to_s.dataUsingEncoding(NSUTF8StringEncoding).MD5HexDigest[0, 5]
-      image_path = str + UIImagePNGRepresentation(image).MD5HexDigest + '.png'
+      image_path = str + UIImageJPEGRepresentation(image, 0.8).MD5HexDigest + '.jpg'
       path = NSString.pathWithComponents([App.documents_path, image_path])
-      image.saveToPath(path, type:NYXImageTypePNG, backgroundFillColor:nil)
+      image.saveToPath(path, type:NYXImageTypeJPEG, backgroundFillColor:nil)
 
       thumbnail = image.scaleToFitSize([256, 256])
-      thumbnail_path = str + UIImagePNGRepresentation(thumbnail).MD5HexDigest + '.png'
+      thumbnail_path = str + UIImageJPEGRepresentation(thumbnail, 0.8).MD5HexDigest + '.jpg'
       path = NSString.pathWithComponents([App.documents_path, thumbnail_path])
-      thumbnail.saveToPath(path, type:NYXImageTypePNG, backgroundFillColor:nil)
+      thumbnail.saveToPath(path, type:NYXImageTypeJPEG, backgroundFillColor:nil)
 
       photo = self.create(
         :image_path => image_path,
