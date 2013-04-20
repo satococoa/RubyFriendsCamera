@@ -138,6 +138,7 @@ class PhotosController < UICollectionViewController
   def take_picture
     BW::Device.camera.rear.picture({media_types: [:image]}, self) do |result|
       @image = result[:original_image]
+      @image.saveToPhotosAlbum
     end
   end
 
