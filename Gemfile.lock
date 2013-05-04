@@ -7,10 +7,10 @@ GEM
     addressable (2.3.4)
     bubble-wrap (1.2.0)
     claide (0.2.0)
-    cocoapods (0.18.1)
+    cocoapods (0.19.1)
       activesupport (~> 3.2.13)
       claide (~> 0.2.0)
-      cocoapods-core (= 0.18.1)
+      cocoapods-core (= 0.19.1)
       cocoapods-downloader (~> 0.1.0)
       colored (~> 1.2)
       escape (~> 0.0.4)
@@ -20,10 +20,8 @@ GEM
       open4 (~> 1.3.0)
       rake (~> 10.0.0)
       xcodeproj (~> 0.5.5)
-    cocoapods-core (0.18.1)
+    cocoapods-core (0.19.1)
       activesupport (~> 3.2.13)
-      faraday (~> 0.8.1)
-      octokit (~> 1.7)
       rake (~> 10.0.0)
     cocoapods-downloader (0.1.0)
     colored (1.2)
@@ -35,8 +33,8 @@ GEM
     hashie (2.0.4)
     i18n (0.6.1)
     json (1.7.7)
-    motion-cocoapods (1.3.0.rc1)
-      cocoapods (>= 0.17.0)
+    motion-cocoapods (1.2.2)
+      cocoapods (>= 0.14.0)
     motion-pixate (1.2)
       sass
     motion-testflight (1.5)
@@ -64,7 +62,7 @@ PLATFORMS
 
 DEPENDENCIES
   bubble-wrap
-  motion-cocoapods (= 1.3.0.rc1)
+  motion-cocoapods
   motion-pixate
   motion-testflight
   nano-store
