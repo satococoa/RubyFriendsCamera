@@ -1,26 +1,22 @@
 PODS:
   - NanoStore (2.6.4)
   - NSData+MD5Digest (1.0.0)
-  - NYXImagesKit (2.1.3)
+  - NYXImagesKit (2.2)
   - SVProgressHUD (0.9)
   - SVWebViewController (0.1)
 
 DEPENDENCIES:
   - NanoStore (~> 2.6.0)
   - NSData+MD5Digest
-  - NYXImagesKit (from `NYXImagesKit.podspec`)
+  - NYXImagesKit
   - SVProgressHUD
   - SVWebViewController
-
-EXTERNAL SOURCES:
-  NYXImagesKit:
-    :podspec: NYXImagesKit.podspec
 
 SPEC CHECKSUMS:
   NanoStore: 73d29e30e1e7f253f719c6ad1d60181ebcf1b5be
   NSData+MD5Digest: 8275479b2a935e6caa8a92a9a814fb5abecba367
-  NYXImagesKit: b2751a2fade056fc1f8cd78a090d24ba256e9446
+  NYXImagesKit: 3db116343087d2c247a0519aea6a081e660fafa6
   SVProgressHUD: 03d4845ec8e64591726428a08236c6a5489d45f8
   SVWebViewController: 2e3a367237bb7072e54e05c6eaa82d21a12ba676
 
-COCOAPODS: 0.18.1
+COCOAPODS: 0.19.1

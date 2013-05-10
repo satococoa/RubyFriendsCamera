@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 $:.unshift("/Library/RubyMotion/lib")
-require 'motion/project'
+require 'motion/project/template/ios'
 require 'bundler/setup'
 Bundler.require :default
 
@@ -48,7 +48,7 @@ Motion::Project::App.setup do |app|
 
   app.pods do
     pod 'NanoStore', '~> 2.6.0'
-    pod 'NYXImagesKit', :local => 'NYXImagesKit.podspec'
+    pod 'NYXImagesKit'
     pod 'NSData+MD5Digest'
     pod 'SVWebViewController'
     pod 'SVProgressHUD'
