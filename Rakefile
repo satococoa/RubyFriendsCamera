@@ -54,6 +54,8 @@ Motion::Project::App.setup do |app|
     pod 'SVProgressHUD'
     pod 'PSTCollectionView'
   end
+  app.libs << '-fobjc-arc'
+
   app.info_plist['UIRequiredDeviceCapabilities'] = [
     'still-camera'
   ]
