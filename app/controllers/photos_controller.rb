@@ -149,17 +149,30 @@ class PhotosController < PSTCollectionViewController
   end
 
   def open_tweet(image)
-    if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter)
-      tweet_controller = SLComposeViewController.composeViewControllerForServiceType(SLServiceTypeTwitter).tap do |t|
-        t.setInitialText(AppDelegate::HASHTAG + ' ')
-        t.addImage(image)
-        t.completionHandler = lambda {|result|
-          dismissModalViewControllerAnimated(true)
-        }
+    if Device.ios_version =~ /5\..+/
+      if TWTweetComposeViewController.canSendTweet
+        controller = TWTweetComposeViewController.new.tap do |t|
+          t.setInitialText(AppDelegate::HASHTAG + ' ')
+          t.addImage(image)
+          t.completionHandler = lambda {|result|
+            dismissModalViewControllerAnimated(true)
+          }
+        end
+        presentModalViewController(controller, animated:true)
       end
-      presentModalViewController(tweet_controller, animated:true)
     else
-      App.alert('Posting twitter is not available.')
+      if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter)
+        tweet_controller = SLComposeViewController.composeViewControllerForServiceType(SLServiceTypeTwitter).tap do |t|
+          t.setInitialText(AppDelegate::HASHTAG + ' ')
+          t.addImage(image)
+          t.completionHandler = lambda {|result|
+            dismissModalViewControllerAnimated(true)
+          }
+        end
+        presentModalViewController(tweet_controller, animated:true)
+      else
+        App.alert('Posting twitter is not available.')
+      end
     end
   end
 end

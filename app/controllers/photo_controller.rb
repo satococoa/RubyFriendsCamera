@@ -110,23 +110,36 @@ class PhotoController < UIViewController
   end
 
   def open_share(type)
-    case type
-    when :twitter
-      service_type = SLServiceTypeTwitter
-    when :facebook
-      service_type = SLServiceTypeFacebook
-    end
-    if SLComposeViewController.isAvailableForServiceType(service_type)
-      controller = SLComposeViewController.composeViewControllerForServiceType(service_type).tap do |t|
-        t.setInitialText(AppDelegate::HASHTAG + ' ')
-        t.addImage(@photo.image)
-        t.completionHandler = lambda {|result|
-          dismissModalViewControllerAnimated(true)
-        }
+    if Device.ios_version =~ /5\..+/
+      if TWTweetComposeViewController.canSendTweet
+        controller = TWTweetComposeViewController.new.tap do |t|
+          t.setInitialText(AppDelegate::HASHTAG + ' ')
+          t.addImage(@photo.image)
+          t.completionHandler = lambda {|result|
+            dismissModalViewControllerAnimated(true)
+          }
+        end
+        presentModalViewController(controller, animated:true)
       end
-      presentModalViewController(controller, animated:true)
     else
-      App.alert("Posting #{type} is not available.")
+      case type
+      when :twitter
+        service_type = SLServiceTypeTwitter
+      when :facebook
+        service_type = SLServiceTypeFacebook
+      end
+      if SLComposeViewController.isAvailableForServiceType(service_type)
+        controller = SLComposeViewController.composeViewControllerForServiceType(service_type).tap do |t|
+          t.setInitialText(AppDelegate::HASHTAG + ' ')
+          t.addImage(@photo.image)
+          t.completionHandler = lambda {|result|
+            dismissModalViewControllerAnimated(true)
+          }
+        end
+        presentModalViewController(controller, animated:true)
+      else
+        App.alert("Posting #{type} is not available.")
+      end
     end
   end
 
