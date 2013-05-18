@@ -52,6 +52,7 @@ Motion::Project::App.setup do |app|
     pod 'NSData+MD5Digest'
     pod 'SVWebViewController'
     pod 'SVProgressHUD'
+    pod 'PSTCollectionView'
   end
   app.info_plist['UIRequiredDeviceCapabilities'] = [
     'still-camera'

@@ -1,4 +1,4 @@
-class PhotosController < UICollectionViewController
+class PhotosController < PSTCollectionViewController
   def viewDidLoad
     super
     navigationItem.title = 'RubyFriends'

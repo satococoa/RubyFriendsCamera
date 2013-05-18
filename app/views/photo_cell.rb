@@ -1,4 +1,4 @@
-class PhotoCell < UICollectionViewCell
+class PhotoCell < PSTCollectionViewCell
   def initWithFrame(rect)
     super
     @image_view ||= LoadableImageView.new.tap do |iv|
