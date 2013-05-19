@@ -159,6 +159,8 @@ class PhotosController < PSTCollectionViewController
           }
         end
         presentModalViewController(controller, animated:true)
+      else
+        App.alert('Posting twitter is not available.')
       end
     else
       if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter)
