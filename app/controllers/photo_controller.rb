@@ -13,10 +13,7 @@ class PhotoController < UIViewController
     delete_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemTrash, target:self, action:'delete_tapped')
     navigationItem.rightBarButtonItems = [action_button, delete_button]
 
-    @image_view = UIImageView.new.tap do |iv|
-      iv.frame = CGRectZero
-      iv.contentMode = UIViewContentModeScaleAspectFit
-      iv.userInteractionEnabled = true
+    @image_view = PhotoImageView.alloc.initWithFrame(App.bounds).tap do |iv|
       tap = UITapGestureRecognizer.alloc.initWithTarget(self, action:'toggle_navigation_bar')
       iv.addGestureRecognizer(tap)
     end
@@ -58,8 +55,8 @@ class PhotoController < UIViewController
     x = (frame_size.width - width) / 2
     y = (frame_size.height - height) / 2
 
-    @image_view.frame = [[x, y], [width, height]]
-    @image_view.image = @photo.image
+    @image_view.image_view.frame = [[x, y], [width, height]]
+    @image_view.image_view.image = @photo.image
   end
 
   def setup_label
