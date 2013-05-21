@@ -11,11 +11,11 @@ Motion::Project::App.setup do |app|
   app.name = 'RubyFriendsCamera'
   app.version = '1.0.0'
   app.short_version = '1.0.0'
-  app.deployment_target = '6.0'
+  app.deployment_target = '5.1'
   app.interface_orientations = [:portrait]
   app.prerendered_icon = true
   app.frameworks += [
-    'Social',
+    'Twitter',
     'Accelerate',
     'AssetsLibrary',
     'ImageIO',
@@ -23,7 +23,10 @@ Motion::Project::App.setup do |app|
     'QuartzCore',
     'CoreImage'
   ]
-  
+  app.weak_frameworks += [
+    'Social'
+  ]
+
   conf_file = './config.yml'
   if File.exists?(conf_file)
     config = YAML::load_file(conf_file)
@@ -52,7 +55,10 @@ Motion::Project::App.setup do |app|
     pod 'NSData+MD5Digest'
     pod 'SVWebViewController'
     pod 'SVProgressHUD'
+    pod 'PSTCollectionView'
   end
+  app.libs << '-fobjc-arc'
+
   app.info_plist['UIRequiredDeviceCapabilities'] = [
     'still-camera'
   ]
