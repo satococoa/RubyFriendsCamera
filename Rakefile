@@ -15,7 +15,6 @@ Motion::Project::App.setup do |app|
   app.interface_orientations = [:portrait]
   app.prerendered_icon = true
   app.frameworks += [
-    'Twitter',
     'Accelerate',
     'AssetsLibrary',
     'ImageIO',
@@ -24,7 +23,7 @@ Motion::Project::App.setup do |app|
     'CoreImage'
   ]
   app.weak_frameworks += [
-    'Social'
+    'Social', 'Twitter'
   ]
 
   conf_file = './config.yml'
