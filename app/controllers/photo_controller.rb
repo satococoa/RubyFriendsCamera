@@ -1,4 +1,6 @@
 class PhotoController < UIViewController
+  include Share
+
   attr_accessor :photo
   def init
     super
@@ -68,7 +70,7 @@ class PhotoController < UIViewController
   end
 
   def action_tapped
-    action_sheet = UIActionSheet.alloc.initWithTitle('Share', delegate:self, cancelButtonTitle:'Cancel', destructiveButtonTitle:nil, otherButtonTitles:'Twitter', 'Facebook', 'Save to album', nil)
+    action_sheet = UIActionSheet.alloc.initWithTitle('Share', delegate:self, cancelButtonTitle:'Cancel', destructiveButtonTitle:nil, otherButtonTitles:'Twitter', 'Save to album', nil)
     action_sheet.tag = 1
     action_sheet.showInView(view)
   end
@@ -84,9 +86,7 @@ class PhotoController < UIViewController
       case button_index
       when 0 # twitter
         open_share(:twitter)
-      when 1 # facebook
-        open_share(:facebook)
-      when 2 # save to album
+      when 1 # save to album
         @photo.image.saveToPhotosAlbum
         SVProgressHUD.showSuccessWithStatus('Saved!')
       when action_sheet.cancelButtonIndex
@@ -110,31 +110,15 @@ class PhotoController < UIViewController
   end
 
   def open_share(type)
-    if defined?(SLComposeViewController)
-      case type
-      when :twitter
-        service_type = SLServiceTypeTwitter
-      when :facebook
-        service_type = SLServiceTypeFacebook
-      end
-      controller = SLComposeViewController.composeViewControllerForServiceType(service_type).tap do |t|
-        t.setInitialText(AppDelegate::HASHTAG + ' ')
-        t.addImage(@photo.image)
-        t.completionHandler = lambda {|result|
-          dismissModalViewControllerAnimated(true)
-        }
-      end
-      presentModalViewController(controller, animated:true)
-    else
-      controller = TWTweetComposeViewController.new.tap do |t|
-        t.setInitialText(AppDelegate::HASHTAG + ' ')
-        t.addImage(@photo.image)
-        t.completionHandler = lambda {|result|
-          dismissModalViewControllerAnimated(true)
-        }
-      end
-      presentModalViewController(controller, animated:true)
+    controller = share_controller(:twitter) do |c|
+      c.setInitialText(AppDelegate::HASHTAG + ' ')
+      c.addImage(@photo.image)
+      c.completionHandler = lambda {|result|
+        dismissModalViewControllerAnimated(true)
+      }
+      c
     end
+    presentModalViewController(controller, animated:true)
   end
 
   def toggle_navigation_bar

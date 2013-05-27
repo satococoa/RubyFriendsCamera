@@ -1,4 +1,6 @@
 class PhotosController < PSTCollectionViewController
+  include Share
+
   def viewDidLoad
     super
     navigationItem.title = 'RubyFriends'
@@ -149,24 +151,14 @@ class PhotosController < PSTCollectionViewController
   end
 
   def open_tweet(image)
-    if defined?(SLComposeViewController)
-      tweet_controller = SLComposeViewController.composeViewControllerForServiceType(SLServiceTypeTwitter).tap do |t|
-        t.setInitialText(AppDelegate::HASHTAG + ' ')
-        t.addImage(image)
-        t.completionHandler = lambda {|result|
-          dismissModalViewControllerAnimated(true)
-        }
-      end
-      presentModalViewController(tweet_controller, animated:true)
-    else
-      controller = TWTweetComposeViewController.new.tap do |t|
-        t.setInitialText(AppDelegate::HASHTAG + ' ')
-        t.addImage(image)
-        t.completionHandler = lambda {|result|
-          dismissModalViewControllerAnimated(true)
-        }
-      end
-      presentModalViewController(controller, animated:true)
+    controller = share_controller(:twitter) do |c|
+      c.setInitialText(AppDelegate::HASHTAG + ' ')
+      c.addImage(image)
+      c.completionHandler = lambda {|result|
+        dismissModalViewControllerAnimated(true)
+      }
+      c
     end
+    presentModalViewController(controller, animated:true)
   end
 end
