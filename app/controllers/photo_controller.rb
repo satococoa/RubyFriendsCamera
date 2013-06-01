@@ -33,32 +33,8 @@ class PhotoController < UIViewController
 
   def viewWillAppear(animated)
     navigationController.navigationBar.translucent = true
-    setup_image_frame
+    @image_view.image = @photo.image
     setup_label
-  end
-
-  def setup_image_frame
-    image_size = @photo.image.size
-    frame_size = CGSizeMake(App.bounds.size.width, App.bounds.size.height - 20)
-    if image_size.height > frame_size.height
-      height = frame_size.height
-      width = height / image_size.height * image_size.width
-      if width > frame_size.width
-        width = frame_size.width
-        height = width / image_size.width * image_size.height
-      end
-    elsif image_size.width > frame_size.width
-      width = frame_size.width
-      height = width / image_size.width * image_size.height
-    else
-      height = image_size.height
-      width = image_size.width
-    end
-    x = (frame_size.width - width) / 2
-    y = (frame_size.height - height) / 2
-
-    @image_view.image_view.frame = [[x, y], [width, height]]
-    @image_view.image_view.image = @photo.image
   end
 
   def setup_label
