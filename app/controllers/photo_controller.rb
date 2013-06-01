@@ -15,10 +15,7 @@ class PhotoController < UIViewController
     delete_button = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemTrash, target:self, action:'delete_tapped')
     navigationItem.rightBarButtonItems = [action_button, delete_button]
 
-    @image_view = PhotoImageView.alloc.initWithFrame(App.bounds).tap do |iv|
-      tap = UITapGestureRecognizer.alloc.initWithTarget(self, action:'toggle_navigation_bar')
-      iv.addGestureRecognizer(tap)
-    end
+    @image_view = PhotoImageView.alloc.initWithFrame(App.bounds)
     view.addSubview(@image_view)
 
     @label = UILabel.new.tap do |l|
@@ -35,6 +32,31 @@ class PhotoController < UIViewController
     navigationController.navigationBar.translucent = true
     @image_view.image = @photo.image
     setup_label
+    register_tap_observers
+  end
+
+  def viewWillDissapear(animated)
+    unregister_tap_observers
+  end
+
+  def dealloc
+    unregister_tap_observers
+    super
+  end
+
+  def register_tap_observers
+    @tap_observer = App.notification_center.observe('PhotoImageViewTapped') do |notif|
+      performSelector('toggle_navigation_bar', withObject:nil, afterDelay:0.2)
+    end
+    @double_tap_observer = App.notification_center.observe('PhotoImageViewDoubleTapped') do |notif|
+      NSObject.cancelPreviousPerformRequestsWithTarget(self)
+      @image_view.toggle_zoom
+    end
+  end
+
+  def unregister_tap_observers
+    App.notification_center.unobserve(@tap_observer)
+    App.notification_center.unobserve(@double_tap_observer)
   end
 
   def setup_label
