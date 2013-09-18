@@ -36,7 +36,7 @@ Motion::Project::App.setup do |app|
     app.testflight.distribution_lists = config['testflight']['distribution_lists']
     app.pixate.user = config['pixate']['user']
     app.pixate.key  = config['pixate']['key']
-    app.pixate.framework = 'vendor/pixate.framework'
+    app.pixate.framework = 'vendor/Pixate.framework'
     app.identifier = config['identifier']
     app.info_plist['CFBundleURLTypes'] = [
       { 'CFBundleURLName' => config['identifier'],
