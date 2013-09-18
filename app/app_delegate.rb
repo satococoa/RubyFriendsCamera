@@ -8,6 +8,7 @@ class AppDelegate
     photos_controller = PhotosController.alloc.initWithCollectionViewLayout(PSTCollectionViewFlowLayout.new)
     navigation_controller = UINavigationController.alloc.initWithRootViewController(photos_controller)
     @window.rootViewController = navigation_controller
+    @window.styleMode = PXStylingNormal
     @window.makeKeyAndVisible
 
     true

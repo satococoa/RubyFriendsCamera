@@ -36,7 +36,7 @@ Motion::Project::App.setup do |app|
     app.testflight.distribution_lists = config['testflight']['distribution_lists']
     app.pixate.user = config['pixate']['user']
     app.pixate.key  = config['pixate']['key']
-    app.pixate.framework = 'vendor/PXEngine.framework'
+    app.pixate.framework = 'vendor/pixate.framework'
     app.identifier = config['identifier']
     app.info_plist['CFBundleURLTypes'] = [
       { 'CFBundleURLName' => config['identifier'],
@@ -50,7 +50,7 @@ Motion::Project::App.setup do |app|
 
   app.pods do
     pod 'NanoStore', '~> 2.6.0'
-    pod 'NYXImagesKit', podspec: 'NYXImagesKit.podspec'
+    pod 'NYXImagesKit'
     pod 'NSData+MD5Digest'
     pod 'SVWebViewController'
     pod 'SVProgressHUD'
