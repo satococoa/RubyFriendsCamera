@@ -10,7 +10,7 @@ Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
   app.name = 'RubyFriendsCamera'
   app.version = '1.1.0'
-  app.short_version = '1.1.0'
+  app.short_version = app.version
   app.deployment_target = '5.1'
   app.interface_orientations = [:portrait]
   app.prerendered_icon = true
