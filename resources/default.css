@@ -22,7 +22,7 @@ toolbar {
   border-bottom-right-radius: 6px;
 }
 
-nav-buttons, bar-button-item {
+bar-button, bar-button-item {
   background-color: #9F1D2F;
 }
 
