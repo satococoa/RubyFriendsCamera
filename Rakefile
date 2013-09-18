@@ -68,3 +68,15 @@ Motion::Project::App.setup do |app|
     app.entitlements['get-task-allow']  = false
   end
 end
+
+desc "Set the env to 'adhoc'"
+task :set_adhoc do
+  ENV['ENV'] = 'adhoc'
+end
+
+desc "Run Testflight with the adhoc provisioning profile"
+# e.g. rake tf notes="My release notes"
+task :tf => [
+    :set_adhoc,
+    :testflight
+]
