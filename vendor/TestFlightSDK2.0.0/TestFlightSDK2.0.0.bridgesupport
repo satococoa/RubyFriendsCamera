@@ -1,0 +1,69 @@
+<?xml version='1.0'?>
+<signatures version='1.0'>
+<constant const='true' name='TFOptionDisableInAppUpdates' type='@' declared_type='NSString*'/>
+<constant const='true' name='TFOptionFlushSecondsInterval' type='@' declared_type='NSString*'/>
+<constant const='true' name='TFOptionLogOnCheckpoint' type='@' declared_type='NSString*'/>
+<constant const='true' name='TFOptionLogToConsole' type='@' declared_type='NSString*'/>
+<constant const='true' name='TFOptionLogToSTDERR' type='@' declared_type='NSString*'/>
+<constant const='true' name='TFOptionManualSessions' type='@' declared_type='NSString*'/>
+<constant const='true' name='TFOptionReinstallCrashHandlers' type='@' declared_type='NSString*'/>
+<constant const='true' name='TFOptionReportCrashes' type='@' declared_type='NSString*'/>
+<constant const='true' name='TFOptionSendLogOnlyOnCrash' type='@' declared_type='NSString*'/>
+<constant const='true' name='TFOptionSessionKeepAliveTimeout' type='@' declared_type='NSString*'/>
+<string_constant nsstring='true' name='TESTFLIGHT_SDK_VERSION' value='2.0.0'/>
+<function variadic='true' name='TFLog'>
+<arg printf_format='true' name='format' type='@' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</function>
+<function name='TFLogPreFormatted'>
+<arg name='message' type='@' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</function>
+<function variadic='true' name='TFLog_async'>
+<arg printf_format='true' name='format' type='@' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</function>
+<function name='TFLogv'>
+<arg name='format' type='@' declared_type='NSString*'/>
+<arg name='arg_list' type='*' declared_type='va_list'/>
+<retval type='v' declared_type='void'/>
+</function>
+<function name='TFLogv_async'>
+<arg name='format' type='@' declared_type='NSString*'/>
+<arg name='arg_list' type='*' declared_type='va_list'/>
+<retval type='v' declared_type='void'/>
+</function>
+<class name='TestFlight'>
+<method selector='addCustomEnvironmentInformation:forKey:' class_method='true'>
+<arg name='information' type='@' index='0' declared_type='NSString*'/>
+<arg name='key' type='@' index='1' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='manuallyEndSession' class_method='true'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='manuallyStartSession' class_method='true'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='passCheckpoint:' class_method='true'>
+<arg name='checkpointName' type='@' index='0' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setDeviceIdentifier:' class_method='true'>
+<arg name='deviceIdentifer' type='@' index='0' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setOptions:' class_method='true'>
+<arg name='options' type='@' index='0' declared_type='NSDictionary*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='submitFeedback:' class_method='true'>
+<arg name='feedback' type='@' index='0' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='takeOff:' class_method='true'>
+<arg name='applicationToken' type='@' index='0' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+</signatures>

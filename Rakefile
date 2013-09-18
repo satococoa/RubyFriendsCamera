@@ -29,7 +29,7 @@ Motion::Project::App.setup do |app|
   conf_file = './config.yml'
   if File.exists?(conf_file)
     config = YAML::load_file(conf_file)
-    app.testflight.sdk        = 'vendor/TestFlightSDK'
+    app.testflight.sdk        = 'vendor/TestFlightSDK2.0.0'
     app.testflight.api_token  = config['testflight']['api_token']
     app.testflight.team_token = config['testflight']['team_token']
     app.testflight.notify     = true
