@@ -1,1621 +1,1723 @@
 <?xml version='1.0'?>
 <signatures version='1.0'>
-<constant const='true' type='@' declared_type='NSString*' name='PXStylesheetDidChangeNotification'/>
-<enum name='PXCacheStylesTypeAuto' value='0'/>
-<enum name='PXCacheStylesTypeNone' value='1'/>
-<enum name='PXLinearGradientDirectionToBottom' value='4'/>
-<enum name='PXLinearGradientDirectionToBottomLeft' value='5'/>
-<enum name='PXLinearGradientDirectionToBottomRight' value='3'/>
-<enum name='PXLinearGradientDirectionToLeft' value='6'/>
-<enum name='PXLinearGradientDirectionToRight' value='2'/>
-<enum name='PXLinearGradientDirectionToTop' value='0'/>
-<enum name='PXLinearGradientDirectionToTopLeft' value='7'/>
-<enum name='PXLinearGradientDirectionToTopRight' value='1'/>
-<enum name='PXParseErrorDestinationConsole' value='1'/>
-<enum name='PXParseErrorDestinationNone' value='0'/>
-<enum name='PXStylesheetOriginApplication' value='0'/>
-<enum name='PXStylesheetOriginInline' value='3'/>
-<enum name='PXStylesheetOriginUser' value='1'/>
-<enum name='PXStylesheetOriginView' value='2'/>
-<enum name='PXStylingNone' value='2'/>
-<enum name='PXStylingNormal' value='1'/>
-<enum name='PXStylingUndefined' value='0'/>
-<enum name='PXUpdateStylesTypeAuto' value='0'/>
-<enum name='PXUpdateStylesTypeManual' value='1'/>
-<enum name='kAlignViewPortNone' value='0'/>
-<enum name='kAlignViewPortXMaxYMax' value='9'/>
-<enum name='kAlignViewPortXMaxYMid' value='8'/>
-<enum name='kAlignViewPortXMaxYMin' value='7'/>
-<enum name='kAlignViewPortXMidYMax' value='6'/>
-<enum name='kAlignViewPortXMidYMid' value='5'/>
-<enum name='kAlignViewPortXMidYMin' value='4'/>
-<enum name='kAlignViewPortXMinYMax' value='3'/>
-<enum name='kAlignViewPortXMinYMid' value='2'/>
-<enum name='kAlignViewPortXMinYMin' value='1'/>
-<enum name='kCropTypeMeet' value='0'/>
-<enum name='kCropTypeSlice' value='1'/>
-<enum name='kDimensionTypeCentimeters' value='4'/>
-<enum name='kDimensionTypeDegrees' value='9'/>
-<enum name='kDimensionTypeDevicePixels' value='3'/>
-<enum name='kDimensionTypeEms' value='0'/>
-<enum name='kDimensionTypeExs' value='1'/>
-<enum name='kDimensionTypeGradians' value='11'/>
-<enum name='kDimensionTypeHertz' value='14'/>
-<enum name='kDimensionTypeInches' value='6'/>
-<enum name='kDimensionTypeKilohertz' value='15'/>
-<enum name='kDimensionTypeMillimeters' value='5'/>
-<enum name='kDimensionTypeMilliseconds' value='12'/>
-<enum name='kDimensionTypePercentage' value='16'/>
-<enum name='kDimensionTypePicas' value='8'/>
-<enum name='kDimensionTypePixels' value='2'/>
-<enum name='kDimensionTypePoints' value='7'/>
-<enum name='kDimensionTypeRadians' value='10'/>
-<enum name='kDimensionTypeSeconds' value='13'/>
-<enum name='kDimensionTypeUserDefined' value='17'/>
-<enum name='kStrokeTypeCenter' value='0'/>
-<enum name='kStrokeTypeInner' value='1'/>
-<enum name='kStrokeTypeOuter' value='2'/>
+<enum value='4' name='PXCacheStylesTypeImages'/>
+<enum value='0' name='PXCacheStylesTypeNone'/>
+<enum value='2' name='PXCacheStylesTypeSave'/>
+<enum value='1' name='PXCacheStylesTypeStyleOnce'/>
+<enum value='0' name='PXGradientUnitsBoundingBox'/>
+<enum value='1' name='PXGradientUnitsUserSpace'/>
+<enum value='4' name='PXLinearGradientDirectionToBottom'/>
+<enum value='5' name='PXLinearGradientDirectionToBottomLeft'/>
+<enum value='3' name='PXLinearGradientDirectionToBottomRight'/>
+<enum value='6' name='PXLinearGradientDirectionToLeft'/>
+<enum value='2' name='PXLinearGradientDirectionToRight'/>
+<enum value='0' name='PXLinearGradientDirectionToTop'/>
+<enum value='7' name='PXLinearGradientDirectionToTopLeft'/>
+<enum value='1' name='PXLinearGradientDirectionToTopRight'/>
+<enum value='1' name='PXParseErrorDestinationConsole'/>
+<enum value='0' name='PXParseErrorDestinationNone'/>
+<enum value='0' name='PXStylesheetOriginApplication'/>
+<enum value='3' name='PXStylesheetOriginInline'/>
+<enum value='1' name='PXStylesheetOriginUser'/>
+<enum value='2' name='PXStylesheetOriginView'/>
+<enum value='2' name='PXStylingNone'/>
+<enum value='1' name='PXStylingNormal'/>
+<enum value='0' name='PXStylingUndefined'/>
+<enum value='6.283185307179586' name='TWO_PI'/>
+<enum value='0' name='kAlignViewPortNone'/>
+<enum value='9' name='kAlignViewPortXMaxYMax'/>
+<enum value='8' name='kAlignViewPortXMaxYMid'/>
+<enum value='7' name='kAlignViewPortXMaxYMin'/>
+<enum value='6' name='kAlignViewPortXMidYMax'/>
+<enum value='5' name='kAlignViewPortXMidYMid'/>
+<enum value='4' name='kAlignViewPortXMidYMin'/>
+<enum value='3' name='kAlignViewPortXMinYMax'/>
+<enum value='2' name='kAlignViewPortXMinYMid'/>
+<enum value='1' name='kAlignViewPortXMinYMin'/>
+<enum value='0' name='kCropTypeMeet'/>
+<enum value='1' name='kCropTypeSlice'/>
+<enum value='4' name='kDimensionTypeCentimeters'/>
+<enum value='9' name='kDimensionTypeDegrees'/>
+<enum value='3' name='kDimensionTypeDevicePixels'/>
+<enum value='0' name='kDimensionTypeEms'/>
+<enum value='1' name='kDimensionTypeExs'/>
+<enum value='11' name='kDimensionTypeGradians'/>
+<enum value='14' name='kDimensionTypeHertz'/>
+<enum value='6' name='kDimensionTypeInches'/>
+<enum value='15' name='kDimensionTypeKilohertz'/>
+<enum value='5' name='kDimensionTypeMillimeters'/>
+<enum value='12' name='kDimensionTypeMilliseconds'/>
+<enum value='16' name='kDimensionTypePercentage'/>
+<enum value='8' name='kDimensionTypePicas'/>
+<enum value='2' name='kDimensionTypePixels'/>
+<enum value='7' name='kDimensionTypePoints'/>
+<enum value='10' name='kDimensionTypeRadians'/>
+<enum value='13' name='kDimensionTypeSeconds'/>
+<enum value='17' name='kDimensionTypeUserDefined'/>
+<enum value='0' name='kStrokeTypeCenter'/>
+<enum value='1' name='kStrokeTypeInner'/>
+<enum value='2' name='kStrokeTypeOuter'/>
 <class name='NSDictionary'>
 <method selector='toCSS'>
-<retval type='@' declared_type='NSString*'/>
+<retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='toCSSWithKeys:'>
-<arg index='0' type='@' declared_type='NSArray*' name='keys'/>
-<retval type='@' declared_type='NSString*'/>
+<arg index='0' declared_type='NSArray*' name='keys' type='@'/>
+<retval declared_type='NSString*' type='@'/>
 </method>
 </class>
 <class name='NSObject'>
 <method selector='animationPropertyHandlers'>
-<retval type='@' declared_type='NSDictionary*'/>
+<retval declared_type='NSDictionary*' type='@'/>
 </method>
 <method selector='applyFillToPath:withContext:'>
-<arg index='0' type='^{CGPath=}' declared_type='CGPathRef' name='path'/>
-<arg index='1' type='^{CGContext=}' declared_type='CGContextRef' name='context'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGPathRef' name='path' type='^{CGPath=}'/>
+<arg index='1' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='applyInsetToPath:withContext:'>
-<arg index='0' type='^{CGPath=}' declared_type='CGPathRef' name='path'/>
-<arg index='1' type='^{CGContext=}' declared_type='CGContextRef' name='context'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGPathRef' name='path' type='^{CGPath=}'/>
+<arg index='1' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='applyOutsetToPath:withContext:'>
-<arg index='0' type='^{CGPath=}' declared_type='CGPathRef' name='path'/>
-<arg index='1' type='^{CGContext=}' declared_type='CGContextRef' name='context'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGPathRef' name='path' type='^{CGPath=}'/>
+<arg index='1' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='applyStrokeToPath:withContext:'>
-<arg index='0' type='^{CGPath=}' declared_type='CGPathRef' name='path'/>
-<arg index='1' type='^{CGContext=}' declared_type='CGContextRef' name='context'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGPathRef' name='path' type='^{CGPath=}'/>
+<arg index='1' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='attributeValueForName:withNamespace:'>
-<arg index='0' type='@' declared_type='NSString*' name='name'/>
-<arg index='1' type='@' declared_type='NSString*' name='aNamespace'/>
-<retval type='@' declared_type='NSString*'/>
+<arg index='0' declared_type='NSString*' name='name' type='@'/>
+<arg index='1' declared_type='NSString*' name='aNamespace' type='@'/>
+<retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='blendMode'>
-<retval type='i' declared_type='CGBlendMode'/>
+<retval declared_type='CGBlendMode' type='i'/>
 </method>
 <method selector='bounds'>
-<retval type='i' declared_type='int'/>
+<retval declared_type='int' type='i'/>
+</method>
+<method selector='canStylePseudoClass:'>
+<arg index='0' declared_type='NSString*' name='pseudoClass' type='@'/>
+<retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='clippingPath'>
-<retval type='@' declared_type='PXShape*'/>
+<retval declared_type='PXShape*' type='@'/>
 </method>
 <method selector='darkenByPercent:'>
-<arg index='0' type='f' declared_type='CGFloat' name='percent'/>
-<retval type='@' declared_type='id'/>
+<arg index='0' declared_type='CGFloat' name='percent' type64='d' type='f'/>
+<retval declared_type='id' type='@'/>
 </method>
 <method selector='defaultPseudoClass'>
-<retval type='@' declared_type='NSString*'/>
+<retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='fill'>
-<retval type='@' declared_type='id'/>
+<retval declared_type='id' type='@'/>
 </method>
 <method selector='frame'>
-<retval type='i' declared_type='int'/>
+<retval declared_type='int' type='i'/>
 </method>
 <method selector='isOpaque'>
-<retval type='B' declared_type='BOOL'/>
+<retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='isVirtualControl'>
-<retval type='B' declared_type='BOOL'/>
+<retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='lightenByPercent:'>
-<arg index='0' type='f' declared_type='CGFloat' name='percent'/>
-<retval type='@' declared_type='id'/>
+<arg index='0' declared_type='CGFloat' name='percent' type64='d' type='f'/>
+<retval declared_type='id' type='@'/>
 </method>
 <method selector='opacity'>
-<retval type='f' declared_type='CGFloat'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 <method selector='padding'>
-<retval type='@' declared_type='PXOffsets*'/>
+<retval declared_type='PXOffsets*' type='@'/>
 </method>
 <method selector='parent'>
-<retval type='@' declared_type='id'/>
+<retval declared_type='id' type='@'/>
 </method>
 <method selector='pxStyleChildren'>
-<retval type='@' declared_type='NSArray*'/>
+<retval declared_type='NSArray*' type='@'/>
 </method>
 <method selector='pxStyleElementName'>
-<retval type='@' declared_type='NSString*'/>
+<retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='pxStyleNamespace'>
-<retval type='@' declared_type='NSString*'/>
+<retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='pxStyleParent'>
-<retval type='@' declared_type='id'/>
+<retval declared_type='id' type='@'/>
 </method>
 <method selector='registerNotifications'>
-<retval type='v' declared_type='void'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='render:'>
-<arg index='0' type='^{CGContext=}' declared_type='CGContextRef' name='context'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='renderToImageWithBounds:withOpacity:'>
-<arg index='0' type='{CGRect={CGPoint=ff}{CGSize=ff}}' declared_type='CGRect' name='bounds'/>
-<arg index='1' type='B' declared_type='BOOL' name='opaque'/>
-<retval type='@' declared_type='UIImage*'/>
+<arg index='0' declared_type='CGRect' name='bounds' type64='{CGRect={CGPoint=dd}{CGSize=dd}}' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+<arg index='1' declared_type='BOOL' name='opaque' type='B'/>
+<retval declared_type='UIImage*' type='@'/>
 </method>
 <method selector='setBlendMode:'>
-<arg index='0' type='i' declared_type='CGBlendMode' name='blendMode'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGBlendMode' name='blendMode' type='i'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setBounds:'>
-<arg index='0' type='i' declared_type='int' name='bounds'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='int' name='bounds' type='i'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setClippingPath:'>
-<arg index='0' type='@' declared_type='PXShape*' name='clippingPath'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='PXShape*' name='clippingPath' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setFill:'>
-<arg index='0' type='@' declared_type='id' name='fill'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='id' name='fill' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setFrame:'>
-<arg index='0' type='i' declared_type='int' name='frame'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='int' name='frame' type='i'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setOpacity:'>
-<arg index='0' type='f' declared_type='CGFloat' name='opacity'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGFloat' name='opacity' type64='d' type='f'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setPadding:'>
-<arg index='0' type='@' declared_type='PXOffsets*' name='padding'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='PXOffsets*' name='padding' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setParent:'>
-<arg index='0' type='@' declared_type='id' name='parent'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='id' name='parent' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setShadow:'>
-<arg index='0' type='@' declared_type='id' name='shadow'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='id' name='shadow' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setStroke:'>
-<arg index='0' type='@' declared_type='id' name='stroke'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='id' name='stroke' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setStyleCSS:'>
-<arg index='0' type='@' declared_type='NSString*' name='styleCSS'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='NSString*' name='styleCSS' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setStyleClass:'>
-<arg index='0' type='@' declared_type='NSString*' name='styleClass'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='NSString*' name='styleClass' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setStyleId:'>
-<arg index='0' type='@' declared_type='NSString*' name='styleId'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='NSString*' name='styleId' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setStyleMode:'>
+<arg index='0' declared_type='PXStylingMode' name='styleMode' type='i'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setTransform:'>
-<arg index='0' type='{CGAffineTransform=ffffff}' declared_type='CGAffineTransform' name='transform'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGAffineTransform' name='transform' type64='{CGAffineTransform=dddddd}' type='{CGAffineTransform=ffffff}'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setVisible:'>
-<arg index='0' type='B' declared_type='BOOL' name='visible'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='BOOL' name='visible' type='B'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='shadow'>
-<retval type='@' declared_type='id'/>
+<retval declared_type='id' type='@'/>
 </method>
 <method selector='stroke'>
-<retval type='@' declared_type='id'/>
+<retval declared_type='id' type='@'/>
 </method>
 <method selector='styleCSS'>
-<retval type='@' declared_type='NSString*'/>
+<retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='styleClass'>
-<retval type='@' declared_type='NSString*'/>
+<retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='styleId'>
-<retval type='@' declared_type='NSString*'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='styleKey'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='styleMode'>
+<retval declared_type='PXStylingMode' type='i'/>
 </method>
 <method selector='styleableForPseudoElement:'>
-<arg index='0' type='@' declared_type='NSString*' name='pseudoElement'/>
-<retval type='@' declared_type='id'/>
+<arg index='0' declared_type='NSString*' name='pseudoElement' type='@'/>
+<retval declared_type='id' type='@'/>
 </method>
 <method selector='supportedPseudoClasses'>
-<retval type='@' declared_type='NSArray*'/>
+<retval declared_type='NSArray*' type='@'/>
 </method>
 <method selector='supportedPseudoElements'>
-<retval type='@' declared_type='NSArray*'/>
+<retval declared_type='NSArray*' type='@'/>
 </method>
 <method selector='transform'>
-<retval type='{CGAffineTransform=ffffff}' declared_type='CGAffineTransform'/>
+<retval declared_type='CGAffineTransform' type64='{CGAffineTransform=dddddd}' type='{CGAffineTransform=ffffff}'/>
 </method>
 <method selector='updateStyles'>
-<retval type='v' declared_type='void'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='updateStylesAsync'>
-<retval type='v' declared_type='void'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='updateStylesNonRecursively'>
-<retval type='v' declared_type='void'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='updateStylesNonRecursivelyAsync'>
-<retval type='v' declared_type='void'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='visible'>
-<retval type='B' declared_type='BOOL'/>
+<retval declared_type='BOOL' type='B'/>
 </method>
 </class>
 <class name='PXArc'>
 <method selector='center'>
-<retval type='{CGPoint=ff}' declared_type='CGPoint'/>
+<retval declared_type='CGPoint' type64='{CGPoint=dd}' type='{CGPoint=ff}'/>
 </method>
 <method selector='endingAngle'>
-<retval type='f' declared_type='CGFloat'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 <method selector='radius'>
-<retval type='f' declared_type='CGFloat'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 <method selector='setCenter:'>
-<arg index='0' type='{CGPoint=ff}' declared_type='CGPoint' name='center'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGPoint' name='center' type64='{CGPoint=dd}' type='{CGPoint=ff}'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setEndingAngle:'>
-<arg index='0' type='f' declared_type='CGFloat' name='endingAngle'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGFloat' name='endingAngle' type64='d' type='f'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setRadius:'>
-<arg index='0' type='f' declared_type='CGFloat' name='radius'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGFloat' name='radius' type64='d' type='f'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setStartingAngle:'>
-<arg index='0' type='f' declared_type='CGFloat' name='startingAngle'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGFloat' name='startingAngle' type64='d' type='f'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='startingAngle'>
-<retval type='f' declared_type='CGFloat'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 </class>
 <class name='PXCircle'>
 <method selector='center'>
-<retval type='{CGPoint=ff}' declared_type='CGPoint'/>
+<retval declared_type='CGPoint' type64='{CGPoint=dd}' type='{CGPoint=ff}'/>
 </method>
 <method selector='circleWithCenter:withRadius:' class_method='true'>
-<arg index='0' type='{CGPoint=ff}' declared_type='CGPoint' name='center'/>
-<arg index='1' type='f' declared_type='CGFloat' name='radius'/>
-<retval type='@' declared_type='id'/>
+<arg index='0' declared_type='CGPoint' name='center' type64='{CGPoint=dd}' type='{CGPoint=ff}'/>
+<arg index='1' declared_type='CGFloat' name='radius' type64='d' type='f'/>
+<retval declared_type='id' type='@'/>
 </method>
 <method selector='initCenter:radius:'>
-<arg index='0' type='{CGPoint=ff}' declared_type='CGPoint' name='center'/>
-<arg index='1' type='f' declared_type='CGFloat' name='radius'/>
-<retval type='@' declared_type='id'/>
+<arg index='0' declared_type='CGPoint' name='center' type64='{CGPoint=dd}' type='{CGPoint=ff}'/>
+<arg index='1' declared_type='CGFloat' name='radius' type64='d' type='f'/>
+<retval declared_type='id' type='@'/>
 </method>
 <method selector='radius'>
-<retval type='f' declared_type='CGFloat'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 <method selector='setCenter:'>
-<arg index='0' type='{CGPoint=ff}' declared_type='CGPoint' name='center'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGPoint' name='center' type64='{CGPoint=dd}' type='{CGPoint=ff}'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setRadius:'>
-<arg index='0' type='f' declared_type='CGFloat' name='radius'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGFloat' name='radius' type64='d' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='PXClassUtils'>
+<method selector='classDescription:' class_method='true'>
+<arg index='0' declared_type='Class' name='c' type='#'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='classDescriptionForObject:' class_method='true'>
+<arg index='0' declared_type='id' name='object' type='@'/>
+<retval declared_type='NSString*' type='@'/>
 </method>
 </class>
 <class name='PXDimension'>
 <method selector='degrees'>
-<retval type='@' declared_type='PXDimension*'/>
+<retval declared_type='PXDimension*' type='@'/>
 </method>
 <method selector='dimension'>
-<retval type='@' declared_type='NSString*'/>
+<retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='dimensionWithNumber:withDimension:' class_method='true'>
-<arg index='0' type='f' declared_type='CGFloat' name='number'/>
-<arg index='1' type='@' declared_type='NSString*' name='dimension'/>
-<retval type='@' declared_type='id'/>
+<arg index='0' declared_type='CGFloat' name='number' type64='d' type='f'/>
+<arg index='1' declared_type='NSString*' name='dimension' type='@'/>
+<retval declared_type='id' type='@'/>
 </method>
 <method selector='initWithNumber:withDimension:'>
-<arg index='0' type='f' declared_type='CGFloat' name='number'/>
-<arg index='1' type='@' declared_type='NSString*' name='dimension'/>
-<retval type='@' declared_type='id'/>
+<arg index='0' declared_type='CGFloat' name='number' type64='d' type='f'/>
+<arg index='1' declared_type='NSString*' name='dimension' type='@'/>
+<retval declared_type='id' type='@'/>
 </method>
 <method selector='isAngle'>
-<retval type='B' declared_type='BOOL'/>
+<retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='isFrequency'>
-<retval type='B' declared_type='BOOL'/>
+<retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='isLength'>
-<retval type='B' declared_type='BOOL'/>
+<retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='isPercentage'>
-<retval type='B' declared_type='BOOL'/>
+<retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='isTime'>
-<retval type='B' declared_type='BOOL'/>
+<retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='isUserDefined'>
-<retval type='B' declared_type='BOOL'/>
+<retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='number'>
-<retval type='f' declared_type='CGFloat'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 <method selector='points'>
-<retval type='@' declared_type='PXDimension*'/>
+<retval declared_type='PXDimension*' type='@'/>
 </method>
 <method selector='radians'>
-<retval type='@' declared_type='PXDimension*'/>
+<retval declared_type='PXDimension*' type='@'/>
 </method>
 <method selector='type'>
-<retval type='i' declared_type='PXDimensionType'/>
+<retval declared_type='PXDimensionType' type='i'/>
 </method>
 </class>
 <class name='PXEllipse'>
 <method selector='center'>
-<retval type='{CGPoint=ff}' declared_type='CGPoint'/>
+<retval declared_type='CGPoint' type64='{CGPoint=dd}' type='{CGPoint=ff}'/>
 </method>
 <method selector='ellipseWithCenter:withRadiusX:withRadiusY:' class_method='true'>
-<arg index='0' type='{CGPoint=ff}' declared_type='CGPoint' name='center'/>
-<arg index='1' type='f' declared_type='CGFloat' name='radiusX'/>
-<arg index='2' type='f' declared_type='CGFloat' name='radiusY'/>
-<retval type='@' declared_type='id'/>
+<arg index='0' declared_type='CGPoint' name='center' type64='{CGPoint=dd}' type='{CGPoint=ff}'/>
+<arg index='1' declared_type='CGFloat' name='radiusX' type64='d' type='f'/>
+<arg index='2' declared_type='CGFloat' name='radiusY' type64='d' type='f'/>
+<retval declared_type='id' type='@'/>
 </method>
 <method selector='initCenter:radiusX:radiusY:'>
-<arg index='0' type='{CGPoint=ff}' declared_type='CGPoint' name='center'/>
-<arg index='1' type='f' declared_type='CGFloat' name='radiusX'/>
-<arg index='2' type='f' declared_type='CGFloat' name='radiusY'/>
-<retval type='@' declared_type='id'/>
+<arg index='0' declared_type='CGPoint' name='center' type64='{CGPoint=dd}' type='{CGPoint=ff}'/>
+<arg index='1' declared_type='CGFloat' name='radiusX' type64='d' type='f'/>
+<arg index='2' declared_type='CGFloat' name='radiusY' type64='d' type='f'/>
+<retval declared_type='id' type='@'/>
 </method>
 <method selector='radiusX'>
-<retval type='f' declared_type='CGFloat'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 <method selector='radiusY'>
-<retval type='f' declared_type='CGFloat'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 <method selector='setCenter:'>
-<arg index='0' type='{CGPoint=ff}' declared_type='CGPoint' name='center'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGPoint' name='center' type64='{CGPoint=dd}' type='{CGPoint=ff}'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setRadiusX:'>
-<arg index='0' type='f' declared_type='CGFloat' name='radiusX'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGFloat' name='radiusX' type64='d' type='f'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setRadiusY:'>
-<arg index='0' type='f' declared_type='CGFloat' name='radiusY'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGFloat' name='radiusY' type64='d' type='f'/>
+<retval declared_type='void' type='v'/>
 </method>
 </class>
 <class name='PXGradient'>
 <method selector='addColor:'>
-<arg index='0' type='@' declared_type='UIColor*' name='color'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='UIColor*' name='color' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='addColor:withOffset:'>
-<arg index='0' type='@' declared_type='UIColor*' name='color'/>
-<arg index='1' type='f' declared_type='CGFloat' name='offset'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='UIColor*' name='color' type='@'/>
+<arg index='1' declared_type='CGFloat' name='offset' type64='d' type='f'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='colors'>
-<retval type='@' declared_type='NSMutableArray*'/>
+<retval declared_type='NSMutableArray*' type='@'/>
 </method>
 <method selector='gradient'>
-<retval type='^{CGGradient=}' declared_type='CGGradientRef'/>
+<retval declared_type='CGGradientRef' type='^{CGGradient=}'/>
+</method>
+<method selector='gradientUnits'>
+<retval declared_type='PXGradientUnits' type='i'/>
 </method>
 <method selector='offsets'>
-<retval type='@' declared_type='NSMutableArray*'/>
+<retval declared_type='NSMutableArray*' type='@'/>
 </method>
 <method selector='setColors:'>
-<arg index='0' type='@' declared_type='NSMutableArray*' name='colors'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='NSMutableArray*' name='colors' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setGradientUnits:'>
+<arg index='0' declared_type='PXGradientUnits' name='gradientUnits' type='i'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setOffsets:'>
-<arg index='0' type='@' declared_type='NSMutableArray*' name='offsets'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='NSMutableArray*' name='offsets' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setTransform:'>
-<arg index='0' type='{CGAffineTransform=ffffff}' declared_type='CGAffineTransform' name='transform'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGAffineTransform' name='transform' type64='{CGAffineTransform=dddddd}' type='{CGAffineTransform=ffffff}'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='transform'>
-<retval type='{CGAffineTransform=ffffff}' declared_type='CGAffineTransform'/>
+<retval declared_type='CGAffineTransform' type64='{CGAffineTransform=dddddd}' type='{CGAffineTransform=ffffff}'/>
 </method>
 </class>
 <class name='PXLine'>
 <method selector='initX1:y1:x2:y2:'>
-<arg index='0' type='f' declared_type='CGFloat' name='x1'/>
-<arg index='1' type='f' declared_type='CGFloat' name='y1'/>
-<arg index='2' type='f' declared_type='CGFloat' name='x2'/>
-<arg index='3' type='f' declared_type='CGFloat' name='y2'/>
-<retval type='@' declared_type='id'/>
+<arg index='0' declared_type='CGFloat' name='x1' type64='d' type='f'/>
+<arg index='1' declared_type='CGFloat' name='y1' type64='d' type='f'/>
+<arg index='2' declared_type='CGFloat' name='x2' type64='d' type='f'/>
+<arg index='3' declared_type='CGFloat' name='y2' type64='d' type='f'/>
+<retval declared_type='id' type='@'/>
 </method>
 <method selector='p1'>
-<retval type='{CGPoint=ff}' declared_type='CGPoint'/>
+<retval declared_type='CGPoint' type64='{CGPoint=dd}' type='{CGPoint=ff}'/>
 </method>
 <method selector='p2'>
-<retval type='{CGPoint=ff}' declared_type='CGPoint'/>
+<retval declared_type='CGPoint' type64='{CGPoint=dd}' type='{CGPoint=ff}'/>
 </method>
 <method selector='setP1:'>
-<arg index='0' type='{CGPoint=ff}' declared_type='CGPoint' name='p1'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGPoint' name='p1' type64='{CGPoint=dd}' type='{CGPoint=ff}'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setP2:'>
-<arg index='0' type='{CGPoint=ff}' declared_type='CGPoint' name='p2'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGPoint' name='p2' type64='{CGPoint=dd}' type='{CGPoint=ff}'/>
+<retval declared_type='void' type='v'/>
 </method>
 </class>
 <class name='PXLinearGradient'>
 <method selector='angle'>
-<retval type='f' declared_type='CGFloat'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 <method selector='cssAngle'>
-<retval type='f' declared_type='CGFloat'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 <method selector='gradientDirection'>
-<retval type='i' declared_type='PXLinearGradientDirection'/>
+<retval declared_type='PXLinearGradientDirection' type='i'/>
 </method>
 <method selector='gradientFromStartColor:endColor:' class_method='true'>
-<arg index='0' type='@' declared_type='UIColor*' name='startColor'/>
-<arg index='1' type='@' declared_type='UIColor*' name='endColor'/>
-<retval type='@' declared_type='PXLinearGradient*'/>
+<arg index='0' declared_type='UIColor*' name='startColor' type='@'/>
+<arg index='1' declared_type='UIColor*' name='endColor' type='@'/>
+<retval declared_type='PXLinearGradient*' type='@'/>
 </method>
 <method selector='p1'>
-<retval type='{CGPoint=ff}' declared_type='CGPoint'/>
+<retval declared_type='CGPoint' type64='{CGPoint=dd}' type='{CGPoint=ff}'/>
 </method>
 <method selector='p2'>
-<retval type='{CGPoint=ff}' declared_type='CGPoint'/>
+<retval declared_type='CGPoint' type64='{CGPoint=dd}' type='{CGPoint=ff}'/>
 </method>
 <method selector='psAngle'>
-<retval type='f' declared_type='CGFloat'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 <method selector='setAngle:'>
-<arg index='0' type='f' declared_type='CGFloat' name='angle'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGFloat' name='angle' type64='d' type='f'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setCssAngle:'>
-<arg index='0' type='f' declared_type='CGFloat' name='cssAngle'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGFloat' name='cssAngle' type64='d' type='f'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setGradientDirection:'>
-<arg index='0' type='i' declared_type='PXLinearGradientDirection' name='gradientDirection'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='PXLinearGradientDirection' name='gradientDirection' type='i'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setP1:'>
-<arg index='0' type='{CGPoint=ff}' declared_type='CGPoint' name='p1'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGPoint' name='p1' type64='{CGPoint=dd}' type='{CGPoint=ff}'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setP2:'>
-<arg index='0' type='{CGPoint=ff}' declared_type='CGPoint' name='p2'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGPoint' name='p2' type64='{CGPoint=dd}' type='{CGPoint=ff}'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setPsAngle:'>
-<arg index='0' type='f' declared_type='CGFloat' name='psAngle'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGFloat' name='psAngle' type64='d' type='f'/>
+<retval declared_type='void' type='v'/>
 </method>
 </class>
 <class name='PXOffsets'>
 <method selector='bottom'>
-<retval type='f' declared_type='CGFloat'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 <method selector='hasOffset'>
-<retval type='B' declared_type='BOOL'/>
+<retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='initWithTop:right:bottom:left:'>
-<arg index='0' type='f' declared_type='CGFloat' name='top'/>
-<arg index='1' type='f' declared_type='CGFloat' name='right'/>
-<arg index='2' type='f' declared_type='CGFloat' name='bottom'/>
-<arg index='3' type='f' declared_type='CGFloat' name='left'/>
-<retval type='@' declared_type='id'/>
+<arg index='0' declared_type='CGFloat' name='top' type64='d' type='f'/>
+<arg index='1' declared_type='CGFloat' name='right' type64='d' type='f'/>
+<arg index='2' declared_type='CGFloat' name='bottom' type64='d' type='f'/>
+<arg index='3' declared_type='CGFloat' name='left' type64='d' type='f'/>
+<retval declared_type='id' type='@'/>
 </method>
 <method selector='left'>
-<retval type='f' declared_type='CGFloat'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 <method selector='right'>
-<retval type='f' declared_type='CGFloat'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 <method selector='top'>
-<retval type='f' declared_type='CGFloat'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 </class>
 <class name='PXPaintGroup'>
 <method selector='addPaint:'>
-<arg index='0' type='@' declared_type='id' name='paint'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='id' name='paint' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='initWithPaints:'>
-<arg index='0' type='@' declared_type='NSArray*' name='paints'/>
-<retval type='@' declared_type='id'/>
+<arg index='0' declared_type='NSArray*' name='paints' type='@'/>
+<retval declared_type='id' type='@'/>
 </method>
 <method selector='paints'>
-<retval type='@' declared_type='NSArray*'/>
+<retval declared_type='NSArray*' type='@'/>
 </method>
 </class>
 <class name='PXPath'>
 <method selector='close'>
-<retval type='v' declared_type='void'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='createPathFromPathData:' class_method='true'>
-<arg index='0' type='@' declared_type='NSString*' name='data'/>
-<retval type='@' declared_type='PXPath*'/>
+<arg index='0' declared_type='NSString*' name='data' type='@'/>
+<retval declared_type='PXPath*' type='@'/>
 </method>
 <method selector='cubicBezierToX1:y1:x2:y2:x3:y3:'>
-<arg index='0' type='f' declared_type='CGFloat' name='x1'/>
-<arg index='1' type='f' declared_type='CGFloat' name='y1'/>
-<arg index='2' type='f' declared_type='CGFloat' name='x2'/>
-<arg index='3' type='f' declared_type='CGFloat' name='y2'/>
-<arg index='4' type='f' declared_type='CGFloat' name='x3'/>
-<arg index='5' type='f' declared_type='CGFloat' name='y3'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGFloat' name='x1' type64='d' type='f'/>
+<arg index='1' declared_type='CGFloat' name='y1' type64='d' type='f'/>
+<arg index='2' declared_type='CGFloat' name='x2' type64='d' type='f'/>
+<arg index='3' declared_type='CGFloat' name='y2' type64='d' type='f'/>
+<arg index='4' declared_type='CGFloat' name='x3' type64='d' type='f'/>
+<arg index='5' declared_type='CGFloat' name='y3' type64='d' type='f'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='ellipticalArcX:y:radiusX:radiusY:startAngle:endAngle:'>
-<arg index='0' type='f' declared_type='CGFloat' name='x'/>
-<arg index='1' type='f' declared_type='CGFloat' name='y'/>
-<arg index='2' type='f' declared_type='CGFloat' name='radiusX'/>
-<arg index='3' type='f' declared_type='CGFloat' name='radiusY'/>
-<arg index='4' type='f' declared_type='CGFloat' name='startAngle'/>
-<arg index='5' type='f' declared_type='CGFloat' name='endAngle'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGFloat' name='x' type64='d' type='f'/>
+<arg index='1' declared_type='CGFloat' name='y' type64='d' type='f'/>
+<arg index='2' declared_type='CGFloat' name='radiusX' type64='d' type='f'/>
+<arg index='3' declared_type='CGFloat' name='radiusY' type64='d' type='f'/>
+<arg index='4' declared_type='CGFloat' name='startAngle' type64='d' type='f'/>
+<arg index='5' declared_type='CGFloat' name='endAngle' type64='d' type='f'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='lineToX:y:'>
-<arg index='0' type='f' declared_type='CGFloat' name='x'/>
-<arg index='1' type='f' declared_type='CGFloat' name='y'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGFloat' name='x' type64='d' type='f'/>
+<arg index='1' declared_type='CGFloat' name='y' type64='d' type='f'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='moveToX:y:'>
-<arg index='0' type='f' declared_type='CGFloat' name='x'/>
-<arg index='1' type='f' declared_type='CGFloat' name='y'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGFloat' name='x' type64='d' type='f'/>
+<arg index='1' declared_type='CGFloat' name='y' type64='d' type='f'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='quadraticBezierToX1:y1:x2:y2:'>
-<arg index='0' type='f' declared_type='CGFloat' name='x1'/>
-<arg index='1' type='f' declared_type='CGFloat' name='y1'/>
-<arg index='2' type='f' declared_type='CGFloat' name='x2'/>
-<arg index='3' type='f' declared_type='CGFloat' name='y2'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGFloat' name='x1' type64='d' type='f'/>
+<arg index='1' declared_type='CGFloat' name='y1' type64='d' type='f'/>
+<arg index='2' declared_type='CGFloat' name='x2' type64='d' type='f'/>
+<arg index='3' declared_type='CGFloat' name='y2' type64='d' type='f'/>
+<retval declared_type='void' type='v'/>
 </method>
 </class>
 <class name='PXPolygon'>
 <method selector='closed'>
-<retval type='B' declared_type='BOOL'/>
+<retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='initWithPoints:'>
-<arg index='0' type='@' declared_type='NSArray*' name='points'/>
-<retval type='@' declared_type='id'/>
+<arg index='0' declared_type='NSArray*' name='points' type='@'/>
+<retval declared_type='id' type='@'/>
 </method>
 <method selector='points'>
-<retval type='@' declared_type='NSArray*'/>
+<retval declared_type='NSArray*' type='@'/>
 </method>
 <method selector='setClosed:'>
-<arg index='0' type='B' declared_type='BOOL' name='closed'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='BOOL' name='closed' type='B'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setPoints:'>
-<arg index='0' type='@' declared_type='NSArray*' name='points'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='NSArray*' name='points' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 </class>
 <class name='PXRadialGradient'>
 <method selector='endCenter'>
-<retval type='{CGPoint=ff}' declared_type='CGPoint'/>
+<retval declared_type='CGPoint' type64='{CGPoint=dd}' type='{CGPoint=ff}'/>
 </method>
 <method selector='radius'>
-<retval type='f' declared_type='CGFloat'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 <method selector='setEndCenter:'>
-<arg index='0' type='{CGPoint=ff}' declared_type='CGPoint' name='endCenter'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGPoint' name='endCenter' type64='{CGPoint=dd}' type='{CGPoint=ff}'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setRadius:'>
-<arg index='0' type='f' declared_type='CGFloat' name='radius'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGFloat' name='radius' type64='d' type='f'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setStartCenter:'>
-<arg index='0' type='{CGPoint=ff}' declared_type='CGPoint' name='startCenter'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGPoint' name='startCenter' type64='{CGPoint=dd}' type='{CGPoint=ff}'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='startCenter'>
-<retval type='{CGPoint=ff}' declared_type='CGPoint'/>
+<retval declared_type='CGPoint' type64='{CGPoint=dd}' type='{CGPoint=ff}'/>
 </method>
 </class>
 <class name='PXRectangle'>
 <method selector='hasRoundedCorners'>
-<retval type='B' declared_type='BOOL'/>
+<retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='height'>
-<retval type='f' declared_type='CGFloat'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 <method selector='initWithRect:'>
-<arg index='0' type='{CGRect={CGPoint=ff}{CGSize=ff}}' declared_type='CGRect' name='bounds'/>
-<retval type='@' declared_type='id'/>
+<arg index='0' declared_type='CGRect' name='bounds' type64='{CGRect={CGPoint=dd}{CGSize=dd}}' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+<retval declared_type='id' type='@'/>
 </method>
 <method selector='radiusBottomLeft'>
-<retval type='{CGSize=ff}' declared_type='CGSize'/>
+<retval declared_type='CGSize' type64='{CGSize=dd}' type='{CGSize=ff}'/>
 </method>
 <method selector='radiusBottomRight'>
-<retval type='{CGSize=ff}' declared_type='CGSize'/>
+<retval declared_type='CGSize' type64='{CGSize=dd}' type='{CGSize=ff}'/>
 </method>
 <method selector='radiusTopLeft'>
-<retval type='{CGSize=ff}' declared_type='CGSize'/>
+<retval declared_type='CGSize' type64='{CGSize=dd}' type='{CGSize=ff}'/>
 </method>
 <method selector='radiusTopRight'>
-<retval type='{CGSize=ff}' declared_type='CGSize'/>
+<retval declared_type='CGSize' type64='{CGSize=dd}' type='{CGSize=ff}'/>
 </method>
 <method selector='setCornerRadii:'>
-<arg index='0' type='{CGSize=ff}' declared_type='CGSize' name='radii'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGSize' name='radii' type64='{CGSize=dd}' type='{CGSize=ff}'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setCornerRadius:'>
-<arg index='0' type='f' declared_type='CGFloat' name='radius'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGFloat' name='radius' type64='d' type='f'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setHeight:'>
-<arg index='0' type='f' declared_type='CGFloat' name='height'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGFloat' name='height' type64='d' type='f'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setRadiusBottomLeft:'>
-<arg index='0' type='{CGSize=ff}' declared_type='CGSize' name='radiusBottomLeft'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGSize' name='radiusBottomLeft' type64='{CGSize=dd}' type='{CGSize=ff}'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setRadiusBottomRight:'>
-<arg index='0' type='{CGSize=ff}' declared_type='CGSize' name='radiusBottomRight'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGSize' name='radiusBottomRight' type64='{CGSize=dd}' type='{CGSize=ff}'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setRadiusTopLeft:'>
-<arg index='0' type='{CGSize=ff}' declared_type='CGSize' name='radiusTopLeft'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGSize' name='radiusTopLeft' type64='{CGSize=dd}' type='{CGSize=ff}'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setRadiusTopRight:'>
-<arg index='0' type='{CGSize=ff}' declared_type='CGSize' name='radiusTopRight'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGSize' name='radiusTopRight' type64='{CGSize=dd}' type='{CGSize=ff}'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setSize:'>
-<arg index='0' type='{CGSize=ff}' declared_type='CGSize' name='size'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGSize' name='size' type64='{CGSize=dd}' type='{CGSize=ff}'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setWidth:'>
-<arg index='0' type='f' declared_type='CGFloat' name='width'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGFloat' name='width' type64='d' type='f'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setX:'>
-<arg index='0' type='f' declared_type='CGFloat' name='x'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGFloat' name='x' type64='d' type='f'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setY:'>
-<arg index='0' type='f' declared_type='CGFloat' name='y'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGFloat' name='y' type64='d' type='f'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='size'>
-<retval type='{CGSize=ff}' declared_type='CGSize'/>
+<retval declared_type='CGSize' type64='{CGSize=dd}' type='{CGSize=ff}'/>
 </method>
 <method selector='width'>
-<retval type='f' declared_type='CGFloat'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 <method selector='x'>
-<retval type='f' declared_type='CGFloat'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 <method selector='y'>
-<retval type='f' declared_type='CGFloat'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 </class>
 <class name='PXSVGLoader'>
 <method selector='URL'>
-<retval type='@' declared_type='NSURL*'/>
-</method>
-<method selector='addEndSelector:forElement:'>
-<arg index='0' type=':' declared_type='SEL' name='selector'/>
-<arg index='1' type='@' declared_type='NSString*' name='elementName'/>
-<retval type='v' declared_type='void'/>
+<retval declared_type='NSURL*' type='@'/>
 </method>
 <method selector='addShape:'>
-<arg index='0' type='@' declared_type='PXShape*' name='shape'/>
-<retval type='v' declared_type='void'/>
-</method>
-<method selector='addStartSelector:forElement:'>
-<arg index='0' type=':' declared_type='SEL' name='selector'/>
-<arg index='1' type='@' declared_type='NSString*' name='elementName'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='PXShape*' name='shape' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='applyStyles:forShape:'>
-<arg index='0' type='@' declared_type='NSDictionary*' name='attributeDict'/>
-<arg index='1' type='@' declared_type='PXShape*' name='shape'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='NSDictionary*' name='attributeDict' type='@'/>
+<arg index='1' declared_type='PXShape*' name='shape' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='loadFromURL:' class_method='true'>
-<arg index='0' type='@' declared_type='NSURL*' name='URL'/>
-<retval type='@' declared_type='PXShapeDocument*'/>
+<arg index='0' declared_type='NSURL*' name='URL' type='@'/>
+<retval declared_type='PXShapeDocument*' type='@'/>
 </method>
 <method selector='loaderClass' class_method='true'>
-<retval type='#' declared_type='Class'/>
+<retval declared_type='Class' type='#'/>
 </method>
 <method selector='numberFromString:'>
-<arg index='0' type='@' declared_type='NSString*' name='attributeValue'/>
-<retval type='f' declared_type='CGFloat'/>
+<arg index='0' declared_type='NSString*' name='attributeValue' type='@'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 <method selector='setLoaderClass:' class_method='true'>
-<arg index='0' type='#' declared_type='Class' name='class'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='Class' name='class' type='#'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setURL:'>
-<arg index='0' type='@' declared_type='NSURL*' name='URL'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='NSURL*' name='URL' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 </class>
 <class name='PXShadow'>
 <method selector='blendMode'>
-<retval type='i' declared_type='CGBlendMode'/>
+<retval declared_type='CGBlendMode' type='i'/>
 </method>
 <method selector='blurDistance'>
-<retval type='f' declared_type='CGFloat'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 <method selector='color'>
-<retval type='@' declared_type='UIColor*'/>
+<retval declared_type='UIColor*' type='@'/>
 </method>
 <method selector='horizontalOffset'>
-<retval type='f' declared_type='CGFloat'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 <method selector='inset'>
-<retval type='B' declared_type='BOOL'/>
+<retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='setBlendMode:'>
-<arg index='0' type='i' declared_type='CGBlendMode' name='blendMode'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGBlendMode' name='blendMode' type='i'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setBlurDistance:'>
-<arg index='0' type='f' declared_type='CGFloat' name='blurDistance'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGFloat' name='blurDistance' type64='d' type='f'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setColor:'>
-<arg index='0' type='@' declared_type='UIColor*' name='color'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='UIColor*' name='color' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setHorizontalOffset:'>
-<arg index='0' type='f' declared_type='CGFloat' name='horizontalOffset'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGFloat' name='horizontalOffset' type64='d' type='f'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setInset:'>
-<arg index='0' type='B' declared_type='BOOL' name='inset'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='BOOL' name='inset' type='B'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setSpreadDistance:'>
-<arg index='0' type='f' declared_type='CGFloat' name='spreadDistance'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGFloat' name='spreadDistance' type64='d' type='f'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setVerticalOffset:'>
-<arg index='0' type='f' declared_type='CGFloat' name='verticalOffset'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGFloat' name='verticalOffset' type64='d' type='f'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='spreadDistance'>
-<retval type='f' declared_type='CGFloat'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 <method selector='verticalOffset'>
-<retval type='f' declared_type='CGFloat'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 </class>
 <class name='PXShadowGroup'>
 <method selector='addShadowPaint:'>
-<arg index='0' type='@' declared_type='id' name='shadow'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='id' name='shadow' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='count'>
-<retval type='I' declared_type='NSUInteger'/>
+<retval declared_type='NSUInteger' type64='Q' type='I'/>
 </method>
 <method selector='shadows'>
-<retval type='@' declared_type='NSArray*'/>
+<retval declared_type='NSArray*' type='@'/>
 </method>
 </class>
 <class name='PXShape'>
 <method selector='clearPath'>
-<retval type='v' declared_type='void'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='newPath'>
-<retval type='^{CGPath=}' declared_type='CGPathRef'/>
+<retval declared_type='CGPathRef' type='^{CGPath=}'/>
 </method>
 <method selector='owningDocument'>
-<retval type='@' declared_type='PXShapeDocument*'/>
+<retval declared_type='PXShapeDocument*' type='@'/>
 </method>
 <method selector='path'>
-<retval type='^{CGPath=}' declared_type='CGPathRef'/>
+<retval declared_type='CGPathRef' type='^{CGPath=}'/>
 </method>
 <method selector='renderChildren:'>
-<arg index='0' type='^{CGContext=}' declared_type='CGContextRef' name='context'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setNeedsDisplay'>
-<retval type='v' declared_type='void'/>
+<retval declared_type='void' type='v'/>
 </method>
 </class>
 <class name='PXShapeDocument'>
 <method selector='addShape:forName:'>
-<arg index='0' type='@' declared_type='id' name='shape'/>
-<arg index='1' type='@' declared_type='NSString*' name='name'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='id' name='shape' type='@'/>
+<arg index='1' declared_type='NSString*' name='name' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='bounds'>
-<retval type='{CGRect={CGPoint=ff}{CGSize=ff}}' declared_type='CGRect'/>
+<retval declared_type='CGRect' type64='{CGRect={CGPoint=dd}{CGSize=dd}}' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
 </method>
 <method selector='parentView'>
-<retval type='@' declared_type='PXShapeView*'/>
+<retval declared_type='PXShapeView*' type='@'/>
 </method>
 <method selector='setBounds:'>
-<arg index='0' type='{CGRect={CGPoint=ff}{CGSize=ff}}' declared_type='CGRect' name='bounds'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGRect' name='bounds' type64='{CGRect={CGPoint=dd}{CGSize=dd}}' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setParentView:'>
-<arg index='0' type='@' declared_type='PXShapeView*' name='parentView'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='PXShapeView*' name='parentView' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setShape:'>
-<arg index='0' type='@' declared_type='id' name='shape'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='id' name='shape' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='shape'>
-<retval type='@' declared_type='id'/>
+<retval declared_type='id' type='@'/>
 </method>
 <method selector='shapeForName:'>
-<arg index='0' type='@' declared_type='NSString*' name='name'/>
-<retval type='@' declared_type='id'/>
+<arg index='0' declared_type='NSString*' name='name' type='@'/>
+<retval declared_type='id' type='@'/>
 </method>
 </class>
 <class name='PXShapeGroup'>
 <method selector='addShape:'>
-<arg index='0' type='@' declared_type='id' name='shape'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='id' name='shape' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='height'>
-<retval type='f' declared_type='CGFloat'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 <method selector='removeShape:'>
-<arg index='0' type='@' declared_type='id' name='shape'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='id' name='shape' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setHeight:'>
-<arg index='0' type='f' declared_type='CGFloat' name='height'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGFloat' name='height' type64='d' type='f'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setViewport:'>
-<arg index='0' type='{CGRect={CGPoint=ff}{CGSize=ff}}' declared_type='CGRect' name='viewport'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGRect' name='viewport' type64='{CGRect={CGPoint=dd}{CGSize=dd}}' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setViewportAlignment:'>
-<arg index='0' type='i' declared_type='AlignViewPortType' name='viewportAlignment'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='AlignViewPortType' name='viewportAlignment' type='i'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setViewportCrop:'>
-<arg index='0' type='i' declared_type='CropType' name='viewportCrop'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CropType' name='viewportCrop' type='i'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setWidth:'>
-<arg index='0' type='f' declared_type='CGFloat' name='width'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGFloat' name='width' type64='d' type='f'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='shapeAtIndex:'>
-<arg index='0' type='I' declared_type='NSUInteger' name='index'/>
-<retval type='@' declared_type='id'/>
+<arg index='0' declared_type='NSUInteger' name='index' type64='Q' type='I'/>
+<retval declared_type='id' type='@'/>
 </method>
 <method selector='shapeCount'>
-<retval type='I' declared_type='NSUInteger'/>
+<retval declared_type='NSUInteger' type64='Q' type='I'/>
 </method>
 <method selector='viewPortTransform'>
-<retval type='{CGAffineTransform=ffffff}' declared_type='CGAffineTransform'/>
+<retval declared_type='CGAffineTransform' type64='{CGAffineTransform=dddddd}' type='{CGAffineTransform=ffffff}'/>
 </method>
 <method selector='viewport'>
-<retval type='{CGRect={CGPoint=ff}{CGSize=ff}}' declared_type='CGRect'/>
+<retval declared_type='CGRect' type64='{CGRect={CGPoint=dd}{CGSize=dd}}' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
 </method>
 <method selector='viewportAlignment'>
-<retval type='i' declared_type='AlignViewPortType'/>
+<retval declared_type='AlignViewPortType' type='i'/>
 </method>
 <method selector='viewportCrop'>
-<retval type='i' declared_type='CropType'/>
+<retval declared_type='CropType' type='i'/>
 </method>
 <method selector='width'>
-<retval type='f' declared_type='CGFloat'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 </class>
 <class name='PXShapeView'>
 <method selector='applyBoundsToScene'>
-<retval type='v' declared_type='void'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='document'>
-<retval type='@' declared_type='PXShapeDocument*'/>
+<retval declared_type='PXShapeDocument*' type='@'/>
 </method>
 <method selector='loadSceneFromURL:'>
-<arg index='0' type='@' declared_type='NSURL*' name='URL'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='NSURL*' name='URL' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='renderToImage'>
-<retval type='@' declared_type='UIImage*'/>
+<retval declared_type='UIImage*' type='@'/>
 </method>
 <method selector='resourcePath'>
-<retval type='@' declared_type='NSString*'/>
+<retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='setDocument:'>
-<arg index='0' type='@' declared_type='PXShapeDocument*' name='document'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='PXShapeDocument*' name='document' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setResourcePath:'>
-<arg index='0' type='@' declared_type='NSString*' name='resourcePath'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='NSString*' name='resourcePath' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 </class>
 <class name='PXSolidPaint'>
 <method selector='color'>
-<retval type='@' declared_type='UIColor*'/>
+<retval declared_type='UIColor*' type='@'/>
 </method>
 <method selector='initWithColor:'>
-<arg index='0' type='@' declared_type='UIColor*' name='color'/>
-<retval type='@' declared_type='id'/>
+<arg index='0' declared_type='UIColor*' name='color' type='@'/>
+<retval declared_type='id' type='@'/>
 </method>
 <method selector='paintWithColor:' class_method='true'>
-<arg index='0' type='@' declared_type='UIColor*' name='color'/>
-<retval type='@' declared_type='id'/>
+<arg index='0' declared_type='UIColor*' name='color' type='@'/>
+<retval declared_type='id' type='@'/>
 </method>
 <method selector='setColor:'>
-<arg index='0' type='@' declared_type='UIColor*' name='color'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='UIColor*' name='color' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 </class>
 <class name='PXStroke'>
 <method selector='color'>
-<retval type='@' declared_type='id'/>
+<retval declared_type='id' type='@'/>
 </method>
 <method selector='dashArray'>
-<retval type='@' declared_type='NSArray*'/>
+<retval declared_type='NSArray*' type='@'/>
 </method>
 <method selector='dashOffset'>
-<retval type='f' declared_type='CGFloat'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 <method selector='initWithStrokeWidth:'>
-<arg index='0' type='f' declared_type='CGFloat' name='width'/>
-<retval type='@' declared_type='id'/>
+<arg index='0' declared_type='CGFloat' name='width' type64='d' type='f'/>
+<retval declared_type='id' type='@'/>
 </method>
 <method selector='lineCap'>
-<retval type='i' declared_type='CGLineCap'/>
+<retval declared_type='CGLineCap' type='i'/>
 </method>
 <method selector='lineJoin'>
-<retval type='i' declared_type='CGLineJoin'/>
+<retval declared_type='CGLineJoin' type='i'/>
 </method>
 <method selector='miterLimit'>
-<retval type='f' declared_type='CGFloat'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 <method selector='newStrokedPath:'>
-<arg index='0' type='^{CGPath=}' declared_type='CGPathRef' name='path'/>
-<retval type='^{CGPath=}' declared_type='CGPathRef'/>
+<arg index='0' declared_type='CGPathRef' name='path' type='^{CGPath=}'/>
+<retval declared_type='CGPathRef' type='^{CGPath=}'/>
 </method>
 <method selector='setColor:'>
-<arg index='0' type='@' declared_type='id' name='color'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='id' name='color' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setDashArray:'>
-<arg index='0' type='@' declared_type='NSArray*' name='dashArray'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='NSArray*' name='dashArray' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setDashOffset:'>
-<arg index='0' type='f' declared_type='CGFloat' name='dashOffset'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGFloat' name='dashOffset' type64='d' type='f'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setLineCap:'>
-<arg index='0' type='i' declared_type='CGLineCap' name='lineCap'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGLineCap' name='lineCap' type='i'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setLineJoin:'>
-<arg index='0' type='i' declared_type='CGLineJoin' name='lineJoin'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGLineJoin' name='lineJoin' type='i'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setMiterLimit:'>
-<arg index='0' type='f' declared_type='CGFloat' name='miterLimit'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGFloat' name='miterLimit' type64='d' type='f'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setType:'>
-<arg index='0' type='i' declared_type='PXStrokeType' name='type'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='PXStrokeType' name='type' type='i'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setWidth:'>
-<arg index='0' type='f' declared_type='CGFloat' name='width'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='CGFloat' name='width' type64='d' type='f'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='type'>
-<retval type='i' declared_type='PXStrokeType'/>
+<retval declared_type='PXStrokeType' type='i'/>
 </method>
 <method selector='width'>
-<retval type='f' declared_type='CGFloat'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 </class>
 <class name='PXStrokeGroup'>
 <method selector='addStroke:'>
-<arg index='0' type='@' declared_type='id' name='stroke'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='id' name='stroke' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 </class>
 <class name='PXStrokeStroke'>
 <method selector='setStrokeEffect:'>
-<arg index='0' type='@' declared_type='PXStroke*' name='strokeEffect'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='PXStroke*' name='strokeEffect' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setStrokeToApply:'>
-<arg index='0' type='@' declared_type='id' name='strokeToApply'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='id' name='strokeToApply' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='strokeEffect'>
-<retval type='@' declared_type='PXStroke*'/>
+<retval declared_type='PXStroke*' type='@'/>
 </method>
 <method selector='strokeToApply'>
-<retval type='@' declared_type='id'/>
+<retval declared_type='id' type='@'/>
 </method>
 </class>
 <class name='PXStylesheet'>
 <method selector='errors'>
-<retval type='@' declared_type='NSArray*'/>
+<retval declared_type='NSArray*' type='@'/>
 </method>
 <method selector='filePath'>
-<retval type='@' declared_type='NSString*'/>
+<retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='monitorChanges'>
-<retval type='B' declared_type='BOOL'/>
+<retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='origin'>
-<retval type='i' declared_type='PXStylesheetOrigin'/>
+<retval declared_type='PXStylesheetOrigin' type='i'/>
 </method>
 <method selector='setErrors:'>
-<arg index='0' type='@' declared_type='NSArray*' name='errors'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='NSArray*' name='errors' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setFilePath:'>
-<arg index='0' type='@' declared_type='NSString*' name='filePath'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='NSString*' name='filePath' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setMonitorChanges:'>
-<arg index='0' type='B' declared_type='BOOL' name='monitorChanges'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='BOOL' name='monitorChanges' type='B'/>
+<retval declared_type='void' type='v'/>
 </method>
 </class>
 <class name='PXVector'>
 <method selector='add:'>
-<arg index='0' type='@' declared_type='PXVector*' name='vector'/>
-<retval type='@' declared_type='PXVector*'/>
+<arg index='0' declared_type='PXVector*' name='vector' type='@'/>
+<retval declared_type='PXVector*' type='@'/>
 </method>
 <method selector='angle'>
-<retval type='f' declared_type='CGFloat'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 <method selector='angleBetweenVector:'>
-<arg index='0' type='@' declared_type='PXVector*' name='vector'/>
-<retval type='f' declared_type='CGFloat'/>
+<arg index='0' declared_type='PXVector*' name='vector' type='@'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 <method selector='cross:'>
-<arg index='0' type='@' declared_type='PXVector*' name='vector'/>
-<retval type='f' declared_type='CGFloat'/>
+<arg index='0' declared_type='PXVector*' name='vector' type='@'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 <method selector='divide:'>
-<arg index='0' type='f' declared_type='CGFloat' name='scalar'/>
-<retval type='@' declared_type='PXVector*'/>
+<arg index='0' declared_type='CGFloat' name='scalar' type64='d' type='f'/>
+<retval declared_type='PXVector*' type='@'/>
 </method>
 <method selector='dot:'>
-<arg index='0' type='@' declared_type='PXVector*' name='vector'/>
-<retval type='f' declared_type='CGFloat'/>
+<arg index='0' declared_type='PXVector*' name='vector' type='@'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 <method selector='initWithX:Y:'>
-<arg index='0' type='f' declared_type='CGFloat' name='x'/>
-<arg index='1' type='f' declared_type='CGFloat' name='y'/>
-<retval type='@' declared_type='id'/>
+<arg index='0' declared_type='CGFloat' name='x' type64='d' type='f'/>
+<arg index='1' declared_type='CGFloat' name='y' type64='d' type='f'/>
+<retval declared_type='id' type='@'/>
 </method>
 <method selector='length'>
-<retval type='f' declared_type='CGFloat'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 <method selector='magnitude'>
-<retval type='f' declared_type='CGFloat'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 <method selector='multiply:'>
-<arg index='0' type='f' declared_type='CGFloat' name='scalar'/>
-<retval type='@' declared_type='PXVector*'/>
+<arg index='0' declared_type='CGFloat' name='scalar' type64='d' type='f'/>
+<retval declared_type='PXVector*' type='@'/>
 </method>
 <method selector='perp'>
-<retval type='@' declared_type='PXVector*'/>
+<retval declared_type='PXVector*' type='@'/>
 </method>
 <method selector='perpendicular:'>
-<arg index='0' type='@' declared_type='PXVector*' name='vector'/>
-<retval type='@' declared_type='PXVector*'/>
+<arg index='0' declared_type='PXVector*' name='vector' type='@'/>
+<retval declared_type='PXVector*' type='@'/>
 </method>
 <method selector='projectOnto:'>
-<arg index='0' type='@' declared_type='PXVector*' name='vector'/>
-<retval type='@' declared_type='PXVector*'/>
+<arg index='0' declared_type='PXVector*' name='vector' type='@'/>
+<retval declared_type='PXVector*' type='@'/>
 </method>
 <method selector='subtract:'>
-<arg index='0' type='@' declared_type='PXVector*' name='vector'/>
-<retval type='@' declared_type='PXVector*'/>
+<arg index='0' declared_type='PXVector*' name='vector' type='@'/>
+<retval declared_type='PXVector*' type='@'/>
 </method>
 <method selector='unit'>
-<retval type='@' declared_type='PXVector*'/>
+<retval declared_type='PXVector*' type='@'/>
 </method>
 <method selector='vectorWithStartPoint:EndPoint:' class_method='true'>
-<arg index='0' type='{CGPoint=ff}' declared_type='CGPoint' name='p1'/>
-<arg index='1' type='{CGPoint=ff}' declared_type='CGPoint' name='p2'/>
-<retval type='@' declared_type='id'/>
+<arg index='0' declared_type='CGPoint' name='p1' type64='{CGPoint=dd}' type='{CGPoint=ff}'/>
+<arg index='1' declared_type='CGPoint' name='p2' type64='{CGPoint=dd}' type='{CGPoint=ff}'/>
+<retval declared_type='id' type='@'/>
 </method>
 <method selector='vectorWithX:Y:' class_method='true'>
-<arg index='0' type='f' declared_type='CGFloat' name='x'/>
-<arg index='1' type='f' declared_type='CGFloat' name='y'/>
-<retval type='@' declared_type='id'/>
+<arg index='0' declared_type='CGFloat' name='x' type64='d' type='f'/>
+<arg index='1' declared_type='CGFloat' name='y' type64='d' type='f'/>
+<retval declared_type='id' type='@'/>
 </method>
 <method selector='x'>
-<retval type='f' declared_type='CGFloat'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 <method selector='y'>
-<retval type='f' declared_type='CGFloat'/>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
 </class>
 <class name='Pixate'>
+<method selector='apiVersion' class_method='true'>
+<retval declared_type='int' type='i'/>
+</method>
 <method selector='applyStylesheets' class_method='true'>
-<retval type='v' declared_type='void'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='buildDate' class_method='true'>
-<retval type='@' declared_type='NSDate*'/>
+<retval declared_type='NSDate*' type='@'/>
+</method>
+<method selector='clearImageCache' class_method='true'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='clearStyleCache' class_method='true'>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='configuration' class_method='true'>
-<retval type='@' declared_type='PixateConfiguration*'/>
+<retval declared_type='PixateConfiguration*' type='@'/>
 </method>
 <method selector='currentApplicationStylesheet' class_method='true'>
-<retval type='@' declared_type='PXStylesheet*'/>
+<retval declared_type='PXStylesheet*' type='@'/>
 </method>
 <method selector='currentUserStylesheet' class_method='true'>
-<retval type='@' declared_type='PXStylesheet*'/>
+<retval declared_type='PXStylesheet*' type='@'/>
 </method>
 <method selector='currentViewStylesheet' class_method='true'>
-<retval type='@' declared_type='PXStylesheet*'/>
+<retval declared_type='PXStylesheet*' type='@'/>
 </method>
 <method selector='licenseEmail' class_method='true'>
-<retval type='@' declared_type='NSString*'/>
+<retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='licenseKey' class_method='true'>
-<retval type='@' declared_type='NSString*'/>
+<retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='licenseKey:forUser:' class_method='true'>
-<arg index='0' type='@' declared_type='NSString*' name='licenseKey'/>
-<arg index='1' type='@' declared_type='NSString*' name='licenseEmail'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='NSString*' name='licenseKey' type='@'/>
+<arg index='1' declared_type='NSString*' name='licenseEmail' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='matchingDeclarationsForStyleable:' class_method='true'>
-<arg index='0' type='@' declared_type='id' name='styleable'/>
-<retval type='@' declared_type='NSString*'/>
+<arg index='0' declared_type='id' name='styleable' type='@'/>
+<retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='matchingRuleSetsForStyleable:' class_method='true'>
-<arg index='0' type='@' declared_type='id' name='styleable'/>
-<retval type='@' declared_type='NSString*'/>
+<arg index='0' declared_type='id' name='styleable' type='@'/>
+<retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='refreshStylesWithOrientationChange' class_method='true'>
-<retval type='B' declared_type='BOOL'/>
+<retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='selectFromStyleable:usingSelector:' class_method='true'>
-<arg index='0' type='@' declared_type='id' name='styleable'/>
-<arg index='1' type='@' declared_type='NSString*' name='source'/>
-<retval type='@' declared_type='NSArray*'/>
+<arg index='0' declared_type='id' name='styleable' type='@'/>
+<arg index='1' declared_type='NSString*' name='source' type='@'/>
+<retval declared_type='NSArray*' type='@'/>
 </method>
 <method selector='setRefreshStylesWithOrientationChange:' class_method='true'>
-<arg index='0' type='B' declared_type='BOOL' name='value'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='BOOL' name='value' type='B'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='styleSheetFromFilePath:withOrigin:' class_method='true'>
-<arg index='0' type='@' declared_type='NSString*' name='filePath'/>
-<arg index='1' type='i' declared_type='PXStylesheetOrigin' name='origin'/>
-<retval type='@' declared_type='id'/>
+<arg index='0' declared_type='NSString*' name='filePath' type='@'/>
+<arg index='1' declared_type='PXStylesheetOrigin' name='origin' type='i'/>
+<retval declared_type='id' type='@'/>
 </method>
 <method selector='styleSheetFromSource:withOrigin:' class_method='true'>
-<arg index='0' type='@' declared_type='NSString*' name='source'/>
-<arg index='1' type='i' declared_type='PXStylesheetOrigin' name='origin'/>
-<retval type='@' declared_type='id'/>
+<arg index='0' declared_type='NSString*' name='source' type='@'/>
+<arg index='1' declared_type='PXStylesheetOrigin' name='origin' type='i'/>
+<retval declared_type='id' type='@'/>
 </method>
 <method selector='titaniumMode' class_method='true'>
-<retval type='B' declared_type='BOOL'/>
+<retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='updateStyles:' class_method='true'>
-<arg index='0' type='@' declared_type='id' name='styleable'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='id' name='styleable' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='updateStylesAsync:' class_method='true'>
-<arg index='0' type='@' declared_type='id' name='styleable'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='id' name='styleable' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='updateStylesForAllViews' class_method='true'>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='updateStylesNonRecursively:' class_method='true'>
-<arg index='0' type='@' declared_type='id' name='styleable'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='id' name='styleable' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='updateStylesNonRecursivelyAsync:' class_method='true'>
-<arg index='0' type='@' declared_type='id' name='styleable'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='id' name='styleable' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='version' class_method='true'>
-<retval type='@' declared_type='NSString*'/>
+<retval declared_type='NSString*' type='@'/>
 </method>
 </class>
 <class name='PixateConfiguration'>
+<method selector='cacheImages'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='cacheStyles'>
+<retval declared_type='BOOL' type='B'/>
+</method>
 <method selector='cacheStylesType'>
-<retval type='i' declared_type='PXCacheStylesType'/>
+<retval declared_type='PXCacheStylesType' type='i'/>
+</method>
+<method selector='imageCacheCount'>
+<retval declared_type='NSUInteger' type64='Q' type='I'/>
+</method>
+<method selector='imageCacheSize'>
+<retval declared_type='NSUInteger' type64='Q' type='I'/>
 </method>
 <method selector='parseErrorDestination'>
-<retval type='i' declared_type='PXParseErrorDestination'/>
+<retval declared_type='PXParseErrorDestination' type='i'/>
+</method>
+<method selector='preventRedundantStyling'>
+<retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='propertyValueForName:'>
-<arg index='0' type='@' declared_type='NSString*' name='name'/>
-<retval type='@' declared_type='id'/>
+<arg index='0' declared_type='NSString*' name='name' type='@'/>
+<retval declared_type='id' type='@'/>
 </method>
 <method selector='sendParseMessage:'>
-<arg index='0' type='@' declared_type='NSString*' name='message'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='NSString*' name='message' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setCacheStylesType:'>
-<arg index='0' type='i' declared_type='PXCacheStylesType' name='cacheStylesType'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='PXCacheStylesType' name='cacheStylesType' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setImageCacheCount:'>
+<arg index='0' declared_type='NSUInteger' name='imageCacheCount' type64='Q' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setImageCacheSize:'>
+<arg index='0' declared_type='NSUInteger' name='imageCacheSize' type64='Q' type='I'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setParseErrorDestination:'>
-<arg index='0' type='i' declared_type='PXParseErrorDestination' name='parseErrorDestination'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='PXParseErrorDestination' name='parseErrorDestination' type='i'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setPropertyValue:forName:'>
-<arg index='0' type='@' declared_type='id' name='value'/>
-<arg index='1' type='@' declared_type='NSString*' name='name'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='id' name='value' type='@'/>
+<arg index='1' declared_type='NSString*' name='name' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setStyleCacheCount:'>
+<arg index='0' declared_type='NSUInteger' name='styleCacheCount' type64='Q' type='I'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setStyleClass:'>
-<arg index='0' type='@' declared_type='NSString*' name='styleClass'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='NSString*' name='styleClass' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setStyleId:'>
-<arg index='0' type='@' declared_type='NSString*' name='styleId'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='NSString*' name='styleId' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
-<method selector='setUpdateStylesType:'>
-<arg index='0' type='i' declared_type='PXUpdateStylesType' name='updateStylesType'/>
-<retval type='v' declared_type='void'/>
+<method selector='setStyleMode:'>
+<arg index='0' declared_type='PXStylingMode' name='styleMode' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='styleCacheCount'>
+<retval declared_type='NSUInteger' type64='Q' type='I'/>
 </method>
 <method selector='styleClass'>
-<retval type='@' declared_type='NSString*'/>
+<retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='styleId'>
-<retval type='@' declared_type='NSString*'/>
+<retval declared_type='NSString*' type='@'/>
 </method>
-<method selector='updateStylesType'>
-<retval type='i' declared_type='PXUpdateStylesType'/>
+<method selector='styleMode'>
+<retval declared_type='PXStylingMode' type='i'/>
 </method>
 </class>
 <class name='UIBarButtonItem'>
+<method selector='pxStyleElementName'>
+<retval declared_type='NSString*' type='@'/>
+</method>
 <method selector='pxStyleParent'>
-<retval type='@' declared_type='id'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='setPxStyleElementName:'>
+<arg index='0' declared_type='NSString*' name='pxStyleElementName' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setPxStyleParent:'>
-<arg index='0' type='@' declared_type='id' name='pxStyleParent'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='id' name='pxStyleParent' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 </class>
 <class name='UIColor'>
 <method selector='colorFromName:' class_method='true'>
-<arg index='0' type='@' declared_type='NSString*' name='name'/>
-<retval type='@' declared_type='UIColor*'/>
+<arg index='0' declared_type='NSString*' name='name' type='@'/>
+<retval declared_type='UIColor*' type='@'/>
 </method>
 <method selector='colorWithARGBValue:' class_method='true'>
-<arg index='0' type='I' declared_type='uint' name='value'/>
-<retval type='@' declared_type='UIColor*'/>
+<arg index='0' declared_type='uint' name='value' type='I'/>
+<retval declared_type='UIColor*' type='@'/>
 </method>
 <method selector='colorWithHexString:' class_method='true'>
-<arg index='0' type='@' declared_type='NSString*' name='hexString'/>
-<retval type='@' declared_type='UIColor*'/>
+<arg index='0' declared_type='NSString*' name='hexString' type='@'/>
+<retval declared_type='UIColor*' type='@'/>
 </method>
 <method selector='colorWithHexString:withAlpha:' class_method='true'>
-<arg index='0' type='@' declared_type='NSString*' name='hexString'/>
-<arg index='1' type='f' declared_type='CGFloat' name='alpha'/>
-<retval type='@' declared_type='UIColor*'/>
+<arg index='0' declared_type='NSString*' name='hexString' type='@'/>
+<arg index='1' declared_type='CGFloat' name='alpha' type64='d' type='f'/>
+<retval declared_type='UIColor*' type='@'/>
 </method>
 <method selector='colorWithHue:saturation:lightness:' class_method='true'>
-<arg index='0' type='f' declared_type='CGFloat' name='hue'/>
-<arg index='1' type='f' declared_type='CGFloat' name='saturation'/>
-<arg index='2' type='f' declared_type='CGFloat' name='lightness'/>
-<retval type='@' declared_type='UIColor*'/>
+<arg index='0' declared_type='CGFloat' name='hue' type64='d' type='f'/>
+<arg index='1' declared_type='CGFloat' name='saturation' type64='d' type='f'/>
+<arg index='2' declared_type='CGFloat' name='lightness' type64='d' type='f'/>
+<retval declared_type='UIColor*' type='@'/>
 </method>
 <method selector='colorWithHue:saturation:lightness:alpha:' class_method='true'>
-<arg index='0' type='f' declared_type='CGFloat' name='hue'/>
-<arg index='1' type='f' declared_type='CGFloat' name='saturation'/>
-<arg index='2' type='f' declared_type='CGFloat' name='lightness'/>
-<arg index='3' type='f' declared_type='CGFloat' name='alpha'/>
-<retval type='@' declared_type='UIColor*'/>
+<arg index='0' declared_type='CGFloat' name='hue' type64='d' type='f'/>
+<arg index='1' declared_type='CGFloat' name='saturation' type64='d' type='f'/>
+<arg index='2' declared_type='CGFloat' name='lightness' type64='d' type='f'/>
+<arg index='3' declared_type='CGFloat' name='alpha' type64='d' type='f'/>
+<retval declared_type='UIColor*' type='@'/>
 </method>
 <method selector='colorWithRGBAValue:' class_method='true'>
-<arg index='0' type='I' declared_type='uint' name='value'/>
-<retval type='@' declared_type='UIColor*'/>
+<arg index='0' declared_type='uint' name='value' type='I'/>
+<retval declared_type='UIColor*' type='@'/>
 </method>
 <method selector='colorWithRGBValue:' class_method='true'>
-<arg index='0' type='I' declared_type='uint' name='value'/>
-<retval type='@' declared_type='UIColor*'/>
+<arg index='0' declared_type='uint' name='value' type='I'/>
+<retval declared_type='UIColor*' type='@'/>
 </method>
 <method selector='darkenByPercent:'>
-<arg index='0' type='f' declared_type='CGFloat' name='percent'/>
-<retval type='@' declared_type='UIColor*'/>
+<arg index='0' declared_type='CGFloat' name='percent' type64='d' type='f'/>
+<retval declared_type='UIColor*' type='@'/>
 </method>
 <method selector='getHue:saturation:lightness:alpha:'>
-<arg index='0' type='^f' declared_type='CGFloat*' name='hue'/>
-<arg index='1' type='^f' declared_type='CGFloat*' name='saturation'/>
-<arg index='2' type='^f' declared_type='CGFloat*' name='lightness'/>
-<arg index='3' type='^f' declared_type='CGFloat*' name='alpha'/>
-<retval type='B' declared_type='BOOL'/>
+<arg index='0' declared_type='CGFloat*' name='hue' type64='^d' type='^f'/>
+<arg index='1' declared_type='CGFloat*' name='saturation' type64='^d' type='^f'/>
+<arg index='2' declared_type='CGFloat*' name='lightness' type64='^d' type='^f'/>
+<arg index='3' declared_type='CGFloat*' name='alpha' type64='^d' type='^f'/>
+<retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='isOpaque'>
-<retval type='B' declared_type='BOOL'/>
+<retval declared_type='BOOL' type='B'/>
 </method>
 <method selector='lightenByPercent:'>
-<arg index='0' type='f' declared_type='CGFloat' name='percent'/>
-<retval type='@' declared_type='UIColor*'/>
+<arg index='0' declared_type='CGFloat' name='percent' type64='d' type='f'/>
+<retval declared_type='UIColor*' type='@'/>
+</method>
+</class>
+<class name='UINavigationItem'>
+<method selector='pxStyleElementName'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='pxStyleParent'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='setPxStyleElementName:'>
+<arg index='0' declared_type='NSString*' name='pxStyleElementName' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPxStyleParent:'>
+<arg index='0' declared_type='id' name='pxStyleParent' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 </class>
 <class name='UITabBarItem'>
 <method selector='pxStyleParent'>
-<retval type='@' declared_type='id'/>
+<retval declared_type='id' type='@'/>
 </method>
 <method selector='setPxStyleParent:'>
-<arg index='0' type='@' declared_type='id' name='pxStyleParent'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='id' name='pxStyleParent' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 </class>
 <class name='UIView'>
 <method selector='setStyleCSS:'>
-<arg index='0' type='@' declared_type='NSString*' name='styleCSS'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='NSString*' name='styleCSS' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setStyleClass:'>
-<arg index='0' type='@' declared_type='NSString*' name='styleClass'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='NSString*' name='styleClass' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setStyleId:'>
-<arg index='0' type='@' declared_type='NSString*' name='styleId'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='NSString*' name='styleId' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='setStyleMode:'>
-<arg index='0' type='i' declared_type='PXStylingMode' name='styleMode'/>
-<retval type='v' declared_type='void'/>
+<arg index='0' declared_type='PXStylingMode' name='styleMode' type='i'/>
+<retval declared_type='void' type='v'/>
 </method>
 <method selector='styleCSS'>
-<retval type='@' declared_type='NSString*'/>
+<retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='styleClass'>
-<retval type='@' declared_type='NSString*'/>
+<retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='styleId'>
-<retval type='@' declared_type='NSString*'/>
+<retval declared_type='NSString*' type='@'/>
 </method>
 <method selector='styleMode'>
-<retval type='i' declared_type='PXStylingMode'/>
+<retval declared_type='PXStylingMode' type='i'/>
 </method>
 </class>
 <informal_protocol name='PXBoundable'>
-<method selector='bounds' type='{CGRect={CGPoint=ff}{CGSize=ff}}8@0:4'>
-<retval type='i' declared_type='int'/>
+<method selector='bounds' type64='{CGRect={CGPoint=dd}{CGSize=dd}}16@0:8' type='{CGRect={CGPoint=ff}{CGSize=ff}}8@0:4'>
+<retval declared_type='int' type='i'/>
 </method>
-<method selector='setBounds:' type='v24@0:4{CGRect={CGPoint=ff}{CGSize=ff}}8'>
-<arg index='0' type='i' declared_type='int' name='bounds'/>
-<retval type='v' declared_type='void'/>
+<method selector='setBounds:' type64='v48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16' type='v24@0:4{CGRect={CGPoint=ff}{CGSize=ff}}8'>
+<arg index='0' declared_type='int' name='bounds' type='i'/>
+<retval declared_type='void' type='v'/>
 </method>
 </informal_protocol>
 <informal_protocol name='PXPaint'>
-<method selector='applyFillToPath:withContext:' type='v16@0:4^{CGPath=}8^{CGContext=}12'>
-<arg index='0' type='^{CGPath=}' declared_type='CGPathRef' name='path'/>
-<arg index='1' type='^{CGContext=}' declared_type='CGContextRef' name='context'/>
-<retval type='v' declared_type='void'/>
+<method selector='applyFillToPath:withContext:' type64='v32@0:8^{CGPath=}16^{CGContext=}24' type='v16@0:4^{CGPath=}8^{CGContext=}12'>
+<arg index='0' declared_type='CGPathRef' name='path' type='^{CGPath=}'/>
+<arg index='1' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
 </method>
-<method selector='blendMode' type='i8@0:4'>
-<retval type='i' declared_type='CGBlendMode'/>
+<method selector='blendMode' type64='i16@0:8' type='i8@0:4'>
+<retval declared_type='CGBlendMode' type='i'/>
 </method>
-<method selector='darkenByPercent:' type='@12@0:4f8'>
-<arg index='0' type='f' declared_type='CGFloat' name='percent'/>
-<retval type='@' declared_type='id'/>
+<method selector='darkenByPercent:' type64='@24@0:8d16' type='@12@0:4f8'>
+<arg index='0' declared_type='CGFloat' name='percent' type64='d' type='f'/>
+<retval declared_type='id' type='@'/>
 </method>
-<method selector='isOpaque' type='B8@0:4'>
-<retval type='B' declared_type='BOOL'/>
+<method selector='isOpaque' type64='B16@0:8' type='B8@0:4'>
+<retval declared_type='BOOL' type='B'/>
 </method>
-<method selector='lightenByPercent:' type='@12@0:4f8'>
-<arg index='0' type='f' declared_type='CGFloat' name='percent'/>
-<retval type='@' declared_type='id'/>
+<method selector='lightenByPercent:' type64='@24@0:8d16' type='@12@0:4f8'>
+<arg index='0' declared_type='CGFloat' name='percent' type64='d' type='f'/>
+<retval declared_type='id' type='@'/>
 </method>
-<method selector='setBlendMode:' type='v12@0:4i8'>
-<arg index='0' type='i' declared_type='CGBlendMode' name='blendMode'/>
-<retval type='v' declared_type='void'/>
+<method selector='setBlendMode:' type64='v20@0:8i16' type='v12@0:4i8'>
+<arg index='0' declared_type='CGBlendMode' name='blendMode' type='i'/>
+<retval declared_type='void' type='v'/>
 </method>
 </informal_protocol>
 <informal_protocol name='PXPaintable'>
-<method selector='clippingPath' type='@8@0:4'>
-<retval type='@' declared_type='PXShape*'/>
+<method selector='clippingPath' type64='@16@0:8' type='@8@0:4'>
+<retval declared_type='PXShape*' type='@'/>
 </method>
-<method selector='fill' type='@8@0:4'>
-<retval type='@' declared_type='id'/>
+<method selector='fill' type64='@16@0:8' type='@8@0:4'>
+<retval declared_type='id' type='@'/>
 </method>
-<method selector='opacity' type='f8@0:4'>
-<retval type='f' declared_type='CGFloat'/>
+<method selector='opacity' type64='d16@0:8' type='f8@0:4'>
+<retval declared_type='CGFloat' type64='d' type='f'/>
 </method>
-<method selector='setClippingPath:' type='v12@0:4@8'>
-<arg index='0' type='@' declared_type='PXShape*' name='clippingPath'/>
-<retval type='v' declared_type='void'/>
+<method selector='setClippingPath:' type64='v24@0:8@16' type='v12@0:4@8'>
+<arg index='0' declared_type='PXShape*' name='clippingPath' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
-<method selector='setFill:' type='v12@0:4@8'>
-<arg index='0' type='@' declared_type='id' name='fill'/>
-<retval type='v' declared_type='void'/>
+<method selector='setFill:' type64='v24@0:8@16' type='v12@0:4@8'>
+<arg index='0' declared_type='id' name='fill' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
-<method selector='setOpacity:' type='v12@0:4f8'>
-<arg index='0' type='f' declared_type='CGFloat' name='opacity'/>
-<retval type='v' declared_type='void'/>
+<method selector='setOpacity:' type64='v24@0:8d16' type='v12@0:4f8'>
+<arg index='0' declared_type='CGFloat' name='opacity' type64='d' type='f'/>
+<retval declared_type='void' type='v'/>
 </method>
-<method selector='setShadow:' type='v12@0:4@8'>
-<arg index='0' type='@' declared_type='id' name='shadow'/>
-<retval type='v' declared_type='void'/>
+<method selector='setShadow:' type64='v24@0:8@16' type='v12@0:4@8'>
+<arg index='0' declared_type='id' name='shadow' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
-<method selector='setStroke:' type='v12@0:4@8'>
-<arg index='0' type='@' declared_type='id' name='stroke'/>
-<retval type='v' declared_type='void'/>
+<method selector='setStroke:' type64='v24@0:8@16' type='v12@0:4@8'>
+<arg index='0' declared_type='id' name='stroke' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
-<method selector='setVisible:' type='v12@0:4B8'>
-<arg index='0' type='B' declared_type='BOOL' name='visible'/>
-<retval type='v' declared_type='void'/>
+<method selector='setVisible:' type64='v20@0:8B16' type='v12@0:4B8'>
+<arg index='0' declared_type='BOOL' name='visible' type='B'/>
+<retval declared_type='void' type='v'/>
 </method>
-<method selector='shadow' type='@8@0:4'>
-<retval type='@' declared_type='id'/>
+<method selector='shadow' type64='@16@0:8' type='@8@0:4'>
+<retval declared_type='id' type='@'/>
 </method>
-<method selector='stroke' type='@8@0:4'>
-<retval type='@' declared_type='id'/>
+<method selector='stroke' type64='@16@0:8' type='@8@0:4'>
+<retval declared_type='id' type='@'/>
 </method>
-<method selector='visible' type='B8@0:4'>
-<retval type='B' declared_type='BOOL'/>
+<method selector='visible' type64='B16@0:8' type='B8@0:4'>
+<retval declared_type='BOOL' type='B'/>
 </method>
 </informal_protocol>
 <informal_protocol name='PXRenderable'>
-<method selector='padding' type='@8@0:4'>
-<retval type='@' declared_type='PXOffsets*'/>
+<method selector='padding' type64='@16@0:8' type='@8@0:4'>
+<retval declared_type='PXOffsets*' type='@'/>
 </method>
-<method selector='parent' type='@8@0:4'>
-<retval type='@' declared_type='id'/>
+<method selector='parent' type64='@16@0:8' type='@8@0:4'>
+<retval declared_type='id' type='@'/>
 </method>
-<method selector='render:' type='v12@0:4^{CGContext=}8'>
-<arg index='0' type='^{CGContext=}' declared_type='CGContextRef' name='context'/>
-<retval type='v' declared_type='void'/>
+<method selector='render:' type64='v24@0:8^{CGContext=}16' type='v12@0:4^{CGContext=}8'>
+<arg index='0' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
 </method>
-<method selector='renderToImageWithBounds:withOpacity:' type='@28@0:4{CGRect={CGPoint=ff}{CGSize=ff}}8B24'>
-<arg index='0' type='{CGRect={CGPoint=ff}{CGSize=ff}}' declared_type='CGRect' name='bounds'/>
-<arg index='1' type='B' declared_type='BOOL' name='opaque'/>
-<retval type='@' declared_type='UIImage*'/>
+<method selector='renderToImageWithBounds:withOpacity:' type64='@52@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16B48' type='@28@0:4{CGRect={CGPoint=ff}{CGSize=ff}}8B24'>
+<arg index='0' declared_type='CGRect' name='bounds' type64='{CGRect={CGPoint=dd}{CGSize=dd}}' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+<arg index='1' declared_type='BOOL' name='opaque' type='B'/>
+<retval declared_type='UIImage*' type='@'/>
 </method>
-<method selector='setPadding:' type='v12@0:4@8'>
-<arg index='0' type='@' declared_type='PXOffsets*' name='padding'/>
-<retval type='v' declared_type='void'/>
+<method selector='setPadding:' type64='v24@0:8@16' type='v12@0:4@8'>
+<arg index='0' declared_type='PXOffsets*' name='padding' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
-<method selector='setParent:' type='v12@0:4@8'>
-<arg index='0' type='@' declared_type='id' name='parent'/>
-<retval type='v' declared_type='void'/>
+<method selector='setParent:' type64='v24@0:8@16' type='v12@0:4@8'>
+<arg index='0' declared_type='id' name='parent' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
-<method selector='setTransform:' type='v32@0:4{CGAffineTransform=ffffff}8'>
-<arg index='0' type='{CGAffineTransform=ffffff}' declared_type='CGAffineTransform' name='transform'/>
-<retval type='v' declared_type='void'/>
+<method selector='setTransform:' type64='v64@0:8{CGAffineTransform=dddddd}16' type='v32@0:4{CGAffineTransform=ffffff}8'>
+<arg index='0' declared_type='CGAffineTransform' name='transform' type64='{CGAffineTransform=dddddd}' type='{CGAffineTransform=ffffff}'/>
+<retval declared_type='void' type='v'/>
 </method>
-<method selector='transform' type='{CGAffineTransform=ffffff}8@0:4'>
-<retval type='{CGAffineTransform=ffffff}' declared_type='CGAffineTransform'/>
+<method selector='transform' type64='{CGAffineTransform=dddddd}16@0:8' type='{CGAffineTransform=ffffff}8@0:4'>
+<retval declared_type='CGAffineTransform' type64='{CGAffineTransform=dddddd}' type='{CGAffineTransform=ffffff}'/>
 </method>
 </informal_protocol>
 <informal_protocol name='PXShadowPaint'>
-<method selector='applyInsetToPath:withContext:' type='v16@0:4^{CGPath=}8^{CGContext=}12'>
-<arg index='0' type='^{CGPath=}' declared_type='CGPathRef' name='path'/>
-<arg index='1' type='^{CGContext=}' declared_type='CGContextRef' name='context'/>
-<retval type='v' declared_type='void'/>
+<method selector='applyInsetToPath:withContext:' type64='v32@0:8^{CGPath=}16^{CGContext=}24' type='v16@0:4^{CGPath=}8^{CGContext=}12'>
+<arg index='0' declared_type='CGPathRef' name='path' type='^{CGPath=}'/>
+<arg index='1' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
 </method>
-<method selector='applyOutsetToPath:withContext:' type='v16@0:4^{CGPath=}8^{CGContext=}12'>
-<arg index='0' type='^{CGPath=}' declared_type='CGPathRef' name='path'/>
-<arg index='1' type='^{CGContext=}' declared_type='CGContextRef' name='context'/>
-<retval type='v' declared_type='void'/>
+<method selector='applyOutsetToPath:withContext:' type64='v32@0:8^{CGPath=}16^{CGContext=}24' type='v16@0:4^{CGPath=}8^{CGContext=}12'>
+<arg index='0' declared_type='CGPathRef' name='path' type='^{CGPath=}'/>
+<arg index='1' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
 </method>
 </informal_protocol>
 <informal_protocol name='PXStrokeRenderer'>
-<method selector='applyStrokeToPath:withContext:' type='v16@0:4^{CGPath=}8^{CGContext=}12'>
-<arg index='0' type='^{CGPath=}' declared_type='CGPathRef' name='path'/>
-<arg index='1' type='^{CGContext=}' declared_type='CGContextRef' name='context'/>
-<retval type='v' declared_type='void'/>
+<method selector='applyStrokeToPath:withContext:' type64='v32@0:8^{CGPath=}16^{CGContext=}24' type='v16@0:4^{CGPath=}8^{CGContext=}12'>
+<arg index='0' declared_type='CGPathRef' name='path' type='^{CGPath=}'/>
+<arg index='1' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
 </method>
-<method selector='isOpaque' type='B8@0:4'>
-<retval type='B' declared_type='BOOL'/>
+<method selector='isOpaque' type64='B16@0:8' type='B8@0:4'>
+<retval declared_type='BOOL' type='B'/>
 </method>
 </informal_protocol>
 <informal_protocol name='PXStyleable'>
-<method selector='animationPropertyHandlers' type='@8@0:4'>
-<retval type='@' declared_type='NSDictionary*'/>
+<method selector='animationPropertyHandlers' type64='@16@0:8' type='@8@0:4'>
+<retval declared_type='NSDictionary*' type='@'/>
 </method>
-<method selector='attributeValueForName:withNamespace:' type='@16@0:4@8@12'>
-<arg index='0' type='@' declared_type='NSString*' name='name'/>
-<arg index='1' type='@' declared_type='NSString*' name='aNamespace'/>
-<retval type='@' declared_type='NSString*'/>
+<method selector='attributeValueForName:withNamespace:' type64='@32@0:8@16@24' type='@16@0:4@8@12'>
+<arg index='0' declared_type='NSString*' name='name' type='@'/>
+<arg index='1' declared_type='NSString*' name='aNamespace' type='@'/>
+<retval declared_type='NSString*' type='@'/>
 </method>
-<method selector='bounds' type='i8@0:4'>
-<retval type='i' declared_type='int'/>
+<method selector='bounds' type64='i16@0:8' type='i8@0:4'>
+<retval declared_type='int' type='i'/>
 </method>
-<method selector='defaultPseudoClass' type='@8@0:4'>
-<retval type='@' declared_type='NSString*'/>
+<method selector='canStylePseudoClass:' type64='B24@0:8@16' type='B12@0:4@8'>
+<arg index='0' declared_type='NSString*' name='pseudoClass' type='@'/>
+<retval declared_type='BOOL' type='B'/>
 </method>
-<method selector='frame' type='i8@0:4'>
-<retval type='i' declared_type='int'/>
+<method selector='defaultPseudoClass' type64='@16@0:8' type='@8@0:4'>
+<retval declared_type='NSString*' type='@'/>
 </method>
-<method selector='pxStyleChildren' type='@8@0:4'>
-<retval type='@' declared_type='NSArray*'/>
+<method selector='frame' type64='i16@0:8' type='i8@0:4'>
+<retval declared_type='int' type='i'/>
 </method>
-<method selector='pxStyleElementName' type='@8@0:4'>
-<retval type='@' declared_type='NSString*'/>
+<method selector='pxStyleChildren' type64='@16@0:8' type='@8@0:4'>
+<retval declared_type='NSArray*' type='@'/>
 </method>
-<method selector='pxStyleNamespace' type='@8@0:4'>
-<retval type='@' declared_type='NSString*'/>
+<method selector='pxStyleElementName' type64='@16@0:8' type='@8@0:4'>
+<retval declared_type='NSString*' type='@'/>
 </method>
-<method selector='pxStyleParent' type='@8@0:4'>
-<retval type='@' declared_type='id'/>
+<method selector='pxStyleNamespace' type64='@16@0:8' type='@8@0:4'>
+<retval declared_type='NSString*' type='@'/>
 </method>
-<method selector='registerNotifications' type='v8@0:4'>
-<retval type='v' declared_type='void'/>
+<method selector='pxStyleParent' type64='@16@0:8' type='@8@0:4'>
+<retval declared_type='id' type='@'/>
 </method>
-<method selector='setBounds:' type='v12@0:4i8'>
-<arg index='0' type='i' declared_type='int' name='bounds'/>
-<retval type='v' declared_type='void'/>
+<method selector='registerNotifications' type64='v16@0:8' type='v8@0:4'>
+<retval declared_type='void' type='v'/>
 </method>
-<method selector='setFrame:' type='v12@0:4i8'>
-<arg index='0' type='i' declared_type='int' name='frame'/>
-<retval type='v' declared_type='void'/>
+<method selector='setBounds:' type64='v20@0:8i16' type='v12@0:4i8'>
+<arg index='0' declared_type='int' name='bounds' type='i'/>
+<retval declared_type='void' type='v'/>
 </method>
-<method selector='setStyleCSS:' type='v12@0:4@8'>
-<arg index='0' type='@' declared_type='NSString*' name='styleCSS'/>
-<retval type='v' declared_type='void'/>
+<method selector='setFrame:' type64='v20@0:8i16' type='v12@0:4i8'>
+<arg index='0' declared_type='int' name='frame' type='i'/>
+<retval declared_type='void' type='v'/>
 </method>
-<method selector='setStyleClass:' type='v12@0:4@8'>
-<arg index='0' type='@' declared_type='NSString*' name='styleClass'/>
-<retval type='v' declared_type='void'/>
+<method selector='setStyleCSS:' type64='v24@0:8@16' type='v12@0:4@8'>
+<arg index='0' declared_type='NSString*' name='styleCSS' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
-<method selector='setStyleId:' type='v12@0:4@8'>
-<arg index='0' type='@' declared_type='NSString*' name='styleId'/>
-<retval type='v' declared_type='void'/>
+<method selector='setStyleClass:' type64='v24@0:8@16' type='v12@0:4@8'>
+<arg index='0' declared_type='NSString*' name='styleClass' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
-<method selector='styleCSS' type='@8@0:4'>
-<retval type='@' declared_type='NSString*'/>
+<method selector='setStyleId:' type64='v24@0:8@16' type='v12@0:4@8'>
+<arg index='0' declared_type='NSString*' name='styleId' type='@'/>
+<retval declared_type='void' type='v'/>
 </method>
-<method selector='styleClass' type='@8@0:4'>
-<retval type='@' declared_type='NSString*'/>
+<method selector='setStyleMode:' type64='v20@0:8i16' type='v12@0:4i8'>
+<arg index='0' declared_type='PXStylingMode' name='styleMode' type='i'/>
+<retval declared_type='void' type='v'/>
 </method>
-<method selector='styleId' type='@8@0:4'>
-<retval type='@' declared_type='NSString*'/>
+<method selector='styleCSS' type64='@16@0:8' type='@8@0:4'>
+<retval declared_type='NSString*' type='@'/>
 </method>
-<method selector='styleableForPseudoElement:' type='@12@0:4@8'>
-<arg index='0' type='@' declared_type='NSString*' name='pseudoElement'/>
-<retval type='@' declared_type='id'/>
+<method selector='styleClass' type64='@16@0:8' type='@8@0:4'>
+<retval declared_type='NSString*' type='@'/>
 </method>
-<method selector='supportedPseudoClasses' type='@8@0:4'>
-<retval type='@' declared_type='NSArray*'/>
+<method selector='styleId' type64='@16@0:8' type='@8@0:4'>
+<retval declared_type='NSString*' type='@'/>
 </method>
-<method selector='supportedPseudoElements' type='@8@0:4'>
-<retval type='@' declared_type='NSArray*'/>
+<method selector='styleKey' type64='@16@0:8' type='@8@0:4'>
+<retval declared_type='NSString*' type='@'/>
 </method>
-<method selector='updateStyles' type='v8@0:4'>
-<retval type='v' declared_type='void'/>
+<method selector='styleMode' type64='i16@0:8' type='i8@0:4'>
+<retval declared_type='PXStylingMode' type='i'/>
 </method>
-<method selector='updateStylesAsync' type='v8@0:4'>
-<retval type='v' declared_type='void'/>
+<method selector='styleableForPseudoElement:' type64='@24@0:8@16' type='@12@0:4@8'>
+<arg index='0' declared_type='NSString*' name='pseudoElement' type='@'/>
+<retval declared_type='id' type='@'/>
 </method>
-<method selector='updateStylesNonRecursively' type='v8@0:4'>
-<retval type='v' declared_type='void'/>
+<method selector='supportedPseudoClasses' type64='@16@0:8' type='@8@0:4'>
+<retval declared_type='NSArray*' type='@'/>
 </method>
-<method selector='updateStylesNonRecursivelyAsync' type='v8@0:4'>
-<retval type='v' declared_type='void'/>
+<method selector='supportedPseudoElements' type64='@16@0:8' type='@8@0:4'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='updateStyles' type64='v16@0:8' type='v8@0:4'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='updateStylesAsync' type64='v16@0:8' type='v8@0:4'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='updateStylesNonRecursively' type64='v16@0:8' type='v8@0:4'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='updateStylesNonRecursivelyAsync' type64='v16@0:8' type='v8@0:4'>
+<retval declared_type='void' type='v'/>
 </method>
 </informal_protocol>
 <informal_protocol name='PXVirtualControl'>
-<method selector='isVirtualControl' type='B8@0:4'>
-<retval type='B' declared_type='BOOL'/>
+<method selector='isVirtualControl' type64='B16@0:8' type='B8@0:4'>
+<retval declared_type='BOOL' type='B'/>
 </method>
 </informal_protocol>
 </signatures>
